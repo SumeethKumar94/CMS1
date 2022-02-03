@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div clas="container">
   <br>
   <h2 style="text-align: center;font: size 300%;font-family:fantasy ;">{{title}}</h2>
@@ -16,3 +17,49 @@
       <span>All rights are reserved </span>
   </div>
 </footer>
+=======
+
+<div class="container">
+  <br />
+  <h2 style="text-align: center; font-size: 200%; font-family: fantasy;">{{ title }}</h2>
+  <div class="card">
+      <div class="card-body">
+          <router-outlet></router-outlet>
+          <!-- NavBar -->
+          <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+            <div class="container-fluid">
+              <img src="/Home/Images/logo_cms_0.png" alt="" id="nav-img">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/Update inventory/Html/inventory.html">Inventory</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/Generating Credentials/html/adminhome.html">Add Staff</a>
+                  </li>   
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+            <app-staff></app-staff>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <span>All rights reserved @2022</span>
+    </div>
+</footer>
+
+ 
+>>>>>>> 08e16812546e3a8c3bcfd397be8114b8a8beb305
