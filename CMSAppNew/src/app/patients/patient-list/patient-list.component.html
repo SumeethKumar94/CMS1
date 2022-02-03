@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="header">
+        <div class="form=control">
+            <!--search functionality-->
+            <input class="form-control" type="text" placeholder="search text here..."[(ngModel)]="filter">
+        {{filter}}
+        </div> 
+    </div>
+    <table class="table table-bordered table striped">
+        <thead>
+            <tr>
+                <th>PatientId</th>
+                <th>PatientName</th>
+                <th>PatientDob</th>
+                <th>PatientGender</th>
+                <th>PatientPhoneNo</th>
+                <th>BloodGroup</th>
+            </tr>
+        </thead>
+       <tbody>
+        <tr *ngFor="let pt of patientService.patients| filter:filter | paginate:{itemsPerPage:5,currentPage:page} ">
+            <td>{{pt.PatientId}}</td>
+            <td>{{pt.PatientName}}</td>
+            <td>{{pt.PatientDob}}</td>
+            <td>{{pt.PatientGender}}</td>
+            <td>{{pt.PatientPhoneNo}}</td>
+
+            <td>
+                <button class="btn btn-sm btn-info" (click)="updateUser(PatientId)">Update</button>
+            </td>
+        </tr>
+       </tbody>
+
+    </table>
+    <div class="footer">
+        <!--pagination-->
+        <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+    </div>
+     
+</div>
+
