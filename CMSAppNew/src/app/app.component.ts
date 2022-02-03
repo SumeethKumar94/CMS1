@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StaffService } from './shared/staff.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'CMSAppNew';
+  title = 'C M S';
 }
