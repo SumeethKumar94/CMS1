@@ -4,11 +4,7 @@
 
 export const environment = {
   production: false,
-<<<<<<< HEAD
   apiUrl:"https://localhost:44329"
-=======
-  apiUrl:'https://localhost:44329/'
->>>>>>> 08e16812546e3a8c3bcfd397be8114b8a8beb305
 };
 
 /*

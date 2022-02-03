@@ -28,13 +28,8 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
               "src/styles.scss",
               "node_modules/bootstrap/scss/bootstrap.scss"
-=======
-              "src/styles.scss"
-              
->>>>>>> 08e16812546e3a8c3bcfd397be8114b8a8beb305
             ],
             "scripts": []
           },
