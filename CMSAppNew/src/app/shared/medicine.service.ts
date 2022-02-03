@@ -1,0 +1,30 @@
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import {Medicine} from './medicine';
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
+@Injectable({
+  providedIn: 'root'
+})
+export class MedicineService {
+        medicines:Medicine[];
+        formData:Medicine=new Medicine();
+  
+constructor(private httpClient:HttpClient) { }
+
+//get all medicine
+getAllMedicines():Observable<any>{
+  //https://localhost:44329/api/medinventory/get---environment
+  return this.httpClient.get(environment.apiUrl+'/api/medinventory/get');
+}
+  
+//2.
+bindListMedicines(){
+  this.httpClient.get(environment.apiUrl+'/api/medinventory/get')
+  .toPromise().then(
+    response=>{
+      console.log(response);
+      this.medicines=response as Medicine[]
+    }
+  );
+}}
