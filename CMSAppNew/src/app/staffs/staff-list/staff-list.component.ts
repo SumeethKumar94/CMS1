@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { StaffService } from 'src/app/shared/staff.service';
 
 
@@ -15,7 +16,8 @@ export class StaffListComponent implements OnInit {
 
   
   constructor(public staffService : StaffService,
-    private router : Router) { }
+    private router : Router,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     console.log("Welcome to LifeCycle Hook");
@@ -43,6 +45,6 @@ export class StaffListComponent implements OnInit {
         }
       );
     }
-     }
+  }
 
 }

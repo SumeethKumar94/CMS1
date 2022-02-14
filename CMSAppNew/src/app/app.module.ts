@@ -24,6 +24,10 @@ import { LabtestListComponent } from './labtests/labtest-list/labtest-list.compo
 import  {PatientsComponent } from './patients/patients.component';
 import { PatientComponent } from './patients/patient/patient.component';
 import { PatientListComponent} from './patients/patient-list/patient-list.component';
+import { LoginComponent } from './login/login.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -40,9 +44,7 @@ import { PatientListComponent} from './patients/patient-list/patient-list.compon
     PatientsComponent,
     PatientComponent,
     PatientListComponent,
-
-
-
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,9 @@ import { PatientListComponent} from './patients/patient-list/patient-list.compon
     FormsModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot()
   ],
   providers: [MedicineService,LabtestsService, PrescribeService,StaffService,PatientService],
   bootstrap: [AppComponent]
