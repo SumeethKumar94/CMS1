@@ -28,9 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/bootstrap/scss/bootstrap.scss"
-              
+              "src/styles.scss"
               
             ],
             "scripts": []
@@ -126,10 +124,6 @@
           }
         }
       }
-    }
-  },
-  "defaultProject": "CMSAppNew",
-  "cli": {
-    "analytics": false
-  }
+    }},
+  "defaultProject": "CMSAppNew"
 }
