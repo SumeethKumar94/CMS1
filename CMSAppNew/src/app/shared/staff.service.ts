@@ -33,6 +33,11 @@ export class StaffService {
   deletePost(id : number){
     return this.httpClient.delete(environment.apiUrl+'/api/staff/'+id);
   }
+
+  // //getStaff by Id 
+  // GetStaffById(id : number){
+  //   return this.httpClient.get(environment.apiUrl+'/api/staff/search/'+)
+  }
   
 
-}
+

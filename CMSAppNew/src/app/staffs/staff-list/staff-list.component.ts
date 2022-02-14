@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StaffService } from 'src/app/shared/staff.service';
 
 
@@ -12,7 +13,9 @@ export class StaffListComponent implements OnInit {
   page: number = 1;
   filter: string;
 
-  constructor(public staffService : StaffService) { }
+  
+  constructor(public staffService : StaffService,
+    private router : Router) { }
 
   ngOnInit(): void {
     console.log("Welcome to LifeCycle Hook");
@@ -22,16 +25,16 @@ export class StaffListComponent implements OnInit {
   }
 
   //Update Employee 
-  updateEmployee(empId :number){
-    console.log(empId);
-    // navigate to edit form with selected employee details
+  updateEmployee(staffId :number){
+    console.log(staffId);
+    this.router.navigate(['staff',staffId])
     }
 
 
   //Delete Emplyee
-  deletePost(empId :number){
+  deletePost(staffId :number){
     if(confirm('Are you sure, you want to DELETE this record')){
-      this.staffService.deletePost(empId).subscribe(
+      this.staffService.deletePost(staffId).subscribe(
         response =>{
           this.staffService.bindListPosts();
         },
