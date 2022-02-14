@@ -17,6 +17,13 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MedicinesComponent } from '../app/medicines/medicines.component';
 import { MedicineListComponent } from '../app/medicines/medicine-list/medicine-list.component';
 import { MedicineService } from './shared/medicine.service';
+import { DoctorComponent } from  './doctor/doctor.component';
+import { PrescriptionListComponent} from './doctor/prescription-list/prescription-list.component';
+import { LabtestsComponent} from './labtests/labtests.component';
+import { LabtestListComponent } from './labtests/labtest-list/labtest-list.component';
+import  {PatientsComponent } from './patients/patients.component';
+import { PatientComponent } from './patients/patient/patient.component';
+import { PatientListComponent} from './patients/patient-list/patient-list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,17 @@ import { MedicineService } from './shared/medicine.service';
     StaffComponent,
     StaffListComponent,
     MedicinesComponent,
-    MedicineListComponent 
+    MedicineListComponent,
+    DoctorComponent,
+    PrescriptionListComponent,
+    LabtestsComponent,
+    LabtestListComponent,
+    PatientsComponent,
+    PatientComponent,
+    PatientListComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
