@@ -22,9 +22,11 @@ import { StaffListComponent } from './staffs/staff-list/staff-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PrescribeService } from './shared/prescribe.service';
 import { StaffService } from './shared/staff.service';
+import{PatientService} from './shared/patient.service'
 
 @NgModule({
-  declarations: [ MedicinesComponent,
+  declarations: [ 
+    MedicinesComponent,
     MedicineListComponent,
     AppComponent,
     LabtestsComponent,
@@ -33,8 +35,7 @@ import { StaffService } from './shared/staff.service';
     PrescriptionListComponent,
     StaffsComponent,
     StaffComponent,
-    StaffListComponent
-   
+    StaffListComponent  
   ],
   imports: [
     NgxPaginationModule,
@@ -44,7 +45,7 @@ import { StaffService } from './shared/staff.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [MedicineService,LabtestsService, PrescribeService,StaffService],
+  providers: [MedicineService,LabtestsService, PrescribeService,StaffService,PatientService],
  bootstrap: [AppComponent]
 })
 export class AppModule { }
