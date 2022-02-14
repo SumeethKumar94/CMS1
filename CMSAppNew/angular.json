@@ -29,7 +29,6 @@
             ],
             "styles": [
               "src/styles.scss"
-              
             ],
             "scripts": []
           },
@@ -124,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "CMSAppNew"
+    }
+  },
+  "defaultProject": "CMSAppNew",
+  "cli": {
+    "analytics": false
+  }
 }

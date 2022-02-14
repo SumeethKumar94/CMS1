@@ -24,6 +24,7 @@ import { LabtestListComponent } from './labtests/labtest-list/labtest-list.compo
 import  {PatientsComponent } from './patients/patients.component';
 import { PatientComponent } from './patients/patient/patient.component';
 import { PatientListComponent} from './patients/patient-list/patient-list.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -40,9 +41,7 @@ import { PatientListComponent} from './patients/patient-list/patient-list.compon
     PatientsComponent,
     PatientComponent,
     PatientListComponent,
-
-
-
+    LoginComponent
   ],
   imports: [
     BrowserModule,
