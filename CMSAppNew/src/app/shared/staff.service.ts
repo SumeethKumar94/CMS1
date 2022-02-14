@@ -14,13 +14,13 @@ export class StaffService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllPosts():Observable<any>{
-    return this.httpClient.get(environment.apiUrl+'/api/post');
-  }
+  // getAllPosts():Observable<any>{
+  //   return this.httpClient.get(environment.apiUrl+'/api/post');
+  // }
 
 
   bindListPosts(){
-    this.httpClient.get(environment.apiUrl+'api/staff/GetStaffsAll')
+    this.httpClient.get(environment.apiUrl+'/api/staff/GetStaffsAll')
     .toPromise().then(
       response =>{
         console.log("From Services");
@@ -31,11 +31,8 @@ export class StaffService {
   }
 
   deletePost(id : number){
-    return this.httpClient.delete(environment.apiUrl+'api/staff/'+id);
+    return this.httpClient.delete(environment.apiUrl+'/api/staff/'+id);
   }
-
-  getDoctor(){
-    this.httpClient.get(environment.apiUrl+'/api/staff/getStaffsAll')
-  }
+  
 
 }

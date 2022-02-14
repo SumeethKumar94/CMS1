@@ -8,6 +8,4 @@ import { StaffService } from './shared/staff.service';
 })
 export class AppComponent {
   title = '';
-  filter: string;
-  constructor(public staffService : StaffService) { }
 }
