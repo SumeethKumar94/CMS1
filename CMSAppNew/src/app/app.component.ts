@@ -7,5 +7,5 @@ import { StaffService } from './shared/staff.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = '';
+  title = 'C M S';
 }

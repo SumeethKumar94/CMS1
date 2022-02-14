@@ -1,0 +1,35 @@
+<div class="header">
+    <div class="form-control">
+        <!--search functionality-->
+        <input class="form-control" type="text" placeholder="search text here..."[(ngModel)]="filter" >
+        {{filter}}
+    </div>
+
+    <a [routerLink]="" class="btn btn-outline-secondary" style="float: right; margin-top: 10px;margin-bottom: 10px;">Add Medicine</a>
+</div>
+<table class="table table-ordered table-striped">
+    <thead>
+        <tr>
+            <th>MedInvId</th>
+            <th>MedicineName</th>
+            <th>NetMedQty</th>
+            <th>UnitPrice</th>
+            <th>MedDesc</th>
+            <th>Action</th><!--edit,delete-->
+        </tr>
+    </thead>
+    
+    <tbody> 
+        <tr *ngFor="let med of medicineService.medicines | filter:filter | paginate: {itemsPerPage:3,currentPage:page}" >
+            <td>{{med.MedInvId}}</td>
+            <td>{{med.MedicineName}}</td>
+            <td>{{med.NetMedQty}}</td>
+            <td>{{UnitPrice}}</td> 
+            <td>{{med.MedDesc}}</td>
+        </tr>
+    </tbody>
+   </table>  
+   <div class="footer">
+    <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+    <!--Pagination-->
+</div>
