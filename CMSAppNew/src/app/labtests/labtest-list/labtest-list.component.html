@@ -1,15 +1,16 @@
-<div class="container">
-    <div class="header">
-        <div class="form-control">
+<div class="header" style="background-color: aliceblue;">
+    <div style="margin: 25px;">
 
             <!--Search functionality-->
             <input class="form-control" type="text" placeholder="Search here.." [(ngModel)]="filter">
             {{filter}}
             <!--Property Binding-->
-            <a [routerLink]="" class="btn btn-outline-secondary" style="float: right;margin-top: 15px;margin-bottom: 10px;">Add Lab Tests</a>
             
-        </div>
     </div>
+    
+</div>
+<div style="margin: 1.5em;overflow: scroll;background-color: aliceblue;">
+    <a [routerLink]="" class="btn btn-outline-secondary" style="float: right;margin-top: 15px;margin-bottom: 10px;">Add Lab Tests</a>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -30,7 +31,7 @@
                 <td>{{lb.TestPrice}}</td>
                 <td>
                     <button class="btn btn-sm btn-outline-info" (click)="updateLabtest(lb.LabTestId)">Edit</button>&nbsp;
-                    <button class="btn btn-sm btn-outline-danger" (click)="deleteLabtest(lb.LabTestId)">X</button>
+                    <button class="btn btn-sm btn-danger" (click)="deleteLabtest(lb.LabTestId)">Delete</button>
                 </td>
             </tr>
         </tbody>
