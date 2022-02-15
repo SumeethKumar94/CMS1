@@ -11,5 +11,5 @@ export class Staff {
     StaffPassword: string;
     RoleId : number = 0;
     RoleName : string= '';
-    StaffPassword:string='';
+    
 }
