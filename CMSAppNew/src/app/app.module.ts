@@ -11,7 +11,7 @@ import { PrescribeService } from './shared/prescribe.service';
 import { StaffService } from './shared/staff.service';
 import { PatientService } from './shared/patient.service';
 import { LabtestsService } from './shared/labtests.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MedicinesComponent } from '../app/medicines/medicines.component';
@@ -24,6 +24,9 @@ import { LabtestListComponent } from './labtests/labtest-list/labtest-list.compo
 import  {PatientsComponent } from './patients/patients.component';
 import { PatientComponent } from './patients/patient/patient.component';
 import { PatientListComponent} from './patients/patient-list/patient-list.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { ReceptionistComponent } from './receptionist/receptionist.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,9 @@ import { PatientListComponent} from './patients/patient-list/patient-list.compon
     PatientsComponent,
     PatientComponent,
     PatientListComponent,
+    LoginComponent,
+    AdminComponent,
+    ReceptionistComponent,
 
 
 
@@ -50,7 +56,8 @@ import { PatientListComponent} from './patients/patient-list/patient-list.compon
     FormsModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [MedicineService,LabtestsService, PrescribeService,StaffService,PatientService],
   bootstrap: [AppComponent]
