@@ -15,8 +15,7 @@ import { PatientListComponent } from './patients/patient-list/patient-list.compo
 import { AppointmentComponent } from './appointments/appointment/appointment.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { LabtestComponent } from './labtests/labtest/labtest.component';
-
-
+import { AdminNavComponent } from './admin/admin-nav/admin-nav.component'
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -37,7 +36,8 @@ const routes: Routes = [
   {path:'appointment/:appId',component:AppointmentComponent},
   {path:'appointments',component:AppointmentsComponent},
   {path:'patient/:PatientId', component: PatientComponent },
-  {path:'staff/:StaffId',component:StaffComponent}
+  {path:'staff/:StaffId',component:StaffComponent},
+  {path:'adminnav',component:AdminNavComponent}
 ];
 
 @NgModule({

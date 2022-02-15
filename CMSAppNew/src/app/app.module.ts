@@ -32,6 +32,7 @@ import { AppointmentsComponent } from './appointments/appointments.component';
 import { AppointmentComponent } from './appointments/appointment/appointment.component';
 import { AppointmentlistComponent } from './appointments/appointmentlist/appointmentlist.component';
 import { LabtestComponent } from './labtests/labtest/labtest.component';
+import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { LabtestComponent } from './labtests/labtest/labtest.component';
     AppointmentlistComponent,
     ReceptionistComponent,
     LabtestComponent,
-    AdminComponent
+    AdminComponent,
+    AdminNavComponent
   ],
   imports: [
     BrowserModule,
