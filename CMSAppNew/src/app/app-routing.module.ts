@@ -23,7 +23,8 @@ const routes: Routes = [
   {path:'prescriptions', component:PrescriptionListComponent},
   {path:'staffs', component:StaffsComponent},
   {path:'stafflist',component:StaffListComponent},
-  {path:'staff',component:StaffComponent}
+  {path:'staff',component:StaffComponent},
+  {path:'staff/:StaffId',component:StaffComponent}
 ];
 
 @NgModule({
