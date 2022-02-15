@@ -1,8 +1,8 @@
 <div class="container">
  
-    <h3>Login here...</h3>
-    <hr>
-    <form [formGroup] = "loginForm" (ngSubmit) = "loginCredentials()">
+    <h3 style="text-align: center;color: rgb(43, 174, 184);font-weight: bolder;font-size: 3em; background-color: aliceblue; padding: .5em;">LOGIN</h3>
+    
+    <form [formGroup] = "loginForm" (ngSubmit) = "loginCredentials()" style="background-color: aliceblue; padding:10px;margin:0%;padding-left: 50px;padding-right: 50px;">
         
       <!--User Name Control-->
       <div class="form-group">
@@ -44,7 +44,7 @@
   
     <!--Button-->
     <div>
-        <button class="btn btn-primary">Login</button>
+        <button class="btn btn-primary" style="width: 100%;">Login</button>
     </div>
     <div *ngIf = "errors" style="color:crimson; text-align:left;">
       {{errors}}

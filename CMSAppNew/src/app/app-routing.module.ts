@@ -20,7 +20,6 @@ const routes: Routes = [
   {path:'receptionist',component:ReceptionistComponent},
   {path:'pharmacist', component:MedicineListComponent},
   {path:'labtest', component:LabtestListComponent},
-
   {path:'prescriptions', component:PrescriptionListComponent},
   {path:'staffs', component:StaffsComponent},
   {path:'stafflist',component:StaffListComponent},

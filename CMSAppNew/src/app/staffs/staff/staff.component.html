@@ -25,7 +25,7 @@
     </div>
 
     <!--Address-->
-     <!--Designation-->
+     <!--StaffPassword-->
      <div class="form-group">
         <label>Address :  </label>
         <textarea name = "StaffAddr"
@@ -82,20 +82,66 @@
         </div>
     </div>
 
-     <!-- Department dropdown -->
-     <div class="form-group">
-        <label>Department :  </label>
-        <select name="RoleId" id="RoleId"
+    <!--Passwoed-->
+    <div class="form-group">
+        <label>Password :  </label>
+        <input type="text" name = "StaffPassword"
+        #StaffPassword = "ngModel"
+        [(ngModel)] = "staffService.formData.StaffPassword"
         class="form-control"
+        placeholder="Enter StaffPassword"
+        required minlength="5" maxlength="25"
+        [ngClass] = "{'is-invalid': StaffPassword.touched && StaffPassword.invalid}"/>
+        <!--Validation-->
+        <div class="validation-error" *ngIf = "StaffPassword.touched && StaffPassword.invalid">
+           
+            <div *ngIf = "StaffPassword.errors.required">
+                 StaffPassword required
+            </div>
+        </div>
+    </div>
+
+    <!-- BloodGroup dropdown -->
+
+    <div class="form-floating">
+        <select class="form-select" id="floatingSelectGrid"
+         aria-label="Floating label select example"
+         #BloodGroup = "ngModel"
+        required name="BloodGroup"
+        [(ngModel)] = "staffService.formData.BloodGroup">
+          <option selected>Select BloodGroup</option>
+          <option value="O+">O+</option>
+        <option value="O+">O-</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        </select>
+        <label for="BloodGroup">BloodGroup :  </label>
+        <!--Validation-->
+        <div class="validation-error" *ngIf = "BloodGroup.touched && BloodGroup.invalid">
+           
+            <div *ngIf = "BloodGroup.errors.required">
+                 BloodGroup required
+            </div>
+        </div>
+    </div>
+
+
+     <!-- Department dropdown -->
+     <div class="form-floating">
+        <select name="RoleId" class="form-control" id="RoleId"
+        aria-label="Floating label select example"
         #RoleId = "ngModel"
         required
-        [(ngModel)] = "staffService.formData.RoleId"
-        >
-        <option value="0" disabled> Select Department</option>
-        <option *ngFor = " let dept of staffService.department"
-        value="{{dept.RoleId}}">{{dept.RoleName}}
-        </option>
+        [(ngModel)] = "staffService.formData.RoleId">
+          <option selected>Select Department</option>
+          <option *ngFor = " let dept of staffService.department"
+          value="{{dept.RoleId}}">{{dept.RoleName}}</option>
         </select>
+        <label for="RoleId">Department :</label>
         <!--Validation-->
         <div class="validation-error" *ngIf = "RoleId.touched && RoleId.invalid">
            
@@ -104,6 +150,43 @@
             </div>
         </div>
     </div>
+
+    <!-- Gender dropdown -->
+    <div class="form-floating">
+        <label for="Gender">Gender :  </label>
+        <select name="Gender" id="Gender"
+        class="form-select"
+        #Gender = "ngModel"
+        required
+        [(ngModel)] = "staffService.formData.Gender"
+        >
+        <option value="0" disabled> Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+        </select>
+        <!--Validation-->
+        <div class="validation-error" *ngIf = "Gender.touched && Gender.invalid">
+           
+            <div *ngIf = "Gender.errors.required">
+                 Gender required
+            </div>
+        </div>
+    </div>
+
+
+    <!--IsActive-->
+    <div class="form-group">
+        <div class="form-check">
+            <label class = "form-check-label">IsActive</label>
+            <input type="checkbox" name="StaffIsActive" id="StaffIsActive"
+            #StaffIsActive = "ngModel"
+            [(ngModel)] = "staffService.formData.StaffIsActive"
+            class="form-check-input"
+            >
+        </div>
+    </div>
+
      <!--Submit-->
      <br>
      <div class="form-group">
