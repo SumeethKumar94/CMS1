@@ -11,4 +11,5 @@ export class Staff {
     RoleId : number = 0;
     RoleName : string= '';
     StaffPassword:string='';
+    BloodGroup: string = '';
 }
