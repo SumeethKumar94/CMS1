@@ -22,6 +22,7 @@ const routes: Routes = [
   {path:'pharmacist', component:MedicineListComponent},
   {path:'labtestlist', component:LabtestListComponent},
   {path:'labtest', component:LabtestComponent},
+  {path:'labtest/:LabTestId', component:LabtestComponent},
   {path:'prescriptions', component:PrescriptionListComponent},
   {path:'staffs', component:StaffsComponent},
   {path:'stafflist',component:StaffListComponent},
