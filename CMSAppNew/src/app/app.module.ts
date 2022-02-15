@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StaffsComponent } from './staffs/staffs.component';
@@ -29,6 +28,9 @@ import { AdminComponent } from './admin/admin.component';
 import { ReceptionistComponent } from './receptionist/receptionist.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { AppointmentComponent } from './appointments/appointment/appointment.component';
+import { AppointmentlistComponent } from './appointments/appointmentlist/appointmentlist.component';
 import { LabtestComponent } from './labtests/labtest/labtest.component';
 
 
@@ -48,9 +50,12 @@ import { LabtestComponent } from './labtests/labtest/labtest.component';
     PatientComponent,
     PatientListComponent,
     LoginComponent,
-    AdminComponent,
+    AppointmentsComponent,
+    AppointmentComponent,
+    AppointmentlistComponent,
     ReceptionistComponent,
-    LabtestComponent
+    LabtestComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

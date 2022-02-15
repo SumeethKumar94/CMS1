@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import{PatientService} from '../../shared/patient.service'
 
 @Component({
@@ -11,7 +12,8 @@ export class PatientListComponent implements OnInit {
  page:number=1;
  filter:string;
 
-constructor(public patientService:PatientService) { }
+constructor(public patientService:PatientService,
+  private router:Router) { }
 
   ngOnInit(): void {
     console.log("welcome to the loop")
@@ -31,5 +33,11 @@ constructor(public patientService:PatientService) { }
       }
     )
   }
+   //edit patient--update
+   updatePatient(PatientId :number){
+    console.log(PatientId);
+    this.router.navigate(['patient',PatientId])
+    }
+
 
 }
