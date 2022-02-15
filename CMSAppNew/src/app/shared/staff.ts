@@ -10,4 +10,5 @@ export class Staff {
     Phone : string= '';
     RoleId : number = 0;
     RoleName : string= '';
+    StaffPassword:string='';
 }
