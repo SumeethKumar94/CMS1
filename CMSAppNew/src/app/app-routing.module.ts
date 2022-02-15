@@ -10,6 +10,7 @@ import { StaffListComponent } from './staffs/staff-list/staff-list.component';
 import { StaffComponent } from './staffs/staff/staff.component';
 import { StaffsComponent } from './staffs/staffs.component';
 import { PrescriptionListComponent } from './doctor/prescription-list/prescription-list.component';
+import { LabtestComponent } from './labtests/labtest/labtest.component';
 
 
 
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'admin', component:AdminComponent},
   {path:'receptionist',component:ReceptionistComponent},
   {path:'pharmacist', component:MedicineListComponent},
-  {path:'labtest', component:LabtestListComponent},
+  {path:'labtestlist', component:LabtestListComponent},
+  {path:'labtest', component:LabtestComponent},
   {path:'prescriptions', component:PrescriptionListComponent},
   {path:'staffs', component:StaffsComponent},
   {path:'stafflist',component:StaffListComponent},

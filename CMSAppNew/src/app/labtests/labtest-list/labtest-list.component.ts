@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LabtestsService } from 'src/app/shared/labtests.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-labtest-list',
@@ -12,7 +13,10 @@ export class LabtestListComponent implements OnInit {
   page:number=1;
   filter:string;
 
-  constructor(public labtestService:LabtestsService) { }
+  constructor(
+    public labtestService : LabtestsService,
+    private router : Router
+    ) { }
 
   ngOnInit(): void {
 
@@ -20,10 +24,15 @@ export class LabtestListComponent implements OnInit {
 
   }
 
-  //Edit Employee
+  addLabtest(){
+    this.router.navigate(['labtest']);
+  }
+
+  //Edit 
   updateLabtest(labId : number){
     console.log("Editing : "+labId);
     // navigate to edit form
+    this.router.navigate(['labtest',labId])
   }
 
   deleteLabtest(labId : number){
