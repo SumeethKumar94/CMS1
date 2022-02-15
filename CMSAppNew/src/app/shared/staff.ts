@@ -8,8 +8,9 @@ export class Staff {
     StaffDob : Date = new Date;
     Gender : string= '';
     Phone : string= '';
+    StaffPassword: string;
     RoleId : number = 0;
     RoleName : string= '';
-    StaffPassword:string='';
     BloodGroup: string = '';
+    
 }

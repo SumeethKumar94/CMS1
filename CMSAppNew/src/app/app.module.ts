@@ -11,7 +11,7 @@ import { PrescribeService } from './shared/prescribe.service';
 import { StaffService } from './shared/staff.service';
 import { PatientService } from './shared/patient.service';
 import { LabtestsService } from './shared/labtests.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MedicinesComponent } from '../app/medicines/medicines.component';
@@ -25,6 +25,8 @@ import  {PatientsComponent } from './patients/patients.component';
 import { PatientComponent } from './patients/patient/patient.component';
 import { PatientListComponent} from './patients/patient-list/patient-list.component';
 import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { ReceptionistComponent } from './receptionist/receptionist.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -44,7 +46,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PatientsComponent,
     PatientComponent,
     PatientListComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent,
+    ReceptionistComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgxPaginationModule,
     Ng2SearchPipeModule,
     HttpClientModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot()
   ],
