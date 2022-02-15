@@ -26,5 +26,15 @@ bindListMedicines(){
       console.log(response);
       this.medicines=response as Medicine[]
     }
-  );
+  );}
+  
+  //update
+  updateMedicine(medicine:Medicine):Observable<any>{
+    return this.httpClient.put(environment.apiUrl+'/api/medinventory/get/',medicine);
+  }
+
+  //delete
+  deleteMedicine(id : number){
+    return this.httpClient.delete(environment.apiUrl+'/api/medinventory/medicine/'+id);
+  
 }}
