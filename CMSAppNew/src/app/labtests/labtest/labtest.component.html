@@ -1,13 +1,13 @@
-
+<h3 style="text-align: center;color: rgb(43, 174, 184);font-weight: bolder;font-size: 1.5em; background-color: aliceblue; padding: .5em;">LAB TEST</h3>
 <!-- Template driven form -->
-<form name="userform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+<form name="userform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)" style="padding: 50px;padding-top: 0px;padding-bottom: 100px;">
 
     <!-- LabTest Id (Hidden)-->
     <input type = "hidden" name="LabTestId" [(ngModel)]="labService.formData.LabTestId">
 
     <!-- Lab Test Name -->
     <div class="form-group">
-        <label>  Lab Test Name : </label>
+        &nbsp;<label> Test Name : </label>
         <input type="text" name="TestName"
         #TestName="ngModel"
         [(ngModel)]="labService.formData.TestName"
@@ -25,7 +25,7 @@
 
     <!-- TestDesc -->
     <div class="form-group">
-        <label> Description : </label>
+        &nbsp;<label> Description : </label>
         <input type="text" name="TestDesc"
         #TestDesc="ngModel"
         [(ngModel)]="labService.formData.TestDesc"
@@ -43,7 +43,7 @@
 
     <!-- Test Normal Range -->
     <div class="form-group">
-        <label>  Test Normal Range : </label>
+        &nbsp;<label>  Test Normal Range : </label>
         <input type="number" name="TestNormalRange"
         #TestNormalRange="ngModel"
         [(ngModel)]="labService.formData.TestNormalRange"
@@ -61,7 +61,7 @@
 
     <!-- TestPrice -->
     <div class="form-group">
-        <label> Price : </label>
+        &nbsp;<label> Price : </label>
         <input type="number" name="TestPrice"
         #TestPrice="ngModel"
         [(ngModel)]="labService.formData.TestPrice"
@@ -79,7 +79,7 @@
 
     <!-- TestUnit -->
     <div class="form-group">
-        <label>  TestUnit : </label>
+        &nbsp;<label>  TestUnit : </label>
         <input type="text" name="TestUnit"
         #TestUnit="ngModel"
         [(ngModel)]="labService.formData.TestUnit"
