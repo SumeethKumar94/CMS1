@@ -56,12 +56,12 @@ export class StaffService {
 
   //update staff 
   updateStaffById(staff : Staff): Observable<any>{
-    return this.httpClient.put(environment.apiUrl+'/api/staff/',staff);
+    return this.httpClient.put(environment.apiUrl+'/api/staff',staff);
   }
 
   //insert employee 
   insertStaff(staff :Staff): Observable<any>{
-    return this.httpClient.post(environment.apiUrl+'/api/staff/',staff);
+    return this.httpClient.post(environment.apiUrl+'/api/staff/addstaff',staff);
   }
 }
   
