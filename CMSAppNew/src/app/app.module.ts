@@ -27,6 +27,9 @@ import { PatientListComponent} from './patients/patient-list/patient-list.compon
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { ReceptionistComponent } from './receptionist/receptionist.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -45,10 +48,7 @@ import { ReceptionistComponent } from './receptionist/receptionist.component';
     PatientListComponent,
     LoginComponent,
     AdminComponent,
-    ReceptionistComponent,
-
-
-
+    ReceptionistComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +57,9 @@ import { ReceptionistComponent } from './receptionist/receptionist.component';
     NgxPaginationModule,
     Ng2SearchPipeModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot()
   ],
   providers: [MedicineService,LabtestsService, PrescribeService,StaffService,PatientService],
   bootstrap: [AppComponent]

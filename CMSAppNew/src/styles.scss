@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+.form-group>input{
+    font-weight: bolder;
+}
+
+.font-group>select{
+    font-weight: bolder;
+}
+
+.form-group input placeholder{
+    color: #c07878;
+    //color: adjust-color($color: #c07878);
+}
+
+table tbody tr:hover{
+    background-color: #3c8ca0;
+    cursor: pointer;
+}
+
+input.invalid{
+    border-color: red;
+}
+
+div.validation-error{
+    width: 100%;
+    margin-top: .25em;
+    font-size: 80%;
+    color: #3c8ca0;
+}
+
+.card-body{
+    padding: 0px;
+}
+
+#navbar{
+    /* background-color: #85dcb8; */
+    /* background-color: #647ffa; */
+    background-image: linear-gradient(to left, #296260, #367674, #448b88, #52a09d, #61b6b2);
+}
+#btn-nav{
+    background-color: #41b3a3;
+    color: beige;
+    opacity: .8;
+}
+#btn-nav:hover{
+    background-color: #41b3a3;
+    color: #fff;
+    opacity: 1;
+}
+#nav-img{
+    height: 50px;
+    width: 80px;
+    border-radius: 80%;
+}
+
