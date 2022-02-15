@@ -26,6 +26,12 @@
             <td>{{med.NetMedQty}}</td>
             <td>{{UnitPrice}}</td> 
             <td>{{med.MedDesc}}</td>
+            <td>
+                <button class="btn btn-sm btn-info" (click)="updatePost(pt.PostId)"> Edit </button>
+                &nbsp;
+                
+                <button class="btn btn-sm btn-outline-danger" (click)="deleteMedicine(med.MedInvId)"> Delete </button>
+            </td>
         </tr>
     </tbody>
    </table>  

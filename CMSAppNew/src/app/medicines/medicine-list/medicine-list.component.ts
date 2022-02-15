@@ -20,22 +20,57 @@ export class MedicineListComponent implements OnInit {
     this.medicineService.bindListMedicines();
 
   }
-  //1
-  getMedicines(){
-  
-    //call service method
-    this.medicineService.getAllMedicines().subscribe(
-      response =>{
-     
-        console.log('retrieving from list');
-        console.log(response);
-      },
-      error=>{
-        console.log('something wrong');
+
+   //delete Medicine
+   deleteMedicine(MedInvId :number){
+    if(confirm('Are you sure, you want to DELETE this record')){
+       this.medicineService.deleteMedicine(MedInvId).subscribe(
+        response =>{
+        this.medicineService.bindListMedicines();
+        },
+        error=>{
         console.log(error);
-      }
-    );
-  }
+         }
+       );
+   } };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //1
+  // getMedicines(){
+  
+  //   //call service method
+  //   this.medicineService.getAllMedicines().subscribe(
+  //     response =>{
+     
+  //       console.log('retrieving from list');
+  //       console.log(response);
+  //     },
+  //     error=>{
+  //       console.log('something wrong');
+  //       console.log(error);
+  //     }
+  //   );
+  // }
 
 
 }
