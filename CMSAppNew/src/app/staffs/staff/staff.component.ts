@@ -22,7 +22,6 @@ export class StaffComponent implements OnInit {
   ngOnInit(): void {
     // get roles
     this.staffService.bindListDepartment();
-
     //get staffId
     this.staffId = this.route.params['staffId'];
 
@@ -44,6 +43,7 @@ export class StaffComponent implements OnInit {
         }
       );
     }
+
   }
   //submit form 
   onSubmit(form : NgForm){
