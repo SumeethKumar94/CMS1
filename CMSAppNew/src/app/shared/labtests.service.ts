@@ -25,6 +25,19 @@ export class LabtestsService {
     );
   }
 
+  getLabtestById(id:number):Observable<any>{
+    return this.httpClient.get(environment.apiUrl+"/api/inventory/labtest/"+id);
+  }
+
+  insertLabtest(lab:Labtests):Observable<any>{
+    return this.httpClient.post(environment.apiUrl+"/api/inventory/labtest",lab);
+  }
+
+  updateLabtests(lab:Labtests):Observable<any>{
+    console.log(lab);
+    return this.httpClient.put(environment.apiUrl+"/api/inventory/labtest",lab);
+  }
+
   deleteLabtest(id : number){
     return this.httpClient.delete(environment.apiUrl+"/api/inventory/labtest/"+id);
   }

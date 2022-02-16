@@ -1,0 +1,108 @@
+<app-admin-nav></app-admin-nav>
+<h3 style="text-align: center;color: rgb(43, 174, 184);font-weight: bolder;font-size: 1.5em; background-color: aliceblue; padding: .5em;">LAB TEST</h3>
+<!-- Template driven form -->
+<form name="userform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)" style="padding: 50px;padding-top: 0px;padding-bottom: 100px;">
+
+    <!-- LabTest Id (Hidden)-->
+    <input type = "hidden" name="LabTestId" [(ngModel)]="labService.formData.LabTestId">
+
+    <!-- Lab Test Name -->
+    <div class="form-group">
+        &nbsp;<label> Test Name : </label>
+        <input type="text" name="TestName"
+        #TestName="ngModel"
+        [(ngModel)]="labService.formData.TestName"
+        class="form-control"
+        placeholder="Enter Lab Test Name"
+        required minlength="3"
+        [ngClass]="{'is-invalid':TestName.touched && TestName.invalid}"/>
+        <!-- Validation -->
+        <div class="validation-error" *ngIf="TestName.touched && TestName.invalid">
+            <div *ngIf="TestName.errors.required">
+                Lab Test Name is required
+            </div>
+        </div>
+    </div>
+
+    <!-- TestDesc -->
+    <div class="form-group">
+        &nbsp;<label> Description : </label>
+        <input type="text" name="TestDesc"
+        #TestDesc="ngModel"
+        [(ngModel)]="labService.formData.TestDesc"
+        class="form-control"
+        placeholder="Enter TestDesc Name"
+        required minlength="3"
+        [ngClass]="{'is-invalid':TestDesc.touched && TestDesc.invalid}"/>
+        <!-- Validation -->
+        <div class="validation-error" *ngIf="TestDesc.touched && TestDesc.invalid">
+            <div *ngIf="TestDesc.errors.required">
+                Description is required
+            </div>
+        </div>
+    </div>
+
+    <!-- Test Normal Range -->
+    <div class="form-group">
+        &nbsp;<label>  Test Normal Range : </label>
+        <input type="number" name="TestNormalRange"
+        #TestNormalRange="ngModel"
+        [(ngModel)]="labService.formData.TestNormalRange"
+        class="form-control"
+        placeholder="Enter Normal Range"
+        required minlength="3"
+        [ngClass]="{'is-invalid':TestNormalRange.touched && TestNormalRange.invalid}"/>
+        <!-- Validation -->
+        <div class="validation-error" *ngIf="TestNormalRange.touched && TestNormalRange.invalid">
+            <div *ngIf="TestNormalRange.errors.required">
+                Normal Range is required
+            </div>
+        </div>
+    </div>   
+
+    <!-- TestPrice -->
+    <div class="form-group">
+        &nbsp;<label> Price : </label>
+        <input type="number" name="TestPrice"
+        #TestPrice="ngModel"
+        [(ngModel)]="labService.formData.TestPrice"
+        class="form-control"
+        placeholder="Enter Price"
+        required minlength="2"
+        [ngClass]="{'is-invalid':TestPrice.touched && TestPrice.invalid}"/>
+        <!-- Validation -->
+        <div class="validation-error" *ngIf="TestPrice.touched && TestPrice.invalid">
+            <div *ngIf="TestPrice.errors.required">
+                TestPrice is required
+            </div>
+        </div>
+    </div>
+
+    <!-- TestUnit -->
+    <div class="form-group">
+        &nbsp;<label>  TestUnit : </label>
+        <input type="text" name="TestUnit"
+        #TestUnit="ngModel"
+        [(ngModel)]="labService.formData.TestUnit"
+        class="form-control"
+        placeholder="Enter TestUnit"
+        required minlength="1"
+        [ngClass]="{'is-invalid':TestUnit.touched && TestUnit.invalid}"/>
+        <!-- Validation -->
+        <div class="validation-error" *ngIf="TestUnit.touched && TestUnit.invalid">
+            <div *ngIf="TestUnit.errors.required">
+                TestUnit is required
+            </div>
+        </div>
+    </div>   
+    
+
+    <!-- submit -->
+    <br>
+    <div class="form-group">
+        <button type="form-group"
+        class="btn btn-lg btn-primary form-control"
+        [disabled]="!(form.valid && form.dirty)"
+        >Submit</button>
+    </div>
+</form>
