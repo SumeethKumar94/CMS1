@@ -3,19 +3,18 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
-  selector: 'app-admin-nav',
-  templateUrl: './admin-nav.component.html',
-  styleUrls: ['./admin-nav.component.scss']
+  selector: 'app-receptionistnav',
+  templateUrl: './receptionistnav.component.html',
+  styleUrls: ['./receptionistnav.component.scss']
 })
-export class AdminNavComponent implements OnInit {
+export class ReceptionistnavComponent implements OnInit {
 
   constructor(public authService : AuthService,
-    private router: Router) { }
+    private router : Router) { }
 
   ngOnInit(): void {
     
   }
-  //logout
   logout(){
     this.authService.logout();
     this.router.navigateByUrl('login');
