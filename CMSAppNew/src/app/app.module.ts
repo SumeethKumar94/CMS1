@@ -29,6 +29,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ReceptionistComponent } from './receptionist/receptionist.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MedicineComponent } from './medicines/medicine/medicine.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PatientListComponent,
     LoginComponent,
     AdminComponent,
-    ReceptionistComponent
+    ReceptionistComponent,
+    MedicineComponent
   ],
   imports: [
     BrowserModule,

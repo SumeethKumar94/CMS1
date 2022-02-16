@@ -10,6 +10,7 @@ import { StaffListComponent } from './staffs/staff-list/staff-list.component';
 import { StaffComponent } from './staffs/staff/staff.component';
 import { StaffsComponent } from './staffs/staffs.component';
 import { PrescriptionListComponent } from './doctor/prescription-list/prescription-list.component';
+import { MedicineComponent } from './medicines/medicine/medicine.component';
 
 
 
@@ -23,7 +24,10 @@ const routes: Routes = [
   {path:'prescriptions', component:PrescriptionListComponent},
   {path:'staffs', component:StaffsComponent},
   {path:'stafflist',component:StaffListComponent},
-  {path:'staff',component:StaffComponent}
+  {path:'staff',component:StaffComponent},
+  {path:'staff',component:StaffComponent},
+  {path:'medicine',component:MedicineComponent},
+  {path:'medicine/:MedInvId',component:MedicineComponent}
 ];
 
 @NgModule({
