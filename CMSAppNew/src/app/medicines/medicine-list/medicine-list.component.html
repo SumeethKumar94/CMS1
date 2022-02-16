@@ -6,7 +6,7 @@
         {{filter}}
     </div>
 
-    <a [routerLink]="" class="btn btn-outline-secondary" style="float: right; margin-top: 10px;margin-bottom: 10px;">Add Medicine</a>
+    <a [routerLink]="" class="btn btn-outline-secondary" style="float: right; margin-top: 10px;margin-bottom: 10px;" (click)="addMedicine()" >Add Medicine</a>
 </div>
 <table class="table table-ordered table-striped">
     <thead>
@@ -28,7 +28,7 @@
             <td>{{UnitPrice}}</td> 
             <td>{{med.MedDesc}}</td>
             <td>
-                <button class="btn btn-sm btn-info" (click)="updatePost(pt.PostId)"> Edit </button>
+                <button class="btn btn-sm btn-info" (click)="updateMedicine(med.MedInvId)"> Edit </button>
                 &nbsp;
                 
                 <button class="btn btn-sm btn-outline-danger" (click)="deleteMedicine(med.MedInvId)"> Delete </button>

@@ -28,6 +28,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ReceptionistComponent } from './receptionist/receptionist.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MedicineComponent } from './medicines/medicine/medicine.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { AppointmentComponent } from './appointments/appointment/appointment.component';
 import { AppointmentlistComponent } from './appointments/appointmentlist/appointmentlist.component';
@@ -57,6 +58,8 @@ import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
     ReceptionistComponent,
     LabtestComponent,
     AdminComponent,
+    ReceptionistComponent,
+    MedicineComponent,
     AdminNavComponent
   ],
   imports: [

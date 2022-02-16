@@ -1,72 +1,72 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { StaffService } from 'src/app/shared/staff.service';
+import { MedicineService } from 'src/app/shared/medicine.service';
 
 @Component({
-  selector: 'app-staff',
-  templateUrl: './staff.component.html',
-  styleUrls: ['./staff.component.scss']
+  selector: 'app-medicine',
+  templateUrl: './medicine.component.html',
+  styleUrls: ['./medicine.component.scss']
 })
-export class StaffComponent implements OnInit {
+export class MedicineComponent implements OnInit {
 
   //declare variable 
-  staffId : number;
+  MedInvId : number=0;
 
-  constructor(public staffService : StaffService,
+  constructor(public medicineService : MedicineService,
     private route : ActivatedRoute ,
+    private router:Router,
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
     // get roles
-    this.staffService.bindListDepartment();
-    //get staffId
-    this.staffId = this.route.snapshot.params['StaffId'];
+    // this.medicineService.bindListDepartment();
+
+    //get Id
+    this.MedInvId = this.route.snapshot.params['MedInvId'];
 
    // getStaffById
-    if(this.staffId!=0 || this.staffId != null){
-      this.staffService.GetStaffById(this.staffId).subscribe(
+    if(this.MedInvId!=0 || this.MedInvId != null){
+      this.medicineService.getMedicinefById(this.MedInvId).subscribe(
         result =>{
           console.log(result);
-          //formate the date : yyy-MM-dd
-          var datepipe = new DatePipe("en-UK");
-          let formatedDate : any = datepipe.transform(result.StaffDob,'yyy-MM-dd');
-          result.StaffDob = formatedDate;
+          
 
           //asign this result to empService formData
-          this.staffService.formData = Object.assign({},result);
+          this.medicineService.formData = Object.assign({},result);
         },
         error =>{
           console.log(error);
         }
       );
     }
-
   }
   //submit form 
   onSubmit(form : NgForm){
     console.log(form.value);
-    let addId = this.staffService.formData.StaffId;
+    let addId = this.medicineService.formData.MedInvId;
 
     //insert or update
     if(addId == 0 || addId == null){
       //insert 
-      this.insertStaffRecord(form);
+      this.insertMedicineRecord(form);
     }
     else{
-      this.updateStaffRecord(form);
+      this.updateMedicineRecord(form);
     }
   }
-  insertStaffRecord(form?:NgForm){
+
+ 
+  insertMedicineRecord(form?:NgForm){
     console.log("Inserting a record...");
-    this.staffService.insertStaff(form.value).subscribe(
+    this.medicineService.insertMedicine(form.value).subscribe(
       result =>{
         console.log(result);
         //calling reset form for clear the contents
         this.resetForm(form);
-        this.toastr.success('Staff Record has been inserted','CMS v2022');
+        this.toastr.success(' New Medicine Record has been inserted','CMS v2022');
       },
       error =>{
         console.log(error);
@@ -75,14 +75,14 @@ export class StaffComponent implements OnInit {
   }
 
   //Update Method
-  updateStaffRecord(form?:NgForm){
+  updateMedicineRecord(form?:NgForm){
     console.log("Updating record...");
-    this.staffService.updateStaffById(form.value).subscribe(
+    this.medicineService.updateMedicine(form.value).subscribe(
       result =>{
         console.log(result);
         //ca;;ing reset form for clear the contents
         this.resetForm(form);
-        this.toastr.success('Staff Record has been inserted','CMS v2022')
+        this.toastr.success('Medicine Inventory has been inserted','CMS v2022')
       },
       error =>{
         console.log(error);

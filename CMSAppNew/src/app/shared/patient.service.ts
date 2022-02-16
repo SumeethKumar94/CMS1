@@ -24,8 +24,7 @@ export class PatientService {
     this.httpClient.get(environment.apiUrl + '/api/patient')
       .toPromise().then(
         response => {
-          this.patients = response as Patient[]
-          alert(this.patients);
+          this.patients = response as Patient[];
         }
       )
   }

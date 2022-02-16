@@ -1,0 +1,97 @@
+
+<app-admin-nav></app-admin-nav>
+<!-- Template-Drivern Form -->
+    
+<form name ="Medicineform" #form="ngForm" autocomplete="off" (ngSubmit) = "onSubmit(form)">
+    <!-- ID Hidden-->
+    <input type="hidden" name="MedInvId" [(ngModel)] = "medicineService.formData.MedInvId" >
+
+    
+    <!-- MedicineName-->
+    <div class="form-group">
+        <label> Medicine Name :  </label>
+        <input type="text" name = "MedicineName"
+        #MedicineName = "ngModel"
+        [(ngModel)] = "medicineService.formData.MedicineName"
+        class="form-control"
+        placeholder="Enter MedicineName"
+        required minlength="2" maxlength="50"
+        [ngClass] = "{'is-invalid': MedicineName.touched && MedicineName.invalid}"/>
+        <!--Validation-->
+        <div class="validation-error" *ngIf = "MedicineName.touched && MedicineName.invalid">
+           
+            <div *ngIf = "MedicineName.errors.required">
+                Medicine Name is required
+            </div>
+        </div>
+    </div>
+
+   
+     <!--MedDesc-->
+     <div class="form-group">
+        <label>MedDesc :  </label>
+        <textarea name = "MedDesc"
+        #MedDesc = "ngModel"
+        [(ngModel)] = "medicineService.formData.MedDesc"
+        class="form-control"
+        placeholder="Enter Designation"
+        required minlength="5" maxlength="100"
+        [ngClass] = "{'is-invalid': MedDesc.touched && MedDesc.invalid}"></textarea>
+        <!--Validation-->
+        <div class="validation-error" *ngIf = "MedDesc.touched && MedDesc.invalid">
+           
+            <div *ngIf = "MedDesc.errors.required">
+                Medcine Description required
+            </div>
+        </div>
+    </div>
+
+   
+    <!--NetMedQty-->
+    <div class="form-group">
+        <label> NetMedQty:  </label>
+        <input type="number" name = "NetMedQty"
+        #NetMedQty = "ngModel"
+        [(ngModel)] = "medicineService.formData.NetMedQty"
+        class="form-control"
+        placeholder="Enter NetMedQty"
+        required minlength="2" maxlength="10"
+        [ngClass] = "{'is-invalid': NetMedQty.touched && NetMedQty.invalid}"/>
+        <!--Validation-->
+        <div class="validation-error" *ngIf = "NetMedQty.touched && NetMedQty.invalid">
+           
+            <div *ngIf = "NetMedQty.errors.required">
+                NetMedQty required
+            </div>
+        </div>
+    </div>
+
+    <!--UnitPrice-->
+    <div class="form-group">
+        <label>UnitPrice :  </label>
+        <input type="number" name = "UnitPrice"
+        #UnitPrice = "ngModel"
+        [(ngModel)] = "medicineService.formData.UnitPrice"
+        class="form-control"
+        placeholder="Enter UnitPrice"
+        required minlength="5" maxlength="25"
+        [ngClass] = "{'is-invalid': UnitPrice.touched && UnitPrice.invalid}"/>
+        <!--Validation-->
+        <div class="validation-error" *ngIf = "UnitPrice.touched && UnitPrice.invalid">
+           
+            <div *ngIf = "UnitPrice.errors.required">
+                 UnitPrice required
+            </div>
+        </div>
+    </div>
+
+    
+     <!--Submit-->
+     <br>
+     <div class="form-group">
+         <button type="submit" 
+         class="btn btn-lg btn-primary form-control"
+         [disabled] = "!(form.valid && form.dirty)">Submit</button>
+     </div>
+ 
+ </form>
