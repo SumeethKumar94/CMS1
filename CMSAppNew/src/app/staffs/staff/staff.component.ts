@@ -24,7 +24,7 @@ export class StaffComponent implements OnInit {
     this.staffService.bindListDepartment();
 
     //get staffId
-    this.staffId = this.route.params['staffId'];
+    this.staffId = this.route.snapshot.params['staffId'];
 
    // getStaffById
     if(this.staffId!=0 || this.staffId != null){

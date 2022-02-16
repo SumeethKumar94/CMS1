@@ -26,7 +26,7 @@ const routes: Routes = [
   {path:'staffs', component:StaffsComponent},
   {path:'stafflist',component:StaffListComponent},
   {path:'staff',component:StaffComponent},
-  {path:'staff/:StaffId',component:StaffComponent}
+  {path:'staff/:staffId',component:StaffComponent}
 ];
 
 @NgModule({
