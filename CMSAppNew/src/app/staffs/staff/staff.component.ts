@@ -23,7 +23,7 @@ export class StaffComponent implements OnInit {
     // get roles
     this.staffService.bindListDepartment();
     //get staffId
-    this.staffId = this.route.snapshot.params['staffId'];
+    this.staffId = this.route.snapshot.params['StaffId'];
 
    // getStaffById
     if(this.staffId!=0 || this.staffId != null){
