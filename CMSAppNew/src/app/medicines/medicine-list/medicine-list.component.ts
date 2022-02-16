@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { MedicineService } from 'src/app/shared/medicine.service';
 
 @Component({
@@ -12,7 +14,7 @@ export class MedicineListComponent implements OnInit {
   page:number=1;
   filter:string;
 
-  constructor(public medicineService:MedicineService) { }
+  constructor(public medicineService:MedicineService,private router : Router,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     console.log("WELCOME TO LIFE CYCLE HOOK");
@@ -20,6 +22,15 @@ export class MedicineListComponent implements OnInit {
     this.medicineService.bindListMedicines();
 
   }
+  addMedicine(){
+    this.router.navigate(['medicine']);
+  }
+
+   //Update Medicine
+   updateMedicine(MedInvId :number){
+    console.log(MedInvId );
+    this.router.navigate(['medicine',MedInvId ])
+    }
 
    //delete Medicine
    deleteMedicine(MedInvId :number){
@@ -33,6 +44,8 @@ export class MedicineListComponent implements OnInit {
          }
        );
    } };
+
+   
 
 
 

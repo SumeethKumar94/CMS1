@@ -10,6 +10,7 @@ import { StaffListComponent } from './staffs/staff-list/staff-list.component';
 import { StaffComponent } from './staffs/staff/staff.component';
 import { StaffsComponent } from './staffs/staffs.component';
 import { PrescriptionListComponent } from './doctor/prescription-list/prescription-list.component';
+import { MedicineComponent } from './medicines/medicine/medicine.component';
 import { PatientComponent } from './patients/patient/patient.component';
 import { PatientListComponent } from './patients/patient-list/patient-list.component';
 import { AppointmentComponent } from './appointments/appointment/appointment.component';
@@ -30,6 +31,9 @@ const routes: Routes = [
   {path:'staffs', component:StaffsComponent},
   {path:'stafflist',component:StaffListComponent},
   {path:'staff',component:StaffComponent},
+  {path:'staff',component:StaffComponent},
+  {path:'medicine',component:MedicineComponent},
+  {path:'medicine/:MedInvId',component:MedicineComponent},
   {path:'patient',component:PatientComponent},
   {path:'patientlist',component:PatientListComponent},
   {path:'appointment',component:AppointmentComponent},

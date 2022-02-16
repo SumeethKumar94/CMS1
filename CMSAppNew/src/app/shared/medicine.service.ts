@@ -27,10 +27,22 @@ bindListMedicines(){
       this.medicines=response as Medicine[]
     }
   );}
+
+  getMedicinefById(id : number): Observable<any>{
+    console.log(id)
+    return this.httpClient.get(environment.apiUrl+'/api/medinventory/medicine/'+id);
+
+  }
+
+
+  //insert
+  insertMedicine(medicine:Medicine):Observable<any>{
+    return this.httpClient.post(environment.apiUrl+'/api/medinventory/medicine',medicine);
+  }
   
   //update
   updateMedicine(medicine:Medicine):Observable<any>{
-    return this.httpClient.put(environment.apiUrl+'/api/medinventory/get/',medicine);
+    return this.httpClient.put(environment.apiUrl+'/api/medinventory/medicine',medicine);
   }
 
   //delete
