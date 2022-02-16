@@ -1,0 +1,103 @@
+<app-admin-nav></app-admin-nav>
+<form name ="patform" #form="ngForm" autocomplete="off" (ngSubmit) = "onSubmit(form)">
+ <!--Appintment ID Hidden-->
+     <input type="hidden" name="AppointmentId" [(ngModel)] = "appServices.formData.AppointmentId" >
+
+    <!--token no-->
+   <div class="form-group">
+    <label>TokenNo</label>
+    <input type="number" name = "TokenNo"
+    #TokenNo= "ngModel"
+    [(ngModel)] = "appServices.formData.TokenNo"
+    class="form-control"
+    placeholder="Enter TokenNo"
+    required 
+    [ngClass] = "{'is-invalid': TokenNo.touched && TokenNo.invalid}"/>
+    <!--Validation-->
+    <div class="validation-error" *ngIf = "TokenNo.touched && TokenNo.invalid">
+       
+        <div *ngIf = "TokenNo.errors.required">
+            TokenNo required
+        </div>
+    </div>
+</div> 
+<!--Appointment date-->
+<div class="form-group">
+    <label>DateOfAppointment</label>
+    <input type="date" name = "DateOfAppointment"
+    #DateOfAppointment = "ngModel"
+    [(ngModel)] = "appServices.formData.DateOfAppointment"
+    class="form-control"
+    placeholder="Enter Date Of Appointment"
+    required 
+    [ngClass] = "{'is-invalid': DateOfAppointment.touched && DateOfAppointment.invalid}"/>
+    <!--Validation-->
+    <div class="validation-error" *ngIf = "DateOfAppointment.touched && DateOfAppointment.invalid">
+       
+        <div *ngIf = "DateOfAppointment.errors.required">
+            Date Of Appointment required !
+        </div>
+    </div>
+</div>
+ <!--PatientId-->
+ <div class="form-group">
+    <label>PatientId</label>
+    <input type="number" name = "PatientId"
+    #PatientId= "ngModel"
+    [(ngModel)] = "appServices.formData.PatientId"
+    class="form-control"
+    placeholder="Enter PatientId"
+    required 
+    [ngClass] = "{'is-invalid': PatientId.touched && PatientId.invalid}"/>
+    <!--Validation-->
+    <div class="validation-error" *ngIf = "PatientId.touched && PatientId.invalid">
+       
+        <div *ngIf = "PatientId.errors.required">
+            PatientId required
+        </div>
+    </div>
+</div> 
+ <!--DoctorId-->
+ <div class="form-group">
+    <label>DoctorId</label>
+    <input type="number" name = "DoctorId"
+    #DoctorId= "ngModel"
+    [(ngModel)] = "appServices.formData.DoctorId"
+    class="form-control"
+    placeholder="Enter DoctorId"
+    required 
+    [ngClass] = "{'is-invalid': DoctorId.touched && DoctorId.invalid}"/>
+    <!--Validation-->
+    <div class="validation-error" *ngIf = "DoctorId.touched && DoctorId.invalid">
+       
+        <div *ngIf = "DoctorId.errors.required">
+            DoctorId required
+        </div>
+    </div>
+</div> 
+ <!--ReceptionistId-->
+ <div class="form-group">
+    <label>ReceptionistId</label>
+    <input type="number" name = "ReceptionistId"
+    #ReceptionistId= "ngModel"
+    [(ngModel)] = "appServices.formData.ReceptionistId"
+    class="form-control"
+    placeholder="Enter ReceptionistId"
+    required 
+    [ngClass] = "{'is-invalid': ReceptionistId.touched && ReceptionistId.invalid}"/>
+    <!--Validation-->
+    <div class="validation-error" *ngIf = "ReceptionistId.touched && ReceptionistId.invalid">
+       
+        <div *ngIf = "ReceptionistId.errors.required">
+            ReceptionistId required
+        </div>
+    </div>
+</div> 
+ <!--Submit-->
+ <br>
+ <div class="form-group">
+     <button type="submit" 
+     class="btn btn-lg btn-primary form-control"
+     [disabled] = "!(form.valid && form.dirty)">Submit</button>
+ </div>
+</form>

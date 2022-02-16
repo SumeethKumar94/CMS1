@@ -1,3 +1,4 @@
+<app-admin-nav></app-admin-nav>
 <div class="container">
     <div class="header">
         <div class="form=control">
@@ -24,9 +25,11 @@
             <td>{{pt.PatientDob | date:'dd-MMM-yyyy'}}</td>
             <td>{{pt.PatientGender}}</td>
             <td>{{pt.PatientPhoneNo}}</td>
+            <td>{{pt.BloodGroup}}</td>
 
             <td>
-                <button class="btn btn-sm btn-info" (click)="updateUser(PatientId)">Update</button>
+                
+                <button class="btn btn-sm btn-info" (click)="updatePatient(pt.PatientId)">Update</button>
             </td>
         </tr>
        </tbody>
