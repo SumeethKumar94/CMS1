@@ -41,6 +41,8 @@ import { ReceptionistnavComponent } from './receptionist/receptionistnav/recepti
 import { PrescriptionlabListComponent } from './doctor/prescriptionlab-list/prescriptionlab-list.component';
 import { PharmacistComponent } from './pharmacist/pharmacist.component';
 import { PharmacistnavComponent } from './pharmacist/pharmacistnav/pharmacistnav.component';
+import { DoctorappointmentlistComponent } from './appointments/doctorappointmentlist/doctorappointmentlist.component';
+import { AppointmentService } from './shared/appointment.service';
 
 
 @NgModule({
@@ -74,7 +76,8 @@ import { PharmacistnavComponent } from './pharmacist/pharmacistnav/pharmacistnav
     ReceptionistnavComponent,
     PrescriptionlabListComponent,
     PharmacistComponent,
-    PharmacistnavComponent
+    PharmacistnavComponent,
+    DoctorappointmentlistComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +90,7 @@ import { PharmacistnavComponent } from './pharmacist/pharmacistnav/pharmacistnav
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot()
   ],
-  providers: [MedicineService,LabtestsService, PrescribeService,StaffService,PatientService],
+  providers: [MedicineService,LabtestsService, PrescribeService,StaffService,PatientService,AppointmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

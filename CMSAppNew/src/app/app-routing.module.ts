@@ -20,6 +20,7 @@ import { AdminNavComponent } from './admin/admin-nav/admin-nav.component'
 import { AppointmentlistComponent } from './appointments/appointmentlist/appointmentlist.component';
 import { LabtechnicianComponent } from './labtechnician/labtechnician.component';
 import { PharmacistComponent } from './pharmacist/pharmacist.component';
+import { DoctorappointmentlistComponent } from './appointments/doctorappointmentlist/doctorappointmentlist.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -49,7 +50,9 @@ const routes: Routes = [
   {path:'medicinelist',component:MedicineListComponent},
   {path:'appointmentlist',component:AppointmentlistComponent},
   {path:'pharmacist', component:PharmacistComponent},
-  {path:'labtechnician', component:LabtechnicianComponent}
+  {path:'labtechnician', component:LabtechnicianComponent},
+  {path:'doctorappointmentlist', component:DoctorappointmentlistComponent},
+  {path:'doctorappointmentlist/:DoctorId', component:DoctorappointmentlistComponent},
 ];
 
 @NgModule({

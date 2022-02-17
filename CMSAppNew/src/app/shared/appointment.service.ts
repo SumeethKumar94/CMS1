@@ -10,6 +10,7 @@ import { Appointment } from './appointment';
 export class AppointmentService {
 
   appointment: Appointment[];
+  appointment1: Appointment[];
   formData: Appointment = new Appointment();
 
   constructor(private httpClient: HttpClient) { }
@@ -48,4 +49,18 @@ export class AppointmentService {
         this.appointment=response as Appointment[]
       }
     );}
+
+    // GetDoctorAppointmentById(id: number): Observable<any> {
+    //    return this.httpClient.get(environment.apiUrl + '/api/doctor/appointments/' + id);
+  
+    // }
+
+    bindListDoctorAppointments(id:number){
+      this.httpClient.get(environment.apiUrl+'/api/doctor/appointments/'+id)
+      .toPromise().then(
+        response=>{
+          console.log(response);
+          this.appointment1=response as Appointment[]
+        }
+      );}
 }
