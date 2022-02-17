@@ -19,7 +19,13 @@ export class AppointmentlistComponent implements OnInit {
   ngOnInit(): void {
 
     this.appointmentService.bindListDoctors();
-
+    // this.appointmentService1.bindListDoctorAppointments(DoctorId)
+    
+  }
+  bindListDoctorAppointments(DoctorId:number){
+    console.log("listing the appointments of doctorId : "+DoctorId);
+    // navigate to edit form
+    this.router.navigate(['doctorappointmentlist',DoctorId])
   }
 
 

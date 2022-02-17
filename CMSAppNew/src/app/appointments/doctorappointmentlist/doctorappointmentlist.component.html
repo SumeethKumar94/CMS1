@@ -19,24 +19,30 @@
     <table class="table table-ordered table-striped">
         <thead>
             <tr>
-                <th>DoctorId</th>
-                <th>DoctorName</th>
-              
-                <th></th><!--edit,delete-->
+                <th>TokenNo</th>
+                <th>DateOfAppointment</th>
+                <th>AppointmentId</th>
+                <th>PatientName</th>
+                <th></th>
+                
+                
+                
+               
+                
             </tr>
         </thead>
         
         <tbody> 
-            <tr *ngFor="let app of appointmentService.appointment | filter:filter | paginate: {itemsPerPage:3,currentPage:page}" >
-                <td>{{app.DoctorId}}</td>
-                <td>{{app.DoctorName}}</td>
+            <tr *ngFor="let app of appointmentService.appointment1 | filter:filter | paginate: {itemsPerPage:3,currentPage:page}" >
                 
-                 <td>
-                    <!-- <button class="btn btn-sm btn-info" (click)="updateMedicine(med.MedInvId)"> Edit </button>
-                    &nbsp;
-                     --><button class="btn btn-sm btn-info" (click)="bindListDoctorAppointments(app.DoctorId)"> View Appointments </button>
-                    
-                </td> 
+                <td>{{app.TokenNo}}</td>
+                <td>{{app.DateOfAppointment | date:'dd-MMM-yyyy'}}</td>
+                <td>{{app.AppointmentId}}</td>
+                <td>{{app.PatientName}}</td>
+                <td>
+                    <button class="btn btn-sm btn-info" > Prescribe </button>
+                </td>
+                 
             </tr>
         </tbody>
        </table>  
