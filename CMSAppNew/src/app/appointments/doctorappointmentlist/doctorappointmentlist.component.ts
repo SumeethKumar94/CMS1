@@ -14,7 +14,9 @@ export class DoctorappointmentlistComponent implements OnInit {
   filter:string;
   DoctorId:number=0;
 
-  constructor(public appointmentService:AppointmentService,private route :ActivatedRoute,private router:Router) { }
+  constructor(public appointmentService:AppointmentService,
+    private route :ActivatedRoute,
+    private router:Router) { }
 
   ngOnInit(): void {
     this.DoctorId = this.route.snapshot.params['DoctorId']
