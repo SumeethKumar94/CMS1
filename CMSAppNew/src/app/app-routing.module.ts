@@ -19,6 +19,7 @@ import { LabtestComponent } from './labtests/labtest/labtest.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component'
 import { PharmacistComponent } from './pharmacist/pharmacist.component';
 import { LabtechnicianComponent } from './labtechnician/labtechnician.component';
+import { ReceptionComponent } from './billing/reception/reception.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -47,7 +48,8 @@ const routes: Routes = [
   {path:'adminnav',component:AdminNavComponent},
   {path:'medicinelist',component:MedicineListComponent},
   {path:'pharmacist', component:PharmacistComponent},
-  {path:'labtechnician', component:LabtechnicianComponent}
+  {path:'labtechnician', component:LabtechnicianComponent},
+  {path:'receptionbilling',component:ReceptionComponent}
 ];
 
 @NgModule({

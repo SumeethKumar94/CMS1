@@ -41,6 +41,9 @@ import { ReceptionistnavComponent } from './receptionist/receptionistnav/recepti
 import { PrescriptionlabListComponent } from './doctor/prescriptionlab-list/prescriptionlab-list.component';
 import { PharmacistComponent } from './pharmacist/pharmacist.component';
 import { PharmacistnavComponent } from './pharmacist/pharmacistnav/pharmacistnav.component';
+import { BillingComponent } from './billing/billing.component';
+import { PharmacyBillingComponent } from './billing/pharmacy-billing/pharmacy-billing.component';
+import { ReceptionComponent } from './billing/reception/reception.component';
 
 
 @NgModule({
@@ -74,7 +77,10 @@ import { PharmacistnavComponent } from './pharmacist/pharmacistnav/pharmacistnav
     ReceptionistnavComponent,
     PrescriptionlabListComponent,
     PharmacistComponent,
-    PharmacistnavComponent
+    PharmacistnavComponent,
+    BillingComponent,
+    PharmacyBillingComponent,
+    ReceptionComponent
   ],
   imports: [
     BrowserModule,
