@@ -17,7 +17,7 @@
                 <th>Prescription Id</th>
                 <th>PrescriptionDate</th>
                 <th>PatientName</th>
-                <th>Medicines</th>
+                <th>Lab Tests</th>
                 <th></th>
             </tr>            
         </thead>
@@ -26,9 +26,9 @@
                 <td>{{lb.PrescriptionId}}</td>
                 <td>{{lb.PrescriptionDate | date:'dd-MM-yyyy'}}</td>
                 <td>{{lb.PatientName}}</td>
-                <td>{{lb.Medicines}}</td>
+                <td>{{lb.LabTests}}</td>
                 <td>
-                    <button class="btn btn-sm btn-info" (click)="updateLabtest(lb.LabTestId)">BILL</button>&nbsp;
+                    <button class="btn btn-sm btn-info" (click)="updateLabtest(lb.LabTestId)">REPORT</button>&nbsp;
                 </td>
             </tr>
         </tbody>
