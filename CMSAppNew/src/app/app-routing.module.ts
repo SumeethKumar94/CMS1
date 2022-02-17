@@ -17,8 +17,9 @@ import { AppointmentComponent } from './appointments/appointment/appointment.com
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { LabtestComponent } from './labtests/labtest/labtest.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component'
-import { PharmacistComponent } from './pharmacist/pharmacist.component';
+import { AppointmentlistComponent } from './appointments/appointmentlist/appointmentlist.component';
 import { LabtechnicianComponent } from './labtechnician/labtechnician.component';
+import { PharmacistComponent } from './pharmacist/pharmacist.component';
 import { ReceptionComponent } from './billing/reception/reception.component';
 
 const routes: Routes = [
@@ -47,6 +48,7 @@ const routes: Routes = [
   {path:'staff/:StaffId',component:StaffComponent},
   {path:'adminnav',component:AdminNavComponent},
   {path:'medicinelist',component:MedicineListComponent},
+  {path:'appointmentlist',component:AppointmentlistComponent},
   {path:'pharmacist', component:PharmacistComponent},
   {path:'labtechnician', component:LabtechnicianComponent},
   {path:'receptionbilling',component:ReceptionComponent}

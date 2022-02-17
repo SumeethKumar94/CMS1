@@ -30,4 +30,22 @@ export class AppointmentService {
   insertAppointment(appointment: Appointment): Observable<any> {
     return this.httpClient.post(environment.apiUrl + '/api/appointments', appointment);
   }
+
+  //get doctor and id
+  GetByDoctor(appointment: Appointment): Observable<any> {
+    return this.httpClient.post(environment.apiUrl + '/api/appointments', appointment);
+  }
+
+  // GetDoctorList():Observable<any>{
+  //       return this.httpClient.get(environment.apiUrl+'/api/doctor/doctors');
+  // }
+
+  bindListDoctors(){
+    this.httpClient.get(environment.apiUrl+'/api/doctor/doctors')
+    .toPromise().then(
+      response=>{
+        console.log(response);
+        this.appointment=response as Appointment[]
+      }
+    );}
 }
