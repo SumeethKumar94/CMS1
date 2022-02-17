@@ -40,6 +40,14 @@ import { DoctornavComponent } from './doctor/doctornav/doctornav.component';
 import { ReceptionistnavComponent } from './receptionist/receptionistnav/receptionistnav.component';
 import { LabreportComponent } from './labtests/labreport/labreport.component';
 import { AddreportComponent } from './labtests/addreport/addreport.component';
+import { PrescriptionlabListComponent } from './doctor/prescriptionlab-list/prescriptionlab-list.component';
+import { PharmacistComponent } from './pharmacist/pharmacist.component';
+import { PharmacistnavComponent } from './pharmacist/pharmacistnav/pharmacistnav.component';
+import { DoctorappointmentlistComponent } from './appointments/doctorappointmentlist/doctorappointmentlist.component';
+import { AppointmentService } from './shared/appointment.service';
+import { BillingComponent } from './billing/billing.component';
+import { PharmacyBillingComponent } from './billing/pharmacy-billing/pharmacy-billing.component';
+import { ReceptionComponent } from './billing/reception/reception.component';
 
 
 @NgModule({
@@ -72,7 +80,15 @@ import { AddreportComponent } from './labtests/addreport/addreport.component';
     DoctornavComponent,
     ReceptionistnavComponent,
     LabreportComponent,
-    AddreportComponent
+    AddreportComponent,
+    PrescriptionlabListComponent,
+    PharmacistComponent,
+    PharmacistnavComponent,
+    DoctorappointmentlistComponent,
+    BillingComponent,
+    PharmacyBillingComponent,
+    ReceptionComponent,
+    PharmacyBillingComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +101,7 @@ import { AddreportComponent } from './labtests/addreport/addreport.component';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot()
   ],
-  providers: [MedicineService,LabtestsService, PrescribeService,StaffService,PatientService],
+  providers: [MedicineService,LabtestsService, PrescribeService,StaffService,PatientService,AppointmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

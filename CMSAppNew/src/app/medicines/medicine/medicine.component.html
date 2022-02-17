@@ -34,7 +34,7 @@
         #MedDesc = "ngModel"
         [(ngModel)] = "medicineService.formData.MedDesc"
         class="form-control"
-        placeholder="Enter Designation"
+        placeholder="Enter medicine details"
         required minlength="5" maxlength="100"
         [ngClass] = "{'is-invalid': MedDesc.touched && MedDesc.invalid}"></textarea>
         <!--Validation-->
@@ -50,7 +50,9 @@
     <!--NetMedQty-->
     <div class="form-group">
         <label> NetMedQty:  </label>
-        <input type="number" name = "NetMedQty"
+       
+        
+        <input type="number"step="1" pattern="\d+" name = "NetMedQty"
         #NetMedQty = "ngModel"
         [(ngModel)] = "medicineService.formData.NetMedQty"
         class="form-control"
@@ -69,7 +71,7 @@
     <!--UnitPrice-->
     <div class="form-group">
         <label>UnitPrice :  </label>
-        <input type="number" name = "UnitPrice"
+        <input type="number" step="1" pattern="\d+" name = "UnitPrice"
         #UnitPrice = "ngModel"
         [(ngModel)] = "medicineService.formData.UnitPrice"
         class="form-control"
