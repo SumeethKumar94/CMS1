@@ -80,7 +80,8 @@ import { ReceptionComponent } from './billing/reception/reception.component';
     PharmacistnavComponent,
     BillingComponent,
     PharmacyBillingComponent,
-    ReceptionComponent
+    ReceptionComponent,
+    PharmacyBillingComponent
   ],
   imports: [
     BrowserModule,
