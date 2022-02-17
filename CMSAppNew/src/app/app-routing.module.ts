@@ -17,13 +17,16 @@ import { AppointmentComponent } from './appointments/appointment/appointment.com
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { LabtestComponent } from './labtests/labtest/labtest.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component'
+import { PharmacistComponent } from './pharmacist/pharmacist.component';
+import { LabtechnicianComponent } from './labtechnician/labtechnician.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
+  {path:'login', component:LoginComponent},
   {path:'doctor', component:DoctorComponent},
   {path:'admin', component:AdminComponent},
   {path:'receptionist',component:ReceptionistComponent},
-  {path:'pharmacist', component:MedicineListComponent},
+  {path:'medlist', component:MedicineListComponent},
   {path:'labtestlist', component:LabtestListComponent},
   {path:'labtest', component:LabtestComponent},
   {path:'labtest/:LabTestId', component:LabtestComponent},
@@ -42,7 +45,9 @@ const routes: Routes = [
   {path:'patient/:PatientId', component: PatientComponent },
   {path:'staff/:StaffId',component:StaffComponent},
   {path:'adminnav',component:AdminNavComponent},
-  {path:'medicinelist',component:MedicineListComponent}
+  {path:'medicinelist',component:MedicineListComponent},
+  {path:'pharmacist', component:PharmacistComponent},
+  {path:'labtechnician', component:LabtechnicianComponent}
 ];
 
 @NgModule({

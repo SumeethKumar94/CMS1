@@ -76,16 +76,16 @@ export class LoginComponent implements OnInit {
             localStorage.setItem("UserName",this.loginUser.Name);
             localStorage.setItem("ACESSROLE",this.loginUser.RoleId);
             sessionStorage.setItem("USERNAME",this.loginUser.Name);
-            this.router.navigateByUrl('/prescriptions');
+            this.router.navigateByUrl('/pharmacist');
           }
           else if(this.loginUser.RoleId === 3){
-            console.log("labtest");
+            console.log("labtechnician");
             localStorage.setItem("UserName",this.loginUser.Name);
             localStorage.setItem("ACESSROLE",this.loginUser.RoleId);
             sessionStorage.setItem("USERNAME",this.loginUser.Name);
-            this.router.navigateByUrl('/prescriptions');
+            this.router.navigateByUrl('/labtechnician');
           }
-          else if(this.loginUser.RoleId === 5){
+          else if(this.loginUser.RoleId === 1){
             console.log("receptionist");
             localStorage.setItem("UserName",this.loginUser.Name);
             localStorage.setItem("ACESSROLE",this.loginUser.RoleId);

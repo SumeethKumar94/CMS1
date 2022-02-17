@@ -38,6 +38,9 @@ import { LabtechnicianComponent } from './labtechnician/labtechnician.component'
 import { LabtechnavComponent } from './labtechnician/labtechnav/labtechnav.component';
 import { DoctornavComponent } from './doctor/doctornav/doctornav.component';
 import { ReceptionistnavComponent } from './receptionist/receptionistnav/receptionistnav.component';
+import { PrescriptionlabListComponent } from './doctor/prescriptionlab-list/prescriptionlab-list.component';
+import { PharmacistComponent } from './pharmacist/pharmacist.component';
+import { PharmacistnavComponent } from './pharmacist/pharmacistnav/pharmacistnav.component';
 
 
 @NgModule({
@@ -68,7 +71,10 @@ import { ReceptionistnavComponent } from './receptionist/receptionistnav/recepti
     LabtechnicianComponent,
     LabtechnavComponent,
     DoctornavComponent,
-    ReceptionistnavComponent
+    ReceptionistnavComponent,
+    PrescriptionlabListComponent,
+    PharmacistComponent,
+    PharmacistnavComponent
   ],
   imports: [
     BrowserModule,
