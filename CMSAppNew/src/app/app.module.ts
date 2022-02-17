@@ -43,6 +43,9 @@ import { PharmacistComponent } from './pharmacist/pharmacist.component';
 import { PharmacistnavComponent } from './pharmacist/pharmacistnav/pharmacistnav.component';
 import { DoctorappointmentlistComponent } from './appointments/doctorappointmentlist/doctorappointmentlist.component';
 import { AppointmentService } from './shared/appointment.service';
+import { BillingComponent } from './billing/billing.component';
+import { PharmacyBillingComponent } from './billing/pharmacy-billing/pharmacy-billing.component';
+import { ReceptionComponent } from './billing/reception/reception.component';
 
 
 @NgModule({
@@ -77,7 +80,10 @@ import { AppointmentService } from './shared/appointment.service';
     PrescriptionlabListComponent,
     PharmacistComponent,
     PharmacistnavComponent,
-    DoctorappointmentlistComponent
+    DoctorappointmentlistComponent,
+    BillingComponent,
+    PharmacyBillingComponent,
+    ReceptionComponent
   ],
   imports: [
     BrowserModule,

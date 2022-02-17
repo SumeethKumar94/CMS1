@@ -21,6 +21,7 @@ import { AppointmentlistComponent } from './appointments/appointmentlist/appoint
 import { LabtechnicianComponent } from './labtechnician/labtechnician.component';
 import { PharmacistComponent } from './pharmacist/pharmacist.component';
 import { DoctorappointmentlistComponent } from './appointments/doctorappointmentlist/doctorappointmentlist.component';
+import { ReceptionComponent } from './billing/reception/reception.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -53,6 +54,7 @@ const routes: Routes = [
   {path:'labtechnician', component:LabtechnicianComponent},
   {path:'doctorappointmentlist', component:DoctorappointmentlistComponent},
   {path:'doctorappointmentlist/:DoctorId', component:DoctorappointmentlistComponent},
+  {path:'receptionbilling',component:ReceptionComponent}
 ];
 
 @NgModule({
