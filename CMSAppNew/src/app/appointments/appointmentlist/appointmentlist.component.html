@@ -1,2 +1,42 @@
+
+
 <app-admin-nav></app-admin-nav>
-<p>appointmentlist works!</p>
+<div class="container">
+<div class="header">
+    <div class="form-control">
+        <!--search functionality-->
+        <input class="form-control" type="text" placeholder="search text here..."[(ngModel)]="filter" >
+        {{filter}}
+    <!-- </div>
+
+    <a [routerLink]="" class="btn btn-outline-secondary" style="float: right; margin-top: 10px;margin-bottom: 10px;" (click)="addMedicine()" >Add Medicine</a>
+</div> -->
+<table class="table table-ordered table-striped">
+    <thead>
+        <tr>
+            <th>DoctorId</th>
+            <th>DoctorName</th>
+          
+            <th>Action</th><!--edit,delete-->
+        </tr>
+    </thead>
+    
+    <tbody> 
+        <tr *ngFor="let app of appointmentService.appointment | filter:filter | paginate: {itemsPerPage:3,currentPage:page}" >
+            <td>{{app.DoctorId}}</td>
+            <td>{{app.DoctorName}}</td>
+            
+            <!-- <td>
+                <button class="btn btn-sm btn-info" (click)="updateMedicine(med.MedInvId)"> Edit </button>
+                &nbsp;
+                
+                <button class="btn btn-sm btn-outline-danger" (click)="deleteMedicine(med.MedInvId)"> Delete </button>
+            </td> -->
+        </tr>
+    </tbody>
+   </table>  
+   <div >
+    <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+    <!--Pagination-->
+</div>
+</div>

@@ -5,4 +5,5 @@ export class Appointment {
         PatientId:number=0;
         DoctorId:number=0;
         ReceptionistId:number=0;
+        DoctorName:string='';
 }

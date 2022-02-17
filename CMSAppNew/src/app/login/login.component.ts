@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
           //check the role based on  role RoleId, it redirect to the respective component
           sessionStorage.setItem("jwtToken",this.loginUser.token)
           
-          if(this.loginUser.RoleId === 5){
+          if(this.loginUser.RoleId === 1){
             
             console.log("Admin");
             localStorage.setItem("UserName",this.loginUser.Name);
@@ -71,14 +71,14 @@ export class LoginComponent implements OnInit {
             sessionStorage.setItem("USERNAME",this.loginUser.Name);
             this.router.navigateByUrl('/doctor');
           }
-          else if(this.loginUser.RoleId === 4){
+          else if(this.loginUser.RoleId === 3){
             console.log("pharmacist");
             localStorage.setItem("UserName",this.loginUser.Name);
             localStorage.setItem("ACESSROLE",this.loginUser.RoleId);
             sessionStorage.setItem("USERNAME",this.loginUser.Name);
             this.router.navigateByUrl('/prescriptions');
           }
-          else if(this.loginUser.RoleId === 3){
+          else if(this.loginUser.RoleId === 4){
             console.log("labtest");
             localStorage.setItem("UserName",this.loginUser.Name);
             localStorage.setItem("ACESSROLE",this.loginUser.RoleId);
