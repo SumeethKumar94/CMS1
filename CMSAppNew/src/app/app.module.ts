@@ -38,6 +38,8 @@ import { LabtechnicianComponent } from './labtechnician/labtechnician.component'
 import { LabtechnavComponent } from './labtechnician/labtechnav/labtechnav.component';
 import { DoctornavComponent } from './doctor/doctornav/doctornav.component';
 import { ReceptionistnavComponent } from './receptionist/receptionistnav/receptionistnav.component';
+import { LabreportComponent } from './labtests/labreport/labreport.component';
+import { AddreportComponent } from './labtests/addreport/addreport.component';
 
 
 @NgModule({
@@ -68,7 +70,9 @@ import { ReceptionistnavComponent } from './receptionist/receptionistnav/recepti
     LabtechnicianComponent,
     LabtechnavComponent,
     DoctornavComponent,
-    ReceptionistnavComponent
+    ReceptionistnavComponent,
+    LabreportComponent,
+    AddreportComponent
   ],
   imports: [
     BrowserModule,
