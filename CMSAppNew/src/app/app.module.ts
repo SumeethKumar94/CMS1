@@ -34,6 +34,10 @@ import { AppointmentComponent } from './appointments/appointment/appointment.com
 import { AppointmentlistComponent } from './appointments/appointmentlist/appointmentlist.component';
 import { LabtestComponent } from './labtests/labtest/labtest.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
+import { LabtechnicianComponent } from './labtechnician/labtechnician.component';
+import { LabtechnavComponent } from './labtechnician/labtechnav/labtechnav.component';
+import { DoctornavComponent } from './doctor/doctornav/doctornav.component';
+import { ReceptionistnavComponent } from './receptionist/receptionistnav/receptionistnav.component';
 
 
 @NgModule({
@@ -60,7 +64,11 @@ import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
     AdminComponent,
     ReceptionistComponent,
     MedicineComponent,
-    AdminNavComponent
+    AdminNavComponent,
+    LabtechnicianComponent,
+    LabtechnavComponent,
+    DoctornavComponent,
+    ReceptionistnavComponent
   ],
   imports: [
     BrowserModule,

@@ -13,10 +13,10 @@ import { NgForm } from '@angular/forms';
 export class AppointmentComponent implements OnInit {
 
   //declare variable appid
-  appId: number=0;
+  appId: number = 0;
   constructor(public appServices: AppointmentService,
     private route: ActivatedRoute,
-    private toastrService:ToastrService) { }
+    private toastrService: ToastrService) { }
 
   ngOnInit(): void {
     this.appId = this.route.snapshot.params['appId']
@@ -26,12 +26,11 @@ export class AppointmentComponent implements OnInit {
       this.appServices.GetAppointmentById(this.appId).subscribe(
         result => {
           console.log(result);
-          //FORMAT THE DATE:YYY-MM-DD
-          var dataPipe=new DatePipe("en-Uk");
-          let formatedDate:any=dataPipe.transform(result.DateOfJoining,'yyyy-MM-dd');
-          result.DateOfJoining=formatedDate;
+          var dataPipe = new DatePipe("en-Uk");
+          let formatedDate: any = dataPipe.transform(result.DateOfJoining, 'yyyy-MM-dd');
+          result.DateOfJoining = formatedDate;
           //assign this result to appservices formdata
-          this.appServices.formData=Object.assign({},result);
+          this.appServices.formData = Object.assign({}, result);
         },
         error => {
           console.log(error);
@@ -40,56 +39,52 @@ export class AppointmentComponent implements OnInit {
     }
 
   }
-  onSubmit(form : NgForm){
+  onSubmit(form: NgForm) {
     console.log(form.value);
     let addId = this.appServices.formData.AppointmentId;
-    
     //insert or update
-
-    if(addId == 0 || addId == null){
+    if (addId == 0 || addId == null) {
       //insert
       this.insertAppointment(form);
-      
     }
-    else{
+    else {
       //update
       this.updateAppointment(form);
     }
   }
-
   //insert method 
-  insertAppointment(form?:NgForm){
+  insertAppointment(form?: NgForm) {
     console.log("Inserting a record...");
     this.appServices.insertAppointment(form.value).subscribe(
-      result =>{
+      result => {
         console.log(result);
         //call resetform for clean the data
         this.resetForm(form);
-        this.toastrService.success("employee record updated sucesfully");
+        this.toastrService.success("Appointment Added");
       },
-      (error) =>{
+      (error) => {
         console.log(error);
       }
     );
   }
   //update
-  updateAppointment(form?:NgForm){
+  updateAppointment(form?: NgForm) {
     console.log("Updatinging a record...");
     this.appServices.updateAppointmentById(form.value).subscribe(
-      result =>{
+      result => {
         console.log(result);
         //call resetform for clean the data
         this.resetForm(form);
         this.toastrService.success("Appointment Updated");
       },
-      (error) =>{
+      (error) => {
         console.log(error);
       }
     );
   }
   //clear all contents
-  resetForm(form?:NgForm){
-    if(form !=null){
+  resetForm(form?: NgForm) {
+    if (form != null) {
       form.resetForm();
     }
   }

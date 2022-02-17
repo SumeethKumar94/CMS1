@@ -10,11 +10,11 @@ import { environment } from 'src/environments/environment';
 export class PatientService {
 
   //retrive all data from 
-  patients: Patient[];//all user
-  formData: Patient = new Patient(); //one user
+  patients: Patient[];
+  formData: Patient = new Patient();
 
   constructor(private httpClient: HttpClient) { }
-  
+
   getAllPatient(): Observable<any> {
     return this.httpClient.get(environment.apiUrl + '/api/patient');
   }
@@ -24,8 +24,7 @@ export class PatientService {
     this.httpClient.get(environment.apiUrl + '/api/patient')
       .toPromise().then(
         response => {
-          this.patients = response as Patient[]
-          alert(this.patients);
+          this.patients = response as Patient[];
         }
       )
   }

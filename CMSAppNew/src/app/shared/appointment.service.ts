@@ -9,25 +9,25 @@ import { Appointment } from './appointment';
 })
 export class AppointmentService {
 
-  appointment : Appointment[];
-  formData :Appointment = new Appointment();
+  appointment: Appointment[];
+  formData: Appointment = new Appointment();
 
   constructor(private httpClient: HttpClient) { }
 
 
-  //getappointment by Id 
-  GetAppointmentById(id : number): Observable<any>{
-    return this.httpClient.get(environment.apiUrl+'/api/appointments/'+id);
+  //get appointment by Id 
+  GetAppointmentById(id: number): Observable<any> {
+    return this.httpClient.get(environment.apiUrl + '/api/appointments/' + id);
 
   }
 
   //update appointment
-  updateAppointmentById(appointment:Appointment): Observable<any>{
-    return this.httpClient.put(environment.apiUrl+'/api/appointments',appointment);
+  updateAppointmentById(appointment: Appointment): Observable<any> {
+    return this.httpClient.put(environment.apiUrl + '/api/appointments', appointment);
   }
 
-  //insert employee 
-  insertAppointment(appointment:Appointment): Observable<any>{
-    return this.httpClient.post(environment.apiUrl+'/api/appointments',appointment);
+  //insert appintment 
+  insertAppointment(appointment: Appointment): Observable<any> {
+    return this.httpClient.post(environment.apiUrl + '/api/appointments', appointment);
   }
 }

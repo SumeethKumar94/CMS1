@@ -7,41 +7,40 @@ import { AppointmentService } from '../shared/appointment.service';
   templateUrl: './appointments.component.html',
   styleUrls: ['./appointments.component.scss']
 })
-export class AppointmentsComponent implements OnInit{
+export class AppointmentsComponent implements OnInit {
 
   constructor(public appServices: AppointmentService) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(form : NgForm){
+  onSubmit(form: NgForm) {
     console.log(form.value);
     let addId = this.appServices.formData.AppointmentId;
-    
+
     //insert or update
 
-    if(addId == 0 || addId == null){
+    if (addId == 0 || addId == null) {
       //insert
       this.insertAppointment(form)
-      
+
     }
-    else{
+    else {
       //update
     }
   }
 
   //insert method 
-  insertAppointment(form?:NgForm){
+  insertAppointment(form?: NgForm) {
     console.log("Inserting a record...");
     this.appServices.insertAppointment(form.value).subscribe(
-      result =>{
+      result => {
         console.log(result);
       },
-      (error) =>{
+      (error) => {
         console.log(error);
       }
     );
   }
-
 }
 

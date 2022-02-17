@@ -17,7 +17,7 @@ export class AdminComponent implements OnInit {
     public authService : AuthService) { }
 
   ngOnInit(): void {
-    this.loggedUser = localStorage.getItem("USERNAME");
+    this.loggedUser = localStorage.getItem("UserName");
     this.loggedId = localStorage.getItem("ACESSROLE");
   }
 

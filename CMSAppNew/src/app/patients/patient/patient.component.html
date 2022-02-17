@@ -1,112 +1,75 @@
 <app-admin-nav></app-admin-nav>
 <!-- Template-Drivern Form -->
-    
-<form name ="patform" #form="ngForm" autocomplete="off" (ngSubmit) = "onSubmit(form)">
-    <!--Patient ID -->
-   <div class="form-group">
-    <label>PatientID</label>
-    <input type="text" name = "PatientId"
-    #PatientId = "ngModel"
-    [(ngModel)] = "patientService.formData.PatientId"
-    class="form-control"
-    placeholder="Enter PatientId"
-    required 
-    [ngClass] = "{'is-invalid': PatientId.touched && PatientId.invalid}"/>
-    <!--Validation-->
-    <div class="validation-error" *ngIf = "PatientId.touched && PatientId.invalid">
-       
-        <div *ngIf = "PatientId.errors.required">
-            PatientId required
-        </div>
-    </div>
-</div> 
+<form name="patform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+    <input type="hidden" name="PatientId" [(ngModel)]="patientService.formData.PatientId">
+
     <!-- PatientName-->
     <div class="form-group">
-        <label>Full Name :  </label>
-        <input type="text" name = "PatientName"
-        #PatientName = "ngModel"
-        [(ngModel)] = "patientService.formData.PatientName"
-        class="form-control"
-        placeholder="Enter Full Name"
-        required minlength="5" maxlength="25"
-        [ngClass] = "{'is-invalid': PatientName.touched && PatientName.invalid}"/>
+        <label>Full Name : </label>
+        <input type="text" name="PatientName" #PatientName="ngModel" [(ngModel)]="patientService.formData.PatientName"
+            class="form-control" placeholder="Enter Full Name" required minlength="5" maxlength="25"
+            [ngClass]="{'is-invalid': PatientName.touched && PatientName.invalid}" />
         <!--Validation-->
-        <div class="validation-error" *ngIf = "PatientName.touched && PatientName.invalid">
-           
-            <div *ngIf = "PatientName.errors.required">
-                 Name is required
+        <div class="validation-error" *ngIf="PatientName.touched && PatientName.invalid">
+
+            <div *ngIf="PatientName.errors.required">
+                Name is required
             </div>
         </div>
     </div>
-
     <!--Date of Birth-->
     <div class="form-group">
-        <label>PatientDob :  </label>
-        <input type="date" name = "PatientDob"
-        #PatientDob = "ngModel"
-        [(ngModel)] = "patientService.formData.PatientDob"
-        class="form-control"
-        placeholder="Enter Date Of Birth"
-        required 
-        [ngClass] = "{'is-invalid': PatientDob.touched && PatientDob.invalid}"/>
+        <label>PatientDob : </label>
+        <input type="date" name="PatientDob" #PatientDob="ngModel" [(ngModel)]="patientService.formData.PatientDob"
+            class="form-control" placeholder="Enter Date Of Birth" required
+            [ngClass]="{'is-invalid': PatientDob.touched && PatientDob.invalid}" />
         <!--Validation-->
-        <div class="validation-error" *ngIf = "PatientDob.touched && PatientDob.invalid">
-           
-            <div *ngIf = "PatientDob.errors.required">
-                 Date of Birth required !
+        <div class="validation-error" *ngIf="PatientDob.touched && PatientDob.invalid">
+
+            <div *ngIf="PatientDob.errors.required">
+                Date of Birth required !
             </div>
         </div>
     </div>
     <!-- PatientGender-->
     <div class="form-group">
-        <label>PatientGender:  </label>
-        <input type="text" name = "PatientGender"
-        #PatientGender = "ngModel"
-        [(ngModel)] = "patientService.formData.PatientGender"
-        class="form-control"
-        placeholder="Enter PatientGender"
-        required 
-        [ngClass] = "{'is-invalid': PatientGender.touched && PatientGender.invalid}"/>
+        <label>PatientGender: </label>
+        <input type="text" name="PatientGender" #PatientGender="ngModel"
+            [(ngModel)]="patientService.formData.PatientGender" class="form-control" placeholder="Enter PatientGender"
+            required [ngClass]="{'is-invalid': PatientGender.touched && PatientGender.invalid}" />
         <!--Validation-->
-        <div class="validation-error" *ngIf = "PatientGender.touched && PatientGender.invalid">
-        
-            <div *ngIf = "PatientGender.errors.required">
+        <div class="validation-error" *ngIf="PatientGender.touched && PatientGender.invalid">
+
+            <div *ngIf="PatientGender.errors.required">
                 PatientGender is required
             </div>
         </div>
     </div>
     <!--Contact-->
     <div class="form-group">
-        <label>PatientPhoneNo:  </label>
-        <input type="text" name = "PatientPhoneNo"
-        #PatientPhoneNo = "ngModel"
-        [(ngModel)] = "patientService.formData.PatientPhoneNo"
-        class="form-control"
-        placeholder="Enter Contact"
-        required minlength="10" maxlength="10"
-        [ngClass] = "{'is-invalid': PatientPhoneNo.touched && PatientPhoneNo.invalid}"/>
+        <label>PatientPhoneNo: </label>
+        <input type="text" name="PatientPhoneNo" #PatientPhoneNo="ngModel"
+            [(ngModel)]="patientService.formData.PatientPhoneNo" class="form-control" placeholder="Enter Contact"
+            required minlength="10" maxlength="10"
+            [ngClass]="{'is-invalid': PatientPhoneNo.touched && PatientPhoneNo.invalid}" />
         <!--Validation-->
-        <div class="validation-error" *ngIf = "PatientPhoneNo.touched && PatientPhoneNo.invalid">
-           
-            <div *ngIf = "PatientPhoneNo.errors.required">
-                 Contact required
+        <div class="validation-error" *ngIf="PatientPhoneNo.touched && PatientPhoneNo.invalid">
+
+            <div *ngIf="PatientPhoneNo.errors.required">
+                Contact required
             </div>
         </div>
     </div>
     <!-- PatientBlood-->
     <div class="form-group">
-        <label>BloodGroup:  </label>
-        <input type="text" name = "BloodGroup"
-        #BloodGroup = "ngModel"
-        [(ngModel)] = "patientService.formData.BloodGroup"
-        class="form-control"
-        placeholder="Enter BloodGroup"
-        required 
-        [ngClass] = "{'is-invalid': BloodGroup.touched && BloodGroup.invalid}"/>
+        <label>BloodGroup: </label>
+        <input type="text" name="BloodGroup" #BloodGroup="ngModel" [(ngModel)]="patientService.formData.BloodGroup"
+            class="form-control" placeholder="Enter BloodGroup" required
+            [ngClass]="{'is-invalid': BloodGroup.touched && BloodGroup.invalid}" />
         <!--Validation-->
-        <div class="validation-error" *ngIf = "BloodGroup.touched && BloodGroup.invalid">
-        
-            <div *ngIf = "BloodGroup.errors.required">
+        <div class="validation-error" *ngIf="BloodGroup.touched && BloodGroup.invalid">
+
+            <div *ngIf="BloodGroup.errors.required">
                 BloodGroup is required
             </div>
         </div>
@@ -114,9 +77,8 @@
     <!--Submit-->
     <br>
     <div class="form-group">
-        <button type="submit" 
-        class="btn btn-lg btn-primary form-control"
-        [disabled] = "!(form.valid && form.dirty)">Submit</button>
+        <button type="submit" class="btn btn-lg btn-primary form-control"
+            [disabled]="!(form.valid && form.dirty)">Submit</button>
     </div>
 
 </form>

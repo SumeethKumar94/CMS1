@@ -11,85 +11,80 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./patient.component.scss']
 })
 export class PatientComponent implements OnInit {
-   PatientId:number=0;
-  constructor(public patientService:PatientService,
+  PatientId: number = 0;
+  constructor(public patientService: PatientService,
     private route: ActivatedRoute,
-    private toastrService:ToastrService) { }
+    private toastrService: ToastrService) { }
 
   ngOnInit(): void {
-        //get patient id
-        this.PatientId = this.route.snapshot.params['PatientId'];
+    //get patient id
+    this.PatientId = this.route.snapshot.params['PatientId'];
 
-        // getStaffById
-         if(this.PatientId!=0 || this.PatientId != null){
-           this.patientService.getPatientById(this.PatientId).subscribe(
-             result =>{
-               console.log(result);
-               //formate the date : yyy-MM-dd
-               var datepipe = new DatePipe("en-UK");
-               let formatedDate : any = datepipe.transform(result.StaffDob,'yyy-MM-dd');
-               result.StaffDob = formatedDate;
-     
-               //asign this result to empService formData
-               this.patientService.formData = Object.assign({},result);
-             },
-             error =>{
-               console.log(error);
-             }
-           );
-         }
+    // getpatientById
+    if (this.PatientId != 0 || this.PatientId != null) {
+      this.patientService.getPatientById(this.PatientId).subscribe(
+        result => {
+          console.log(result);
+          var datepipe = new DatePipe("en-UK");
+          let formatedDate: any = datepipe.transform(result.StaffDob, 'yyy-MM-dd');
+          result.StaffDob = formatedDate;
+
+          //asign this result to empService formData
+          this.patientService.formData = Object.assign({}, result);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    }
   }
-   //submit form 
-   onSubmit(form : NgForm){
+  //submit form 
+  onSubmit(form: NgForm) {
     console.log(form.value);
     let addId = this.patientService.formData.PatientId;
 
     //insert or update
-    if(addId == 0 || addId == null){
+    if (addId == 0 || addId == null) {
       //insert 
       this.insertPatient(form);
     }
-    else{
+    else {
       this.updatePatient(form);
     }
   }
-  insertPatient(form?:NgForm){
+  insertPatient(form?: NgForm) {
     console.log("Inserting a record...");
     this.patientService.insertPatient(form.value).subscribe(
-      result =>{
+      result => {
         console.log(result);
         //calling reset form for clear the contents
         this.resetForm(form);
-        this.toastrService.success("Patient  record inserted sucesfully");
-      
+        this.toastrService.success("Patient  record inserted sucessfully");
       },
-      error =>{
+      error => {
         console.log(error);
       }
     );
   }
-
   //Update Method
-  updatePatient(form?:NgForm){
+  updatePatient(form?: NgForm) {
     console.log("Updating record...");
     this.patientService.updatePatient(form.value).subscribe(
-      result =>{
+      result => {
         console.log(result);
         //ca;;ing reset form for clear the contents
         this.resetForm(form);
-        this.toastrService.success('Patient Record has been inserted','CMS v2022')
+        this.toastrService.success('Patient Record has been Updated');
       },
-      error =>{
+      error => {
         console.log(error);
       }
     );
   }
-
   //clear all contents after submit  
-  resetForm(form?: NgForm){
-    if(form != null){
+  resetForm(form?: NgForm) {
+    if (form != null) {
       form.resetForm();
     }
   }
-
 }

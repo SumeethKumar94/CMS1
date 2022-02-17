@@ -9,20 +9,17 @@ import { Staff } from './staff';
 })
 export class AuthService {
 
-  constructor(private  httpClient : HttpClient) { }
-
-
-  public loginVerify(user : Staff){
+  constructor(private httpClient: HttpClient) { }
+  public loginVerify(user: Staff) {
     //calling web service and passing username and password
-    return this.httpClient.get(environment.apiUrl+"/api/staff/login/"+user.StaffName+"&"+user.StaffPassword);
+    return this.httpClient.get(environment.apiUrl + "/api/staff/login/" + user.StaffName + "&" + user.StaffPassword);
   }
-
   //logout
-  public logout(){
+  public logout() {
     localStorage.removeItem("UserName");
     localStorage.removeItem("ACESSROLE");
     sessionStorage.removeItem("USERNAME");
-}
+  }
 }
 
 

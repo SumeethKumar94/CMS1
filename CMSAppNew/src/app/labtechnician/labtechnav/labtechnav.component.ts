@@ -3,19 +3,19 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
-  selector: 'app-admin-nav',
-  templateUrl: './admin-nav.component.html',
-  styleUrls: ['./admin-nav.component.scss']
+  selector: 'app-labtechnav',
+  templateUrl: './labtechnav.component.html',
+  styleUrls: ['./labtechnav.component.scss']
 })
-export class AdminNavComponent implements OnInit {
+export class LabtechnavComponent implements OnInit {
 
-  constructor(public authService : AuthService,
-    private router: Router) { }
+  constructor(public authService: AuthService,
+    private router:Router) { }
 
   ngOnInit(): void {
-    
+    //logout
+  
   }
-  //logout
   logout(){
     this.authService.logout();
     this.router.navigateByUrl('login');
