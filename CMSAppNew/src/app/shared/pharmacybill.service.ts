@@ -22,4 +22,9 @@ export class PharmacybillService {
       }
     );
   }
+
+  //Medicine List 
+  bindListMedicine(){
+    this.httpClient.get(environment.apiUrl+'')
+  }
 }
