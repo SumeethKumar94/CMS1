@@ -24,6 +24,7 @@ import { PharmacistComponent } from './pharmacist/pharmacist.component';
 import { DoctorappointmentlistComponent } from './appointments/doctorappointmentlist/doctorappointmentlist.component';
 import { ReceptionComponent } from './billing/reception/reception.component';
 import { PharmacyBillingComponent } from './billing/pharmacy-billing/pharmacy-billing.component';
+import { PrescribeComponent } from './doctor/prescribe/prescribe.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -59,6 +60,8 @@ const routes: Routes = [
   {path:'pharmacybilling',component:PharmacyBillingComponent},
   {path:'doctorappointmentlist', component:DoctorappointmentlistComponent},
   {path:'doctorappointmentlist/:DoctorId', component:DoctorappointmentlistComponent},
+  {path:'prescribe',component:PrescribeComponent},
+  {path:'prescribe/:appId',component:PrescribeComponent}
 ];
 
 @NgModule({
