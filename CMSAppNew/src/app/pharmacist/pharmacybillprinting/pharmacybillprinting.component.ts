@@ -30,9 +30,17 @@ export class PharmacybillprintingComponent implements OnInit {
   //submit form 
   onSubmit(){
     var GrandTotal : any;
-    const str = this.pharmacybillService.pharmbillprint
-
-      console.log(str);
+    var gg : number = 0;
+    for (const emp of this.pharmacybillService.pharmbillprint) {
+      for(const tsr of emp.Medicine){
+        
+        var gg = gg+ tsr.Total
+         
+      }
+      
+    }
+    let str  = (<HTMLInputElement>document.getElementById('total'));
+    (<HTMLInputElement>document.getElementById('gtotal')).value = gg.toString();
   }
 
 

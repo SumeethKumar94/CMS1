@@ -28,7 +28,7 @@
 
             </div>
             <label for=""> GrandTotal</label>
-            <input class="card-text" id="gtotal" *ngFor = "let str of emp.Medicine" value="{{str.Total}}">        
+            <input class="card-text" id="gtotal" type="number" value="">        
         </div>
         <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
     </div>

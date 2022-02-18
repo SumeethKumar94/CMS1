@@ -91,7 +91,8 @@ import { PrescribeComponent } from './doctor/prescribe/prescribe.component';
     PharmacyBillingComponent,
     ReceptionComponent,
     PharmacyBillingComponent,
-    PrescribeComponent
+    PrescribeComponent,
+    PharmacybillprintingComponent
     
   ],
   imports: [
