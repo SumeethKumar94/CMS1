@@ -59,7 +59,6 @@ const routes: Routes = [
   {path:'pharmacybilling',component:PharmacyBillingComponent},
   {path:'doctorappointmentlist', component:DoctorappointmentlistComponent},
   {path:'doctorappointmentlist/:DoctorId', component:DoctorappointmentlistComponent},
-  {path:'receptionbilling',component:ReceptionComponent}
 ];
 
 @NgModule({

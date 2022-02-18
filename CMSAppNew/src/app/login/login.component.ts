@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
           //check the role based on  role RoleId, it redirect to the respective component
           sessionStorage.setItem("jwtToken",this.loginUser.token)
           
-          if(this.loginUser.RoleId === 1){
+          if(this.loginUser.RoleId === 5){
             
             console.log("Admin");
             localStorage.setItem("UserName",this.loginUser.Name);
