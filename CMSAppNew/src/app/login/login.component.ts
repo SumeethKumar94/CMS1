@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Staff} from 'src/app/shared/staff';
+import { Staff } from 'src/app/shared/staff';
 import { AuthService } from '../shared/auth.service';
 
 @Component({
@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
           //check the role based on  role RoleId, it redirect to the respective component
           sessionStorage.setItem("jwtToken",this.loginUser.token)
           
-          if(this.loginUser.RoleId === 1){
+          if(this.loginUser.RoleId === 5){
             
             console.log("Admin");
             localStorage.setItem("UserName",this.loginUser.Name);

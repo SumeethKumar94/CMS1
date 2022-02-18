@@ -31,7 +31,7 @@
                 <td>{{app.AppointmentId}}</td>
                 <td>{{app.PatientName}}</td>
                 <td>
-                    <button class="btn btn-sm btn-info" > Prescribe </button>
+                    <button class="btn btn-sm btn-info" (click)="prescribe(app.AppointmentId)"> Prescribe </button>
                 </td>
                  
             </tr>

@@ -46,9 +46,12 @@ import { PharmacistnavComponent } from './pharmacist/pharmacistnav/pharmacistnav
 import { DoctorappointmentlistComponent } from './appointments/doctorappointmentlist/doctorappointmentlist.component';
 import { AppointmentService } from './shared/appointment.service';
 import { BillingComponent } from './billing/billing.component';
-import { PharmacyBillingComponent } from './billing/pharmacy-billing/pharmacy-billing.component';
 import { ReceptionComponent } from './billing/reception/reception.component';
 import { AllappointemntsComponent } from './appointments/allappointemnts/allappointemnts.component';
+import { PharmacybillprintingComponent } from './pharmacist/pharmacybillprinting/pharmacybillprinting.component';
+import { PharmacyBillingComponent} from './billing/pharmacy-billing/pharmacy-billing.component';
+import { PrescribeComponent } from './doctor/prescribe/prescribe.component';
+
 
 @NgModule({
   declarations: [
@@ -91,6 +94,9 @@ import { AllappointemntsComponent } from './appointments/allappointemnts/allappo
     PharmacyBillingComponent,
     AllappointemntsComponent,
    
+    PrescribeComponent,
+    PharmacybillprintingComponent
+    
   ],
   imports: [
     BrowserModule,
