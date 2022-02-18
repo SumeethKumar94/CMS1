@@ -3,8 +3,6 @@ export class Medicine {
     MedicineName: string='';
     NetMedQty: number=0;
     UnitPrice: number=0;
-    MedDesc: string='';
-    
-    
-    
+    MedDesc: string='';   
+    Total : number = 0;
 }

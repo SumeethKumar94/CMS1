@@ -1,10 +1,32 @@
 <app-receptionistnav></app-receptionistnav>
 <div class="flex-container">
-    <div class="container-fluid">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi aut enim eveniet, eum assumenda obcaecati laborum repellat praesentium. Expedita sapiente, deleniti non et facere laborum maxime aut quis assumenda molestiae.</p>
-    </div>
-    <div class="container-fluid">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dolorem modi rem explicabo, rerum harum quos qui omnis iste, sed possimus reiciendis commodi, veritatis consequuntur ex dolor cum voluptatibus quaerat.</p>
+    <div class="container">
+        <table class="table table-bordered table striped">
+            <thead>
+                <tr>
+                    <th>AppointmentId</th>
+                    <th>TokenNo</th>
+                    <th>DateOfAppointment</th>
+                    <th>PatientId</th>
+                    <th>DoctorId</th>
+                    <th>ReceptionistId</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let bill of billservice.billing ">
+                    <td>{{bill.AppointmentId}}</td>
+                    <td>{{bill.TokenNo}}</td>
+                    <td>{{bill.DateOfAppointment | date:'dd-MMM-yyyy'}}</td>
+                    <td>{{bill.PatientId}}</td>
+                    <td>{{bill.DoctorId}}</td>
+                    <td>{{bill.ReceptionistId}}</td>
+                    <td>
+                        <button class="btn btn-sm btn-info">PrintBill</button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
     </div>
 </div>
 

@@ -38,6 +38,8 @@ import { LabtechnicianComponent } from './labtechnician/labtechnician.component'
 import { LabtechnavComponent } from './labtechnician/labtechnav/labtechnav.component';
 import { DoctornavComponent } from './doctor/doctornav/doctornav.component';
 import { ReceptionistnavComponent } from './receptionist/receptionistnav/receptionistnav.component';
+import { LabreportComponent } from './labtests/labreport/labreport.component';
+import { AddreportComponent } from './labtests/addreport/addreport.component';
 import { PrescriptionlabListComponent } from './doctor/prescriptionlab-list/prescriptionlab-list.component';
 import { PharmacistComponent } from './pharmacist/pharmacist.component';
 import { PharmacistnavComponent } from './pharmacist/pharmacistnav/pharmacistnav.component';
@@ -46,6 +48,7 @@ import { AppointmentService } from './shared/appointment.service';
 import { BillingComponent } from './billing/billing.component';
 import { PharmacyBillingComponent } from './billing/pharmacy-billing/pharmacy-billing.component';
 import { ReceptionComponent } from './billing/reception/reception.component';
+import { PharmacybillprintingComponent } from './pharmacy/pharmacybillprinting/pharmacybillprinting.component';
 
 
 @NgModule({
@@ -77,13 +80,17 @@ import { ReceptionComponent } from './billing/reception/reception.component';
     LabtechnavComponent,
     DoctornavComponent,
     ReceptionistnavComponent,
+    LabreportComponent,
+    AddreportComponent,
     PrescriptionlabListComponent,
     PharmacistComponent,
     PharmacistnavComponent,
     DoctorappointmentlistComponent,
     BillingComponent,
     PharmacyBillingComponent,
-    ReceptionComponent
+    ReceptionComponent,
+    PharmacyBillingComponent,
+    PharmacybillprintingComponent
   ],
   imports: [
     BrowserModule,
