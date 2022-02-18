@@ -18,4 +18,10 @@ export class PharmacyBillingComponent implements OnInit {
     this.pharmacybillService.bindListPharmacyBill();
   }
 
+  //print Bill
+  PrintBill(Medicine_Bill_Id : number){
+    console.log(Medicine_Bill_Id);
+    this.router.navigate(['pharmacybillprinting',Medicine_Bill_Id])
+  }
+
 }

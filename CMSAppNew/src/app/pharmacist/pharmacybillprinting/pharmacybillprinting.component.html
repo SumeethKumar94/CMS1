@@ -1,1 +1,36 @@
-<p>pharmacybillprinting works!</p>
+<div class="container">
+    <div class="card" *ngFor = "let emp of pharmacybillService.pharmbillprint">
+        <div class="card-header">
+           <p id="billingId">
+               <span id="billId">Billing Id : &nbsp; {{emp.Medicine_Bill_Id}}</span>       
+               <span id="date">Date : &nbsp; {{emp.BillDate}}</span>
+            </p>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <span id="patientId">Patient Id : &nbsp; {{emp.PatientId}}</span>
+                <span id="patientName">&nbsp; Patient Name : &nbsp; {{emp.PatientName}}</span>
+            </p>
+            <p class="card-text">
+                Doctor Id : &nbsp; {{emp.DoctorId}}
+            </p>
+            <div class="card-text" *ngFor = "let str of emp.Medicine">
+                <p>
+                    Medicine Name : &nbsp; {{str.MedicineName}}
+                </p>
+                <p>
+                    Medicine Quantity : &nbsp; {{str.MedQty}}
+                </p>
+                <p>
+                    Medicine Price : &nbsp; {{str.MedPrice}}
+                </p>
+               <input type="number" disabled value="{{str.Total}}"> 
+
+            </div>
+            <label for=""> GrandTotal</label>
+            <input class="card-text" id="gtotal" *ngFor = "let str of emp.Medicine" value="{{str.Total}}">        
+        </div>
+        <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+    </div>
+</div>
+

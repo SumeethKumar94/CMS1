@@ -1,6 +1,9 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Medicine } from 'src/app/shared/medicine';
 import { PharmacybillService } from 'src/app/shared/pharmacybill.service';
 
 @Component({
@@ -9,12 +12,28 @@ import { PharmacybillService } from 'src/app/shared/pharmacybill.service';
   styleUrls: ['./pharmacybillprinting.component.scss']
 })
 export class PharmacybillprintingComponent implements OnInit {
+  
+  medicine_Bill_Id : number;
 
   constructor(public pharmacybillService : PharmacybillService,
-    private router : Router,
+    private route : ActivatedRoute,
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
+
+    this.medicine_Bill_Id = this.route.snapshot.params['Medicine_Bill_Id'];
+
+    this.pharmacybillService.bindListPharmacyBillPrint(this.medicine_Bill_Id);
+    this.onSubmit()
+    
   }
+  //submit form 
+  onSubmit(){
+    var GrandTotal : any;
+    const str = this.pharmacybillService.pharmbillprint
+
+      console.log(str);
+  }
+
 
 }

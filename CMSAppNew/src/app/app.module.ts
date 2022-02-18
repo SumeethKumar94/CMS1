@@ -48,9 +48,7 @@ import { AppointmentService } from './shared/appointment.service';
 import { BillingComponent } from './billing/billing.component';
 import { PharmacyBillingComponent } from './billing/pharmacy-billing/pharmacy-billing.component';
 import { ReceptionComponent } from './billing/reception/reception.component';
-import { PharmacybillprintingComponent } from './pharmacy/pharmacybillprinting/pharmacybillprinting.component';
-
-
+import { PharmacybillprintingComponent } from './pharmacist/pharmacybillprinting/pharmacybillprinting.component';
 @NgModule({
   declarations: [
     AppComponent,

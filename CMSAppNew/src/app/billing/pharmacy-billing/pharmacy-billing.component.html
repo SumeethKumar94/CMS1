@@ -1,3 +1,5 @@
+<app-pharmacistnav></app-pharmacistnav>
+
 <div class="header">
     <div class="form-control">
         <!--Search functionality-->
@@ -42,9 +44,8 @@
                 </td>
                 <td>{{emp.GrandTotal}}</td>
                 <td>
-                    <button class="btn btn-sm btn-info" (click)="updatePostById(emp.PostId)"> Edit </button>
+                    <button class="btn btn-sm btn-info" (click)="PrintBill(emp.Medicine_Bill_Id)"> Print Bill </button>
                     &nbsp;
-                    <button class="btn btn-sm btn-outline-danger" (click)="deletePost(emp.PostId)"> X </button>
                 </td>
             </tr>
         </tbody>
