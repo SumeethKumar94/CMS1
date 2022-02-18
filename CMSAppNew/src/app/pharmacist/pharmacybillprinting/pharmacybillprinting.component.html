@@ -2,7 +2,7 @@
     <div class="card" *ngFor = "let emp of pharmacybillService.pharmbillprint">
         <div class="card-header">
            <p id="billingId">
-               <span id="billId">Billing Id : &nbsp; {{emp.Medicine_Bill_Id}}</span>       
+               <span id="billId">Billing Id : &nbsp;</span> <span id="billIdData"> {{emp.Medicine_Bill_Id}} </span>       
                <span id="date">Date : &nbsp; {{emp.BillDate}}</span>
             </p>
         </div>
