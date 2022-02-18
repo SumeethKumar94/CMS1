@@ -16,7 +16,8 @@ import { PatientListComponent } from './patients/patient-list/patient-list.compo
 import { AppointmentComponent } from './appointments/appointment/appointment.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { LabtestComponent } from './labtests/labtest/labtest.component';
-import { AdminNavComponent } from './admin/admin-nav/admin-nav.component'
+import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
+import { LabreportComponent } from './labtests/labreport/labreport.component';
 import { AppointmentlistComponent } from './appointments/appointmentlist/appointmentlist.component';
 import { LabtechnicianComponent } from './labtechnician/labtechnician.component';
 import { PharmacistComponent } from './pharmacist/pharmacist.component';
@@ -50,6 +51,7 @@ const routes: Routes = [
   {path:'staff/:StaffId',component:StaffComponent},
   {path:'adminnav',component:AdminNavComponent},
   {path:'medicinelist',component:MedicineListComponent},
+  {path:'labreport',component:LabreportComponent},
   {path:'appointmentlist',component:AppointmentlistComponent},
   {path:'pharmacist', component:PharmacistComponent},
   {path:'labtechnician', component:LabtechnicianComponent},
@@ -57,7 +59,6 @@ const routes: Routes = [
   {path:'pharmacybilling',component:PharmacyBillingComponent},
   {path:'doctorappointmentlist', component:DoctorappointmentlistComponent},
   {path:'doctorappointmentlist/:DoctorId', component:DoctorappointmentlistComponent},
-  {path:'receptionbilling',component:ReceptionComponent}
 ];
 
 @NgModule({

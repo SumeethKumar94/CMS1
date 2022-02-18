@@ -38,6 +38,8 @@ import { LabtechnicianComponent } from './labtechnician/labtechnician.component'
 import { LabtechnavComponent } from './labtechnician/labtechnav/labtechnav.component';
 import { DoctornavComponent } from './doctor/doctornav/doctornav.component';
 import { ReceptionistnavComponent } from './receptionist/receptionistnav/receptionistnav.component';
+import { LabreportComponent } from './labtests/labreport/labreport.component';
+import { AddreportComponent } from './labtests/addreport/addreport.component';
 import { PrescriptionlabListComponent } from './doctor/prescriptionlab-list/prescriptionlab-list.component';
 import { PharmacistComponent } from './pharmacist/pharmacist.component';
 import { PharmacistnavComponent } from './pharmacist/pharmacistnav/pharmacistnav.component';
@@ -78,6 +80,8 @@ import { PharmacybillprintingComponent } from './pharmacy/pharmacybillprinting/p
     LabtechnavComponent,
     DoctornavComponent,
     ReceptionistnavComponent,
+    LabreportComponent,
+    AddreportComponent,
     PrescriptionlabListComponent,
     PharmacistComponent,
     PharmacistnavComponent,

@@ -32,7 +32,7 @@ export class PatientService {
   getPatientById(id: number): Observable<any> {
     return this.httpClient.get(environment.apiUrl + '/api/patient/' + id);
   }
-  //insert patient by id
+  //insert patient 
   insertPatient(patient: Patient): Observable<any> {
     return this.httpClient.post(environment.apiUrl + '/api/patient', patient);
   }
