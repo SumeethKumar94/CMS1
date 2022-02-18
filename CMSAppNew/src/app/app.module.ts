@@ -48,7 +48,7 @@ import { AppointmentService } from './shared/appointment.service';
 import { BillingComponent } from './billing/billing.component';
 import { PharmacyBillingComponent } from './billing/pharmacy-billing/pharmacy-billing.component';
 import { ReceptionComponent } from './billing/reception/reception.component';
-
+import { AllappointemntsComponent } from './appointments/allappointemnts/allappointemnts.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +88,9 @@ import { ReceptionComponent } from './billing/reception/reception.component';
     BillingComponent,
     PharmacyBillingComponent,
     ReceptionComponent,
-    PharmacyBillingComponent
+    PharmacyBillingComponent,
+    AllappointemntsComponent,
+   
   ],
   imports: [
     BrowserModule,
