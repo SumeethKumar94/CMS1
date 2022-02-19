@@ -30,17 +30,14 @@ export class PrescribeComponent implements OnInit {
         result => {
           console.log("Retrieving get By Id");
           console.log(result);
-          this.prescService.formData2 = Object.assign({}, result);
+          this.prescService.formData2 = Object.assign({}, result[0]);
         },
         error => {
           console.log(error);
         }
       ); 
     
-    let idd = this.prescService.formData2.AppointmentId;
-    let iddd = this.prescService.formData2.PatientName;
-    console.log( "Retrieved ID ::: "+idd);
-    console.log( "Retrieved Name ::: "+iddd);
+    
   }
   
 
