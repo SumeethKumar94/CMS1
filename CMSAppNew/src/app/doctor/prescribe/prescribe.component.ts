@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Prescribe } from 'src/app/shared/prescribe';
 import { PrescribeService } from 'src/app/shared/prescribe.service';
 
 @Component({
@@ -12,13 +13,19 @@ import { PrescribeService } from 'src/app/shared/prescribe.service';
 export class PrescribeComponent implements OnInit {
 
   AppointmentId:number =0;
+  reportId:number=0;
+  prescId:number=0;
   constructor(
     private router : Router,
     public prescService:PrescribeService,
     private route: ActivatedRoute,
     private toastrService:ToastrService) { }
 
+  date:Prescribe=new Prescribe();
+
   ngOnInit(): void {
+    this.prescService.getAllMedicine();
+    this.prescService.getAllLabTests();
     this.AppointmentId = this.route.snapshot.params['appId'];
     if (this.AppointmentId != 0 || this.AppointmentId != null) {
       this.prescService.getAppById(this.AppointmentId).subscribe(
@@ -32,6 +39,19 @@ export class PrescribeComponent implements OnInit {
         }
       );
     }
+  }
+
+  addMed(){
+
+  }
+
+  addLab(){
+
+  }
+
+  addDN(){
+    
+    this.router.navigate(['doctorappointmentlist']);
   }
 
   onSubmit(form: NgForm) {
