@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PrescribeService } from 'src/app/shared/prescribe.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class PrescriptionlabListComponent implements OnInit {
   page:number=1;
   filter:string;
 
-  constructor(public prescribeService:PrescribeService) { }
+  constructor(public prescribeService:PrescribeService,
+    private router : Router) { }
 
   ngOnInit(): void {
 
@@ -21,9 +23,8 @@ export class PrescriptionlabListComponent implements OnInit {
   }
 
   //Edit Employee
-  updatePrescription(prescId : number){
-    console.log("Editing : "+prescId);
-    // navigate to edit form
+  updateLabtest(){
+    this.router.navigateByUrl('/labreport')
   }
-
+  
 }
