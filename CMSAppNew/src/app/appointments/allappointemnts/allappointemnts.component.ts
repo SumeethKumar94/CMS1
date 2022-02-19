@@ -33,5 +33,7 @@ export class AllappointemntsComponent implements OnInit {
     console.log(AppointmentId);
     this.router.navigate(['appointment', AppointmentId])
   }
-
+  addAppointment() {
+    this.router.navigate(['addappointment']);
+  }
 }

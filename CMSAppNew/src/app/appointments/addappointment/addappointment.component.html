@@ -5,12 +5,12 @@
  </div>
 <form name="app" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
     <!--Appointment ID Hidden-->
-    <input type="hidden" name="AppointmentId" [(ngModel)]="appServices.formData2.AppointmentId">
+    <input type="hidden" name="AppointmentId" [(ngModel)]="appoService.formData.AppointmentId">
 
     <!--token no-->
     <div class="form-group">
         <label>TokenNo</label>
-        <input type="number" step="1" pattern="\d" name="TokenNo" #TokenNo="ngModel" [(ngModel)]="appServices.formData2.TokenNo"
+        <input type="number" step="1" pattern="\d" name="TokenNo" #TokenNo="ngModel" [(ngModel)]="appoService.formData.TokenNo"
             class="form-control" placeholder="Enter TokenNo" required
             [ngClass]="{'is-invalid': TokenNo.touched && TokenNo.invalid}" />
         <!--Validation-->
@@ -25,7 +25,7 @@
     <div class="form-group">
         <label>DateOfAppointment</label>
         <input type="date" name="DateOfAppointment" #DateOfAppointment="ngModel"
-            [(ngModel)]="appServices.formData2.DateOfAppointment" class="form-control"
+            [(ngModel)]="appoService.formData.DateOfAppointment" class="form-control"
             placeholder="Enter Date Of Appointment" required
             [ngClass]="{'is-invalid': DateOfAppointment.touched && DateOfAppointment.invalid}" />
         <!--Validation-->
@@ -39,7 +39,7 @@
     <!--PatientId-->
     <div class="form-group">
         <label>PatientId</label>
-        <input type="number" step="1" pattern="\d" name="PatientId" #PatientId="ngModel" [(ngModel)]="appServices.formData2.PatientId"
+        <input type="number" step="1" pattern="\d" name="PatientId" #PatientId="ngModel" [(ngModel)]="appoService.formData.PatientId"
             class="form-control" placeholder="Enter PatientId" required
             [ngClass]="{'is-invalid': PatientId.touched && PatientId.invalid}" />
         <!--Validation-->
@@ -50,24 +50,10 @@
             </div>
         </div>
     </div>
-    <!-- PatientName-->
-    <div class="form-group">
-        <label>PatientName: </label>
-        <input type="text" name="PatientName" #PatientName="ngModel" [(ngModel)]="appServices.formData2.PatientName"
-            class="form-control" placeholder="Enter Full Name" required minlength="5" maxlength="25"
-            [ngClass]="{'is-invalid': PatientName.touched && PatientName.invalid}" />
-        <!--Validation-->
-        <div class="validation-error" *ngIf="PatientName.touched && PatientName.invalid">
-
-            <div *ngIf="PatientName.errors.required">
-                Name is required
-            </div>
-        </div>
-    </div>
     <!--DoctorId-->
     <div class="form-group">
         <label>DoctorId</label>
-        <input type="number" step="1" pattern="\d" name="DoctorId" #DoctorId="ngModel" [(ngModel)]="appServices.formData2.DoctorId"
+        <input type="number" step="1" pattern="\d" name="DoctorId" #DoctorId="ngModel" [(ngModel)]="appoService.formData.DoctorId"
             class="form-control" placeholder="Enter DoctorId" required
             [ngClass]="{'is-invalid': DoctorId.touched && DoctorId.invalid}" />
         <!--Validation-->
@@ -82,6 +68,7 @@
      <br>
      <div class="form-group">
          <button type="submit" class="btn btn-lg btn-primary form-control"
-             [disabled]="!(form.valid && form.dirty)">Submit</button>
+             >Submit</button>
      </div>
+     <!-- [disabled]="!(form.valid && form.dirty)" -->
 </form>

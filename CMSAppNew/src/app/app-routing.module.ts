@@ -27,6 +27,7 @@ import { PharmacybillprintingComponent } from './pharmacist/pharmacybillprinting
 import { PharmacyBillingComponent } from './billing/pharmacy-billing/pharmacy-billing.component';
 import { AllappointemntsComponent } from './appointments/allappointemnts/allappointemnts.component';
 import { PrescribeComponent } from './doctor/prescribe/prescribe.component';
+import { AddappointmentComponent } from './appointments/addappointment/addappointment.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -67,7 +68,8 @@ const routes: Routes = [
   {path:'pharmacybillprinting',component:PharmacybillprintingComponent},
   {path:'pharmacybillprinting/:Medicine_Bill_Id',component:PharmacybillprintingComponent},
   {path:'prescribe',component:PrescribeComponent},
-  {path:'prescribe/:appId',component:PrescribeComponent}
+  {path:'prescribe/:appId',component:PrescribeComponent},
+  {path:'addappointment',component:AddappointmentComponent}
 ];
 
 @NgModule({
