@@ -21,14 +21,12 @@ export class PrescribeComponent implements OnInit {
     private route: ActivatedRoute,
     private toastrService:ToastrService) { }
 
-  date:Prescribe=new Prescribe();
-
   ngOnInit(): void {
     this.prescService.getAllMedicine();
     this.prescService.getAllLabTests();
-    this.AppointmentId = this.route.snapshot.params['appId'];
-    if (this.AppointmentId != 0 || this.AppointmentId != null) {
-      this.prescService.getAppById(this.AppointmentId).subscribe(
+    this.AppointmentId = this.route.snapshot.params['AppointmentId'];
+    console.log("AppointmentId : "+this.AppointmentId);
+    this.prescService.getAppById(this.AppointmentId).subscribe(
         result => {
           console.log("Retrieving get By Id");
           console.log(result);
@@ -37,9 +35,14 @@ export class PrescribeComponent implements OnInit {
         error => {
           console.log(error);
         }
-      );
-    }
+      ); 
+    
+    let idd = this.prescService.formData2.AppointmentId;
+    let iddd = this.prescService.formData2.PatientName;
+    console.log( "Retrieved ID ::: "+idd);
+    console.log( "Retrieved Name ::: "+iddd);
   }
+  
 
   addMed(){
 

@@ -68,7 +68,7 @@ const routes: Routes = [
   {path:'pharmacybillprinting',component:PharmacybillprintingComponent},
   {path:'pharmacybillprinting/:Medicine_Bill_Id',component:PharmacybillprintingComponent},
   {path:'prescribe',component:PrescribeComponent},
-  {path:'prescribe/:appId',component:PrescribeComponent},
+  {path:'prescribe/:AppointmentId',component:PrescribeComponent},
   {path:'addappointment',component:AddappointmentComponent}
 ];
 
