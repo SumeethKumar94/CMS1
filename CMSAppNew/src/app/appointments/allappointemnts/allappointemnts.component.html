@@ -13,8 +13,9 @@
                 <th>TokenNo</th>
                 <th>DateOfAppointment</th>
                 <th>PatientId</th>
+                <th>PatientName</th>
                 <th>DoctorId</th>
-                <th>ReceptionistId</th>
+                <th>DoctorName</th>
             </tr>
         </thead>
         <tbody>
@@ -23,11 +24,9 @@
                 <td>{{app.TokenNo}}</td>
                 <td>{{app.DateOfAppointment | date:'dd-MMM-yyyy'}}</td>
                 <td>{{app.PatientId}}</td>
+                <td>{{app.PatientName}}</td>
                 <td>{{app.DoctorId}}</td>
-                <td>{{app.ReceptionistId}}</td>
-                <td>
-                    <button class="btn btn-sm btn-info" (click)="printBill(app.AppointmentId)">print bill</button>
-                </td>
+                <td>{{app.DoctorName}}</td>
             </tr>
         </tbody>
     </table>

@@ -28,7 +28,6 @@ export class AddappointmentComponent implements OnInit {
           var datepipe = new DatePipe("en-UK");
           let formatedDate: any = datepipe.transform(result.StaffDob, 'yyy-MM-dd');
           result.StaffDob = formatedDate;
-
           //asign this result to empService formData
           this.appoService.formData = Object.assign({}, result);
         },
@@ -74,7 +73,7 @@ export class AddappointmentComponent implements OnInit {
         console.log(result);
         //ca;;ing reset form for clear the contents
         this.resetForm(form);
-        this.toastrService.success('Patient Record has been Updated');
+        this.toastrService.success('appointment updated');
       },
       error => {
         console.log(error);
