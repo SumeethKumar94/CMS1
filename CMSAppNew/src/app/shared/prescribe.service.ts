@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Appointment } from './appointment';
 import { Labtests } from './labtests';
 import { Medicine } from './medicine';
+import { Medicines } from './medicines';
 import {Prescribe} from './prescribe';
 
 @Injectable({
@@ -22,7 +23,9 @@ export class PrescribeService {
   formData3 : Medicine = new Medicine();
   labtests : Labtests[];
   formData4 : Labtests =new Labtests();
-
+  medicine : Medicines[]
+  formData5 :Medicines = new Medicines();
+ 
   constructor(private httpClient: HttpClient) { }
 
   ListOfPrescriptions(){
