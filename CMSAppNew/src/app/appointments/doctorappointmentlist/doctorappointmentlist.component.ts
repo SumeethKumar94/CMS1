@@ -24,10 +24,10 @@ export class DoctorappointmentlistComponent implements OnInit {
     this.appointmentService.bindListDoctorAppointments(this.DoctorId)
   }
 
-  prescribe(appId : number){
-    console.log("Editing : "+appId);
+  prescribe(AppointmentId : number){
+    console.log("Editing : "+AppointmentId);
     // navigate to edit form
-    this.router.navigate(['prescribe',appId])
+    this.router.navigate(['prescribe',AppointmentId])
   }
   
   bindListDoctorAppointments(DoctorId:number){
