@@ -22,10 +22,11 @@ export class AppointmentService {
   }
    //geting data
    bindListAppointments() {
-    this.httpClient.get(environment.apiUrl + '/api/appointments')
+    this.httpClient.get(environment.apiUrl + '/api/appointments/get')
       .toPromise().then(
         response => {
           this.appointment = response as Appointment[];
+          console.log(response);
         }
       )
   }
