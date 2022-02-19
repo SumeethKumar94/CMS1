@@ -23,8 +23,11 @@ import { LabtechnicianComponent } from './labtechnician/labtechnician.component'
 import { PharmacistComponent } from './pharmacist/pharmacist.component';
 import { DoctorappointmentlistComponent } from './appointments/doctorappointmentlist/doctorappointmentlist.component';
 import { ReceptionComponent } from './billing/reception/reception.component';
+import { PharmacybillprintingComponent } from './pharmacist/pharmacybillprinting/pharmacybillprinting.component';
 import { PharmacyBillingComponent } from './billing/pharmacy-billing/pharmacy-billing.component';
+import { AllappointemntsComponent } from './appointments/allappointemnts/allappointemnts.component';
 import { PrescribeComponent } from './doctor/prescribe/prescribe.component';
+import { AddappointmentComponent } from './appointments/addappointment/addappointment.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -60,8 +63,13 @@ const routes: Routes = [
   {path:'pharmacybilling',component:PharmacyBillingComponent},
   {path:'doctorappointmentlist', component:DoctorappointmentlistComponent},
   {path:'doctorappointmentlist/:DoctorId', component:DoctorappointmentlistComponent},
+  {path:'allappointments',component:AllappointemntsComponent},
+  {path:'allappointments/:AppointmentId',component:AppointmentComponent},
+  {path:'pharmacybillprinting',component:PharmacybillprintingComponent},
+  {path:'pharmacybillprinting/:Medicine_Bill_Id',component:PharmacybillprintingComponent},
   {path:'prescribe',component:PrescribeComponent},
-  {path:'prescribe/:appId',component:PrescribeComponent}
+  {path:'prescribe/:appId',component:PrescribeComponent},
+  {path:'addappointment',component:AddappointmentComponent}
 ];
 
 @NgModule({
