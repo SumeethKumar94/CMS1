@@ -23,11 +23,14 @@ export class AppService {
   bindListAppointments() {
     this.httpClient.get(environment.apiUrl + '/api/appointments/get')
       .toPromise().then(
+        
         response => {
           this.app = response as App[];
-        }  
+          console.log("sneha");
+        } 
+
       )
-      console.log(this.app)
+     
   }
   //get appointment  by id
   getAppointmentById(id: number): Observable<any> {
