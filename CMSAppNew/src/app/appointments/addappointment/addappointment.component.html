@@ -50,6 +50,20 @@
             </div>
         </div>
     </div>
+    <!-- patientname -->
+    <div class="form-group">
+        <label>PatientName: </label>
+        <input type="text" name="PatientName" #PatientName="ngModel" [(ngModel)]="appoService.formData.PatientName"
+            class="form-control" placeholder="Enter Full Name" required minlength="5" maxlength="25"
+            [ngClass]="{'is-invalid': PatientName.touched && PatientName.invalid}" />
+        <!--Validation-->
+        <div class="validation-error" *ngIf="PatientName.touched && PatientName.invalid">
+
+            <div *ngIf="PatientName.errors.required">
+                Name is required
+            </div>
+        </div>
+    </div>
     <!--DoctorId-->
     <div class="form-group">
         <label>DoctorId</label>
@@ -61,6 +75,20 @@
 
             <div *ngIf="DoctorId.errors.required">
                 DoctorId required
+            </div>
+        </div>
+    </div>
+    <!-- DoctorName -->
+    <div class="form-group">
+        <label>DoctorName: </label>
+        <input type="text" name="DoctorName" #DoctorName="ngModel" [(ngModel)]="appoService.formData.DoctorName"
+            class="form-control" placeholder="Enter Full Name" required minlength="5" maxlength="25"
+            [ngClass]="{'is-invalid': DoctorName.touched && DoctorName.invalid}" />
+        <!--Validation-->
+        <div class="validation-error" *ngIf="DoctorName.touched && DoctorName.invalid">
+
+            <div *ngIf="DoctorName.errors.required">
+                Name is required
             </div>
         </div>
     </div>

@@ -5,4 +5,6 @@ export class App {
     PatientId:number=0;
     DoctorId:number=0;
     ReceptionistId:number=0;
+    PatientName:string='';
+    DoctorName:string='';
 }
