@@ -1,14 +1,14 @@
 <app-doctornav></app-doctornav>
 <h3 style="text-align: center;color: rgb(43, 174, 184);font-weight: bolder;font-size: 1.5em; background-color: aliceblue; padding: .5em;">PRESCRIBE</h3>
 <!-- Template driven form -->
-
-<form name="userform" #form="ngForm" autocomplete="off" style="padding: 50px;padding-top: 0px;padding-bottom: 100px;">
+<div style="padding: 50px;padding-top: 0px;padding-bottom: 100px;">
+<!-- <form name="userform" #form="ngForm" autocomplete="off" style="padding: 50px;padding-top: 0px;padding-bottom: 100px;"></form> -->
  <!-- Appointment Id (Hidden)-->
 <input type = "hidden" name="AppointmentId" [(ngModel)]="prescService.formData2.AppointmentId">
 
 <div class="form-group">
     <label>Patient Name : </label>
-    <input type="text" name="PatientName" 
+    <input type="text" disabled name="PatientName" 
     #PatientName = "ngModel"
     [(ngModel)]="prescService.formData2.PatientName" 
     class="form-control"
@@ -33,11 +33,14 @@
         </select>&nbsp;
         <input type="text" style="margin-top: 10px;width: 4em;" placeholder="Quantity">&nbsp;
         <input type="text" style="margin-top: 10px;width: 4em;" placeholder="Dosage">&nbsp; 
-        <button class="btn btn-info" style="padding-left: 5px;padding-right: 5px;margin-left: 4.5em;" (click)="addMed()">ADD</button>
+        <button class="btn btn-info" style="padding-left: 5px;padding-right: 5px;margin-left: 4.5em;" >ADD</button>
     </div>
+
+
     <div class="col">
-        <label>LAB TEST : </label>&nbsp;
-        <select name="LabTestId" id="LabTestId"
+        <form name="labform" #form="ngForm" autocomplete="off" (ngSubmit)="addLab(form)" style="padding: 50px;padding-top: 0px;padding-bottom: 100px;">
+            <label>LAB TEST : </label>&nbsp;
+            <select name="LabTestId" id="LabTestId"
             class="form-control"
             #LabTestId="ngModel"
             required
@@ -45,15 +48,27 @@
             <option value=0 disabled>Select Lab Test</option>
             <option *ngFor="let med of prescService.labtests" 
             value="{{med.LabTestId}}">{{med.TestName}}</option>
-        </select>
-        <button class="btn btn-info" style="padding-left: 5px;padding-right: 5px;margin-left: 15em;margin-top: 8px;" (click)="addLab()">ADD</button>
+            </select>
+            <button class="btn btn-info" style="padding-left: 5px;padding-right: 5px;margin-left: 15em;margin-top: 8px;">ADD</button>
+        </form>
     </div>
+
+
     <div class="col">
-        <label>NOTES : </label>&nbsp;
-        <input type="text" class="form-control" placeholder="Doctor Notes" style="height: 9em;">
-        <button class="btn btn-info" style="padding-left: 5px;padding-right: 5px;margin-left: 15em;margin-top: 7px;" (click)="addDN()">SAVE</button>
+        <form name="docform" #form="ngForm" autocomplete="off" (ngSubmit)="addDN(form)" style="padding: 50px;padding-top: 0px;padding-bottom: 100px;">
+            <input type = "hidden" name="DoctorNotesId" [(ngModel)]="prescService.formData6.DoctorNotesId">
+            <input type = "hidden" name="AppointmentId" [(ngModel)]="prescService.formData2.AppointmentId">
+            <label>NOTES : </label>&nbsp;
+            <input type="text" class="form-control" placeholder="Doctor Notes" 
+            name="Notes"
+            #Notes="ngModel"
+            [(ngModel)]="prescService.formData6.Notes"
+            style="height: 9em;">
+            <button type="submit" class="btn btn-info" style="padding-left: 5px;padding-right: 5px;margin-left: 15em;margin-top: 7px;">SAVE</button>
+        </form>
     </div>
+
 </div>
-  
+</div>  
     
     

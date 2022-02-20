@@ -41,26 +41,35 @@ export class PrescribeComponent implements OnInit {
   }
   
 
-  addMed(){
-
-  }
-
-  addLab(){
-
-  }
-
-  addDN(){
-    
-    this.router.navigate(['doctorappointmentlist']);
-  }
-
-  onSubmit(form: NgForm) {
+  addMed(form: NgForm){
     console.log(form.value);
-  
-    
-    // this.insertLabRecord(form);
-    
-  }//end OnSubmit
+  }
+
+  addLab(form: NgForm){
+    console.log(form.value);
+  }
+
+  addDN(form: NgForm) {
+    console.log(form.value);
+    console.log("Inserting Doctor Notes");
+    this.prescService.insertDoctorNotes(form.value).subscribe(
+    (result) => {
+      console.log(result);
+      this.resetForm(form);
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+    // this.router.navigate(['appointmentlist']);
+  }
+
+  //clear all contents after submit -- Intialization
+resetForm(form?: NgForm) {
+  if (form != null) {
+    form.resetForm();
+  }
+}//end ResetForm
 
 }
 
