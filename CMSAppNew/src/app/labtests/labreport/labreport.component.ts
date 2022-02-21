@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {LabreportService} from 'src/app/shared/labreport.service'
 import { LabtestsService } from 'src/app/shared/labtests.service';
 
@@ -11,6 +12,7 @@ export class LabreportComponent implements OnInit {
   toastrService: any;
 
   constructor(
+    public router:Router,
     public lrservice: LabreportService,
     public labtestService : LabtestsService
     ) { }
@@ -20,5 +22,10 @@ export class LabreportComponent implements OnInit {
     this.lrservice. bindListLabReport();
 
   }
+  LabReportById(ReportId:number){
+    console.log("lab report corresponding to the id : "+ReportId);
+    // navigate to edit form
+    this.router.navigate(['labreportform',ReportId])
 
+}
 }

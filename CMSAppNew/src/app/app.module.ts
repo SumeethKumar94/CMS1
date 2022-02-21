@@ -50,6 +50,8 @@ import { ReceptionComponent } from './billing/reception/reception.component';
 import { AllappointemntsComponent } from './appointments/allappointemnts/allappointemnts.component';
 import { PharmacybillprintingComponent } from './pharmacist/pharmacybillprinting/pharmacybillprinting.component';
 import { PharmacyBillingComponent} from './billing/pharmacy-billing/pharmacy-billing.component';
+import { LabreportformComponent } from './labtechnician/labreportform/labreportform.component';
+import { UpdatereportComponent } from './labtechnician/updatereport/updatereport.component';
 import { PrescribeComponent } from './doctor/prescribe/prescribe.component';
 import { AddappointmentComponent } from './appointments/addappointment/addappointment.component';
 import { DepartmentComponent } from './department/department.component';
@@ -95,6 +97,8 @@ import { DepartmentListComponent } from './department/department-list/department
     PharmacyBillingComponent,
     ReceptionComponent,
     PharmacyBillingComponent,
+    LabreportformComponent,
+    UpdatereportComponent,
     AllappointemntsComponent,
    
     PrescribeComponent,

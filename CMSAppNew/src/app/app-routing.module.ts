@@ -25,6 +25,8 @@ import { DoctorappointmentlistComponent } from './appointments/doctorappointment
 import { ReceptionComponent } from './billing/reception/reception.component';
 import { PharmacybillprintingComponent } from './pharmacist/pharmacybillprinting/pharmacybillprinting.component';
 import { PharmacyBillingComponent } from './billing/pharmacy-billing/pharmacy-billing.component';
+import { LabreportformComponent } from './labtechnician/labreportform/labreportform.component';
+import { UpdatereportComponent } from './labtechnician/updatereport/updatereport.component';
 import { AllappointemntsComponent } from './appointments/allappointemnts/allappointemnts.component';
 import { PrescribeComponent } from './doctor/prescribe/prescribe.component';
 import { AddappointmentComponent } from './appointments/addappointment/addappointment.component';
@@ -65,6 +67,9 @@ const routes: Routes = [
   {path:'pharmacybilling',component:PharmacyBillingComponent},
   {path:'doctorappointmentlist', component:DoctorappointmentlistComponent},
   {path:'doctorappointmentlist/:DoctorId', component:DoctorappointmentlistComponent},
+  {path:'labreportform/:ReportId',component:LabreportformComponent},
+  {path:'updatereport',component:UpdatereportComponent},
+  {path:'updatereport/:TestId',component:UpdatereportComponent},
   {path:'allappointments',component:AllappointemntsComponent},
   {path:'allappointments/:AppointmentId',component:AppointmentComponent},
   {path:'pharmacybillprinting',component:PharmacybillprintingComponent},
