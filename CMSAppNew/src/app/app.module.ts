@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { StaffsComponent } from './staffs/staffs.component';
 import { StaffComponent } from './staffs/staff/staff.component';
 import { StaffListComponent } from './staffs/staff-list/staff-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PrescribeService } from './shared/prescribe.service';
 import { StaffService } from './shared/staff.service';
 import { PatientService } from './shared/patient.service';
@@ -57,6 +57,7 @@ import { AddappointmentComponent } from './appointments/addappointment/addappoin
 import { DepartmentComponent } from './department/department.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { HomeComponent } from './home/home.component';
+import {AuthInterceptor} from './shared/auth.interceptor';
 
 
 @NgModule({
@@ -120,7 +121,14 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot()
   ],
-  providers: [MedicineService,LabtestsService, PrescribeService,StaffService,PatientService,AppointmentService],
+  providers: [MedicineService,LabtestsService, PrescribeService,StaffService,PatientService,AppointmentService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi:true
+  }
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
