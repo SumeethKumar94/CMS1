@@ -16,6 +16,7 @@
             <tr>
                 <th>Prescription Id</th>
                 <th>PrescriptionDate</th>
+                <th>ReportId</th>
                 <th>PatientName</th>
                 <th>Lab Tests</th>
                 <th></th>
@@ -25,11 +26,12 @@
             <tr *ngFor="let lb of prescribeService.prescribe | filter:filter | paginate: {itemsPerPage:4,currentPage:page}">
                 <td>{{lb.PrescriptionId}}</td>
                 <td>{{lb.PrescriptionDate | date:'dd-MM-yyyy'}}</td>
+                <td>{{ReportId}}</td>
                 <td>{{lb.PatientName}}</td>
                 <td>{{lb.LabTests}}</td>
                 <td>
                     <button class="btn btn-sm btn-info" (click)="LabReportById(lb.ReportId)">REPORT</button>&nbsp;
-                   
+                    
                 </td>
             </tr>
         </tbody>

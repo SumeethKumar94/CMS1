@@ -4,14 +4,14 @@
 
             <!--Search functionality-->
             <input class="form-control" type="text" placeholder="Search here.." [(ngModel)]="filter">
-            {{filter}}
+            
             <!--Property Binding-->
             
     </div>
     
 </div>
 <div style="margin: 1.5em;overflow: scroll;background-color: aliceblue;">
-    <a [routerLink]="" class="btn btn-outline-secondary" style="float: right;margin-top: 15px;margin-bottom: 10px;" (click)="addLabtest()">Add Lab Tests</a>
+    <a [routerLink]="" class="btn-sm btn-info" style="float: right;margin-top: 15px;margin-bottom: 10px;" (click)="addLabtest()">Add Lab Tests</a>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -31,8 +31,8 @@
                 <td>{{lb.TestDesc}}</td>
                 <td>{{lb.TestPrice}}</td>
                 <td>
-                    <button class="btn btn-sm btn-outline-info" (click)="updateLabtest(lb.LabTestId)">Edit</button>&nbsp;
-                    <button class="btn btn-sm btn-danger" (click)="deleteLabtest(lb.LabTestId)">Delete</button>
+                    <button class=" btn-sm btn-info" (click)="updateLabtest(lb.LabTestId)">Edit</button>&nbsp;
+                    <!-- <button class="btn-sm btn-danger" (click)="deleteLabtest(lb.LabTestId)">Delete</button> -->
                 </td>
             </tr>
         </tbody>

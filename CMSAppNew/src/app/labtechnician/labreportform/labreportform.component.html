@@ -1,4 +1,4 @@
-<app-receptionistnav></app-receptionistnav>
+<app-labtechnav></app-labtechnav>
 <div class="header" style="background-color: aliceblue;">
     <div style="margin: 25px;">
 
@@ -44,7 +44,7 @@
                     
                     <div *ngFor="let st of str.Tests ">
                         <td >  {{st.TestName}}<br>{{st.Result}}<br>{{st.TestId}}
-                            <button class="btn btn-sm btn-outline-info" style="margin-left: 10em;" (click)="getTestById(st.TestId)">Edit</button>
+                            <button class="btn btn-sm btn-info" style="margin-left: 10em;" (click)="getTestById(st.TestId)">Edit</button>
                         </td>
                    </div>
                   <td>

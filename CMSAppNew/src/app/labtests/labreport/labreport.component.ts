@@ -10,6 +10,7 @@ import { LabtestsService } from 'src/app/shared/labtests.service';
 })
 export class LabreportComponent implements OnInit {
   toastrService: any;
+  filter:string;
 
   constructor(
     public router:Router,

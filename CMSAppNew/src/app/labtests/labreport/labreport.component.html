@@ -1,4 +1,8 @@
 <app-labtechnav></app-labtechnav>
+<div class="header" style="background-color: aliceblue;">
+    <div style="margin: 25px;">
+<!-- <input class="form-control" type="text" placeholder="Search here.." [(ngModel)]="filter"> -->
+    </div>
 <div style="margin: 1.5em;overflow: scroll;background-color: aliceblue;">
     <table class="table table-bordered table-striped">
         <thead>
@@ -6,10 +10,12 @@
                 <th>ReportId</th>
                 <th>ReportDate</th>
                 <th>Doctor</th>
+                
                 <th>AppointmentId</th>
                 <th>Patient</th>
-                <th>BloodGroup</th>
-                <th>PhnNo</th>
+                
+                <!-- <th>BloodGroup</th>
+                <th>PhnNo</th> -->
                 
                 <th></th>
             </tr>            
@@ -17,14 +23,15 @@
         <tbody>
             <tr *ngFor="let lr of lrservice.reports ">
                 <td>{{lr.ReportId}}</td>
-                <td>{{lr.ReportDate}}</td>
+                <td>{{lr.ReportDate | date:'dd-MMM-yyyy'}}</td>
                 <td>{{lr.Doctor}}</td>
+               
                 <td>{{lr.AppointmentId}}</td>
                 <td>{{lr.Patient}}</td>
-                <td>{{lr.BloodGroup}}</td>
-                <td>{{lr.PhnNo}}</td>
+                <!-- <td>{{lr.BloodGroup}}</td>
+                <td>{{lr.PhnNo}}</td> -->
                 <td>
-                    <button class="btn btn-sm btn-outline-info" (click)="LabReportById(lr.ReportId)">Edit</button>
+                    <button class="btn btn-sm btn-info" (click)="LabReportById(lr.ReportId)">View Report</button>
                 </td>
                 <!-- <td *ngFor="let str of lr.Tests" >TestName:{{str.TestName}} <br>Result:{{str.Result}}</td>
                 <td>{{lr.AppointmentId}}</td>
