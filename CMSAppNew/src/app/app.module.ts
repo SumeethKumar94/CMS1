@@ -94,7 +94,6 @@ import { AddappointmentComponent } from './appointments/addappointment/addappoin
     ReceptionComponent,
     PharmacyBillingComponent,
     AllappointemntsComponent,
-   
     PrescribeComponent,
     PharmacybillprintingComponent,
     AddappointmentComponent
