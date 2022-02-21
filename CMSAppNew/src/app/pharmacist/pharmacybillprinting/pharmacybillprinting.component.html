@@ -6,7 +6,7 @@
                     <span id="billId">Billing Id : &nbsp;</span>
                     <span id="billIdData"> {{ emp.PrescriptionId }} </span>
                     <br>
-                    <span id="date">Date : &nbsp; {{ emp.Date }}</span>
+                    <span id="date">Date : &nbsp; {{ emp.Date | date:'dd-MMM-yyyy' }}</span>
                 </p>
             </div>
             <div class="card-body">

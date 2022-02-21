@@ -29,20 +29,23 @@
 
             <tr *ngFor= "let emp of pharmacybillService.pharmacyBill |filter: filter | paginate :{ itemsPerPage: 4, currentPage: page}">
                 <td>{{emp.PrescriptionId}}</td>
-                <td>{{emp.Date}}</td>
+                <td>{{emp.Date | date:'dd-MMM-yyyy'}}</td>
                 <td>{{emp.PatientName}}</td>
                 <td>{{emp.PatientId}}</td>
                 <td>{{emp.DoctorId}}</td>
-                <td *ngFor = "let str of emp.Medicine">
-                    Medicine Name : {{str.MedicineName}}
-                    <br>
-                Medicine Quantity : {{str.MedQty}}
-                <br>
-                Medicine Price : {{str.MedPrice}}
-                <br>
-                Total : {{str.Total}}
-                </td>
-                <td>{{emp.GrandTotal}}</td>
+                <div  *ngFor = "let str of emp.Medicine">
+
+                    <td>
+                        Medicine Name : {{str.MedicineName}}
+                        <br>
+                        Medicine Quantity : {{str.MedQty}}
+                        <br>
+                        Medicine Price : {{str.MedPrice}}
+                        <br>
+                        Total : {{str.Total}}
+                    </td>
+                </div>
+                
                 <td>
                     <button class="btn btn-sm btn-info" (click)="PrintBill(emp.PrescriptionId)"> Print Bill </button>
                     &nbsp;
