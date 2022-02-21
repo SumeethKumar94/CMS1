@@ -33,6 +33,8 @@ import { AddappointmentComponent } from './appointments/addappointment/addappoin
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { DepartmentComponent } from './department/department.component';
 import{AuthGuard}from './shared/auth.guard'
+import { HomeComponent } from './home/home.component';
+
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -76,11 +78,14 @@ const routes: Routes = [
   {path:'pharmacybillprinting',component:PharmacybillprintingComponent},
   {path:'pharmacybillprinting/:Medicine_Bill_Id',component:PharmacybillprintingComponent},
   {path:'prescribe',component:PrescribeComponent,canActivate:[AuthGuard],data:{role : 2}},
+  {path:'pharmacybillprinting/:PrescriptionId',component:PharmacybillprintingComponent},
+  {path:'prescribe',component:PrescribeComponent},
   {path:'prescribe/:AppointmentId',component:PrescribeComponent},
   {path:'addappointment',component:AddappointmentComponent},
   {path:'departmentlist',component:DepartmentListComponent},
   {path:'department',component:DepartmentComponent},
-  {path:'department/:RoleId',component:DepartmentComponent}
+  {path:'department/:RoleId',component:DepartmentComponent},
+  {path:'home',component:HomeComponent}
 ];
 
 @NgModule({

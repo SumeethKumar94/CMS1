@@ -9,8 +9,8 @@
     <!--token no-->
     <div class="form-group">
         <label>TokenNo</label>
-        <input type="number" step="1" pattern="\d" name="TokenNo" #TokenNo="ngModel" [(ngModel)]="appService.formData.TokenNo"
-            class="form-control" placeholder="Enter TokenNo" required
+        <input type="text" pattern="^([1-9]|[1-2][0-9]|3[0-2])$" name="TokenNo" #TokenNo="ngModel" [(ngModel)]="appService.formData.TokenNo"
+            class="form-control" placeholder="Enter TokenNo" required 
             [ngClass]="{'is-invalid': TokenNo.touched && TokenNo.invalid}" />
         <!--Validation-->
         <div class="validation-error" *ngIf="TokenNo.touched && TokenNo.invalid">

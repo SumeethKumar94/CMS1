@@ -68,8 +68,9 @@ export class LoginComponent implements OnInit {
             console.log("Doctor");
             localStorage.setItem("UserName",this.loginUser.Name);
             localStorage.setItem("ACESSROLE",this.loginUser.RoleId);
+            localStorage.setItem("StaffId",this.loginUser.StaffId);
             sessionStorage.setItem("USERNAME",this.loginUser.Name);
-            this.router.navigateByUrl('/doctor');
+            this.router.navigateByUrl('/doctorappointmentlist');
           }
           else if(this.loginUser.RoleId === 4){
             console.log("pharmacist");
@@ -78,7 +79,6 @@ export class LoginComponent implements OnInit {
             sessionStorage.setItem("USERNAME",this.loginUser.Name);
             this.router.navigateByUrl('/pharmacist');
           }
-         
           else if(this.loginUser.RoleId === 3){
             console.log("labtechnician");
             localStorage.setItem("UserName",this.loginUser.Name);
