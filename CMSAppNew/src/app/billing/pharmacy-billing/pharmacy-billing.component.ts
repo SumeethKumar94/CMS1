@@ -19,9 +19,9 @@ export class PharmacyBillingComponent implements OnInit {
   }
 
   //print Bill
-  PrintBill(Medicine_Bill_Id : number){
-    console.log(Medicine_Bill_Id);
-    this.router.navigate(['pharmacybillprinting',Medicine_Bill_Id])
+  PrintBill(PrescriptionId : number){
+    console.log(PrescriptionId);
+    this.router.navigate(['pharmacybillprinting',PrescriptionId])
   }
 
 }
