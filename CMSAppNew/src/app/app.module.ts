@@ -57,6 +57,7 @@ import { AddappointmentComponent } from './appointments/addappointment/addappoin
 import { DepartmentComponent } from './department/department.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -106,7 +107,8 @@ import { HomeComponent } from './home/home.component';
     AddappointmentComponent,
     DepartmentComponent,
     DepartmentListComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
     
   ],
   imports: [

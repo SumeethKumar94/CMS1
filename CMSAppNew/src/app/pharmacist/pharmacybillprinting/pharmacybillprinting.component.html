@@ -18,7 +18,7 @@
                 <div class="card-text" *ngFor="let str of emp.Medicine">
                     <p>Medicine Name : &nbsp; {{ str.MedicineName }}</p>
                     <p>Medicine Quantity : &nbsp; {{ str.MedQty }}</p>
-                    <p>Medicine Price : &nbsp; {{ str.MedPrice }}</p>
+                    <p>Medicine Price : &nbsp; {{ str.UnitPrice }}</p>
                     <input type="number" disabled value="{{ str.Total }}" />
                 </div>
                 <label for=""> GrandTotal</label>
@@ -29,3 +29,5 @@
     </div>
     <button class="btn btn-success" (click)="Screen()">Print Bill</button>
 </div>
+
+<app-footer></app-footer>
