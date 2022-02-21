@@ -34,6 +34,8 @@ bindListMedicines(){
 
   }
 
+  
+
 
   //insert
   insertMedicine(medicine:Medicine):Observable<any>{

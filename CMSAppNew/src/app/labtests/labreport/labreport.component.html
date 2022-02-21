@@ -6,11 +6,12 @@
                 <th>ReportId</th>
                 <th>ReportDate</th>
                 <th>Doctor</th>
+                <th>AppointmentId</th>
                 <th>Patient</th>
                 <th>BloodGroup</th>
                 <th>PhnNo</th>
-                <th>AppointmentId</th>
-                <th>Tests</th>
+                
+                <th></th>
             </tr>            
         </thead>
         <tbody>
@@ -18,14 +19,19 @@
                 <td>{{lr.ReportId}}</td>
                 <td>{{lr.ReportDate}}</td>
                 <td>{{lr.Doctor}}</td>
+                <td>{{lr.AppointmentId}}</td>
                 <td>{{lr.Patient}}</td>
                 <td>{{lr.BloodGroup}}</td>
                 <td>{{lr.PhnNo}}</td>
+                <td>
+                    <button class="btn btn-sm btn-outline-info" (click)="LabReportById(lr.ReportId)">Edit</button>
+                </td>
+                <!-- <td *ngFor="let str of lr.Tests" >TestName:{{str.TestName}} <br>Result:{{str.Result}}</td>
                 <td>{{lr.AppointmentId}}</td>
                 <td *ngFor="let str of lr.Tests" >TestName:{{str.TestName}} <br>Result:{{str.Result}}</td>
                 <td>
                     <button class="btn btn-sm btn-info" (click)="printbill(lr.ReportId)">PrintReport</button>
-                </td>
+                </td> -->
             </tr>
         </tbody>
     </table>
