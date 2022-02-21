@@ -100,7 +100,6 @@ import { DepartmentListComponent } from './department/department-list/department
     LabreportformComponent,
     UpdatereportComponent,
     AllappointemntsComponent,
-   
     PrescribeComponent,
     PharmacybillprintingComponent,
     AddappointmentComponent,
