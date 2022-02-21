@@ -26,8 +26,8 @@ export class PatientComponent implements OnInit {
         result => {
           console.log(result);
           var datepipe = new DatePipe("en-UK");
-          let formatedDate: any = datepipe.transform(result.StaffDob, 'yyy-MM-dd');
-          result.StaffDob = formatedDate;
+          let formatedDate: any = datepipe.transform(result.PatientDob, 'yyy-MM-dd');
+          result.PatientDob = formatedDate;
 
           //asign this result to empService formData
           this.patientService.formData = Object.assign({}, result);

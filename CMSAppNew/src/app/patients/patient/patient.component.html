@@ -6,7 +6,7 @@
     <!-- PatientName-->
     <div class="form-group">
         <label>Full Name : </label>
-        <input type="text" name="PatientName" #PatientName="ngModel" [(ngModel)]="patientService.formData.PatientName"
+        <input type="text" name="PatientName" pattern="[A-Za-z]+" #PatientName="ngModel" [(ngModel)]="patientService.formData.PatientName"
             class="form-control" placeholder="Enter Full Name" required minlength="5" maxlength="25"
             [ngClass]="{'is-invalid': PatientName.touched && PatientName.invalid}" />
         <!--Validation-->
@@ -56,7 +56,7 @@
     <!--Contact-->
     <div class="form-group">
         <label>PatientPhoneNo: </label>
-        <input type="text" name="PatientPhoneNo" #PatientPhoneNo="ngModel"
+        <input type="text" step="1" pattern="\d" name="PatientPhoneNo" #PatientPhoneNo="ngModel"
             [(ngModel)]="patientService.formData.PatientPhoneNo" class="form-control" placeholder="Enter Contact"
             required minlength="10" maxlength="10"
             [ngClass]="{'is-invalid': PatientPhoneNo.touched && PatientPhoneNo.invalid}" />
