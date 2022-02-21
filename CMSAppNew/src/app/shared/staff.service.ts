@@ -13,6 +13,7 @@ export class StaffService {
   staffs : Staff[];
   department : Department[];
   formData : Staff = new Staff();
+  dformData : Department = new Department();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -62,6 +63,21 @@ export class StaffService {
   //insert employee 
   insertStaff(staff :Staff): Observable<any>{
     return this.httpClient.post(environment.apiUrl+'/api/staff/addstaff',staff);
+  }
+
+  //update Roles
+  updateRole(department : Department): Observable<any>{
+    return this.httpClient.put(environment.apiUrl+'/api/roles/updatedepartment',department)
+  }
+
+  //add ROles
+  insertRole(department:Department): Observable<any>{
+    return this.httpClient.post(environment.apiUrl+'/api/roles/updatedepartment',department)
+  }
+
+  //get role by Id 
+  getRolebyId(id : number): Observable<any>{
+    return this.httpClient.get(environment.apiUrl+'/api/roles/'+id)
   }
 }
   

@@ -1,0 +1,23 @@
+<form name ="empform" #form="ngForm" autocomplete="off" (ngSubmit) = "onSubmit(form)" id="page">
+    <!--Employee ID Hidden-->
+    <input type="hidden" name="RoleId" [(ngModel)] = "staffService.dformData.RoleId" >
+
+    <!-- Employee Name-->
+    <div class="form-group">
+        <label>Department Name :  </label>
+        <input type="text" name = "RoleName"
+        #RoleName = "ngModel"
+        [(ngModel)] = "staffService.dformData.RoleName"
+        class="form-control"
+        placeholder="Enter new Department Name"
+        required minlength="5" maxlength="25"
+        pattern="[A-Za-z]"
+        [ngClass] = "{'is-invalid': RoleName.touched && RoleName.invalid}"/>
+        <!--Validation-->
+        <div class="validation-error" *ngIf = "RoleName.touched && RoleName.invalid">
+           
+            <div *ngIf = "RoleName.errors.required">
+                Department name is required
+            </div>
+        </div>
+    </div>

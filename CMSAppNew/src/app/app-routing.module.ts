@@ -25,9 +25,13 @@ import { DoctorappointmentlistComponent } from './appointments/doctorappointment
 import { ReceptionComponent } from './billing/reception/reception.component';
 import { PharmacybillprintingComponent } from './pharmacist/pharmacybillprinting/pharmacybillprinting.component';
 import { PharmacyBillingComponent } from './billing/pharmacy-billing/pharmacy-billing.component';
+import { LabreportformComponent } from './labtechnician/labreportform/labreportform.component';
+import { UpdatereportComponent } from './labtechnician/updatereport/updatereport.component';
 import { AllappointemntsComponent } from './appointments/allappointemnts/allappointemnts.component';
 import { PrescribeComponent } from './doctor/prescribe/prescribe.component';
 import { AddappointmentComponent } from './appointments/addappointment/addappointment.component';
+import { DepartmentListComponent } from './department/department-list/department-list.component';
+import { DepartmentComponent } from './department/department.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -63,13 +67,19 @@ const routes: Routes = [
   {path:'pharmacybilling',component:PharmacyBillingComponent},
   {path:'doctorappointmentlist', component:DoctorappointmentlistComponent},
   {path:'doctorappointmentlist/:DoctorId', component:DoctorappointmentlistComponent},
+  {path:'labreportform/:ReportId',component:LabreportformComponent},
+  {path:'updatereport',component:UpdatereportComponent},
+  {path:'updatereport/:TestId',component:UpdatereportComponent},
   {path:'allappointments',component:AllappointemntsComponent},
   {path:'allappointments/:AppointmentId',component:AppointmentComponent},
   {path:'pharmacybillprinting',component:PharmacybillprintingComponent},
   {path:'pharmacybillprinting/:Medicine_Bill_Id',component:PharmacybillprintingComponent},
   {path:'prescribe',component:PrescribeComponent},
   {path:'prescribe/:AppointmentId',component:PrescribeComponent},
-  {path:'addappointment',component:AddappointmentComponent}
+  {path:'addappointment',component:AddappointmentComponent},
+  {path:'departmentlist',component:DepartmentListComponent},
+  {path:'department',component:DepartmentComponent},
+  {path:'department/:RoleId',component:DepartmentComponent}
 ];
 
 @NgModule({

@@ -10,7 +10,7 @@
     <div class="form-group">
         <label>Full Name :  </label>
         <input type="text" name = "StaffName"
-        pattern="[A-Za-z]+"
+        pattern="^[A-Za-z]+"
         #StaffName = "ngModel"
         [(ngModel)] = "staffService.formData.StaffName"
         class="form-control"
@@ -56,7 +56,7 @@
         [(ngModel)] = "staffService.formData.StaffDob"
         class="form-control"
         placeholder="Select a designation"
-        required minlength="5" max="2022-20-02"
+         max="2022-20-02"
         [ngClass] = "{'is-invalid': StaffDob.touched && StaffDob.invalid}"/>
         <!--Validation-->
         <div class="validation-error" *ngIf = "StaffDob.touched && StaffDob.invalid">
@@ -70,14 +70,16 @@
     <!--Contact-->
     <div class="form-group">
         <label>Phone Number :  </label>
-        <input type="number" name = "Phone"
+        <input type="text" name = "Phone"
         #Phone = "ngModel"
         [(ngModel)] = "staffService.formData.Phone"
         class="form-control"
         placeholder="Enter 10 digit mobile number"
-        required minlength="10" maxlength="10"
+        required 
+        minlength="10"
+        maxlength="10"
         [ngClass] = "{'is-invalid': Phone.touched && Phone.invalid}" 
-        pattern="[0-9]+"/>
+        pattern="\d+"/>
         <!--Validation-->
         <div class="validation-error" *ngIf = "Phone.touched && Phone.invalid">
            
@@ -90,7 +92,7 @@
     <!--Passwoed-->
     <div class="form-group">
         <label>Password :  </label>
-        <input type="text" name = "StaffPassword"
+        <input type="password" name = "StaffPassword"
         #StaffPassword = "ngModel"
         [(ngModel)] = "staffService.formData.StaffPassword"
         class="form-control"

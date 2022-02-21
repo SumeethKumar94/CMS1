@@ -1,0 +1,62 @@
+<app-receptionistnav></app-receptionistnav>
+<div class="header" style="background-color: aliceblue;">
+    <div style="margin: 25px;">
+
+            <!--Search functionality-->
+            <input class="form-control" type="text" placeholder="Search here.." [(ngModel)]="filter">
+            {{filter}}
+            <!--Property Binding-->
+            
+    </div>
+    
+</div>
+<div style="margin: 1.5em;overflow: scroll;background-color: aliceblue;">
+    <!-- <a [routerLink]="" class="btn btn-outline-secondary" style="float: right;margin-top: 15px;margin-bottom: 10px;" (click)="addLabtest()">Add Lab Tests</a> -->
+    <table class="table table-ordered table-striped">
+        <thead>
+            <tr>
+                <!-- <th>ReportDate</th> -->
+                <!-- <th>Doctor</th>
+                 <th>Patient</th>
+                 <th>BloodGroup</th>
+                <th>PhnNo</th>   -->
+                <!-- <th>AppointmentId</th> -->
+                <th>Details</th>
+                <th>Test</th>
+                <th></th>
+               
+                <!-- <th>TestId</th>  -->
+            </tr>
+        </thead>
+        
+        <tbody> 
+             <!-- <tr *ngFor="let rep of labreportService.report1 | filter:filter | paginate: {itemsPerPage:3,currentPage:page}" > -->
+               
+                
+                <tr *ngFor="let str of labreportService.report1  | filter:filter | paginate: {itemsPerPage:3,currentPage:page} ">
+                    <td>ReportDate    :{{str.ReportDate | date:'dd-MMM-yyyy'}}<br>
+                        AppointmentId :{{str.AppointmentId}}<br>
+                        Doctor Name   :{{str.Doctor}}<br>
+                        Patient Name  :{{str.Patient}}<br>
+                        BloodGroup    :{{str.BloodGroup}}<br>
+                        Phone number  :{{str.PhnNo}}
+                    </td>
+                    
+                    <div *ngFor="let st of str.Tests ">
+                        <td >  {{st.TestName}}<br>{{st.Result}}<br>{{st.TestId}}
+                            <button class="btn btn-sm btn-outline-info" style="margin-left: 10em;" (click)="getTestById(st.TestId)">Edit</button>
+                        </td>
+                   </div>
+                  <td>
+                 <!-- <button *ngFor="let st of str.Tests " class="btn btn-sm btn-info" > Edit</button>&nbsp; -->
+                  </td>
+                  <!-- (click)="updateMedicine(med.MedInvId)"    -->
+            </tr>
+           
+        </tbody>
+       </table>  
+       <div >
+        <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+       
+    </div>
+</div> 
