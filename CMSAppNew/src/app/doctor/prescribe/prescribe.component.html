@@ -21,7 +21,8 @@
 <div class="row">
     
         <div class="col">
-            <form name="medform" #formmed="ngForm" autocomplete="off" (ngSubmit)="addMed(formmed)">
+            <form name="medform" #form="ngForm" autocomplete="off" (ngSubmit)="addMed(form)">
+                {{prescService.formData5.MedId}}
             <input type = "hidden" name="MedId" [(ngModel)]="MedIdZero">
             <label>MEDICINE : </label>&nbsp;
             <select name="MedInvId" id="MedInvId"
