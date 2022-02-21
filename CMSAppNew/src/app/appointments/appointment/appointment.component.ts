@@ -25,6 +25,8 @@ export class AppointmentComponent implements OnInit {
     if (this.appId != 0 || this.appId != null) {
       this.appServices.GetAppointmentById(this.appId).subscribe(
         result => {
+          console.log("----");
+          this.appServices.formData2=result[0];
           console.log(result);
           var dataPipe = new DatePipe("en-Uk");
           let formatedDate: any = dataPipe.transform(result.DateOfJoining, 'yyyy-MM-dd');
@@ -78,6 +80,24 @@ export class AppointmentComponent implements OnInit {
         this.toastrService.success("Appointment Updated");
       },
       (error) => {
+        console.log(error);
+      }
+    );
+  }
+  //printbill
+  printappointmentbill(form?: NgForm) {
+    console.log("printing bill");
+    this.appServices.printappointmentbill(form.value).subscribe(
+      result => {
+        console.log(result);
+        this.appServices.formData=result;
+        console.log("-------");
+        console.log(this.appServices.formData);
+        //ca;;ing reset form for clear the contents
+        this.resetForm(form);
+        this.toastrService.success('printing bill');
+      },
+      error => {
         console.log(error);
       }
     );

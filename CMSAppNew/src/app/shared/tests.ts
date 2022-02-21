@@ -5,3 +5,4 @@ export class Tests {
         LabTestId: number=0;
 }
 
+   

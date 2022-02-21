@@ -31,17 +31,25 @@
             </div>
         </div>
     </div>
-    <!-- PatientGender-->
-    <div class="form-group">
-        <label>PatientGender: </label>
-        <input type="text" name="PatientGender" #PatientGender="ngModel"
-            [(ngModel)]="patientService.formData.PatientGender" class="form-control" placeholder="Enter PatientGender"
-            required [ngClass]="{'is-invalid': PatientGender.touched && PatientGender.invalid}" />
+    <!-- Gender dropdown -->
+    <div class="form-floating">
+        <label for="PatientGender">Gender :  </label>
+         <select name="PatientGender" id="PatientGender"
+        class="form-select"
+        #PatientGender = "ngModel"
+        required
+        [(ngModel)] = "patientService.formData.PatientGender"
+        >
+        <option value="0" disabled> Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+        </select>
         <!--Validation-->
-        <div class="validation-error" *ngIf="PatientGender.touched && PatientGender.invalid">
-
-            <div *ngIf="PatientGender.errors.required">
-                PatientGender is required
+        <div class="validation-error" *ngIf = "PatientGender.touched && PatientGender.invalid">
+           
+            <div *ngIf = "PatientGender.errors.required">
+                PatientGender required
             </div>
         </div>
     </div>
@@ -61,16 +69,28 @@
         </div>
     </div>
     <!-- PatientBlood-->
-    <div class="form-group">
-        <label>BloodGroup: </label>
-        <input type="text" name="BloodGroup" #BloodGroup="ngModel" [(ngModel)]="patientService.formData.BloodGroup"
-            class="form-control" placeholder="Enter BloodGroup" required
-            [ngClass]="{'is-invalid': BloodGroup.touched && BloodGroup.invalid}" />
+    <div class="form-floating">
+        <select class="form-select" id="floatingSelectGrid"
+         aria-label="Floating label select example"
+         #BloodGroup = "ngModel"
+        required name="BloodGroup"
+        [(ngModel)] = "patientService.formData.BloodGroup">
+          <option selected>Select BloodGroup</option>
+          <option value="O+">O+</option>
+        <option value="O+">O-</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        </select>
+        <label for="BloodGroup">BloodGroup :  </label>
         <!--Validation-->
-        <div class="validation-error" *ngIf="BloodGroup.touched && BloodGroup.invalid">
-
-            <div *ngIf="BloodGroup.errors.required">
-                BloodGroup is required
+        <div class="validation-error" *ngIf = "BloodGroup.touched && BloodGroup.invalid">
+           
+            <div *ngIf = "BloodGroup.errors.required">
+                 BloodGroup required
             </div>
         </div>
     </div>

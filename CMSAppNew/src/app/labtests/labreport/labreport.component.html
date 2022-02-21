@@ -1,5 +1,5 @@
+<app-labtechnav></app-labtechnav>
 <div style="margin: 1.5em;overflow: scroll;background-color: aliceblue;">
-    <a [routerLink]="" class="btn btn-outline-secondary" style="float: right;margin-top: 15px;margin-bottom: 10px;">Print Report</a>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -26,7 +26,12 @@
                 <td>
                     <button class="btn btn-sm btn-outline-info" (click)="LabReportById(lr.ReportId)">Edit</button>
                 </td>
-                <!-- <td *ngFor="let str of lr.Tests" >TestName:{{str.TestName}} <br>Result:{{str.Result}}</td> -->
+                <!-- <td *ngFor="let str of lr.Tests" >TestName:{{str.TestName}} <br>Result:{{str.Result}}</td>
+                <td>{{lr.AppointmentId}}</td>
+                <td *ngFor="let str of lr.Tests" >TestName:{{str.TestName}} <br>Result:{{str.Result}}</td>
+                <td>
+                    <button class="btn btn-sm btn-info" (click)="printbill(lr.ReportId)">PrintReport</button>
+                </td> -->
             </tr>
         </tbody>
     </table>

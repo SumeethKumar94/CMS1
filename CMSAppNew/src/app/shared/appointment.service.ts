@@ -12,16 +12,41 @@ export class AppointmentService {
   appointment: Appointment[];
   appointment1: Appointment[];
   formData: Appointment = new Appointment();
+  formData2: Appointment = new Appointment();
 
   constructor(private httpClient: HttpClient) { }
 
+  //all appointments
+  getAllAppointments(): Observable<any> {
+    return this.httpClient.get(environment.apiUrl + '/api/appointments');
+  }
+   //geting data
+   bindListAppointments() {
+    this.httpClient.get(environment.apiUrl + '/api/appointments/get')
+      .toPromise().then(
+        response => {
+          this.appointment = response as Appointment[];
+          console.log(response);
+        }
+      )
+  }
 
   //get appointment by Id 
   GetAppointmentById(id: number): Observable<any> {
-    return this.httpClient.get(environment.apiUrl + '/api/appointments/' + id);
-
+    return this.httpClient.get(environment.apiUrl + '/api/doctor/appointments/' + id);
   }
-
+  bindListAppointmentBill(id:number){
+    this.httpClient.get(environment.apiUrl+'/api/doctor/appointments/'+id)
+    .toPromise().then(
+      response=>{
+        console.log(response);
+        this.appointment=response as Appointment[]
+      }
+    );}
+    // appointment bill
+  printappointmentbill(id:number): Observable<any> {
+    return this.httpClient.get(environment.apiUrl + '/api/doctor/appointments/' +id);
+  }
   //update appointment
   updateAppointmentById(appointment: Appointment): Observable<any> {
     return this.httpClient.put(environment.apiUrl + '/api/appointments', appointment);
@@ -36,11 +61,8 @@ export class AppointmentService {
   GetByDoctor(appointment: Appointment): Observable<any> {
     return this.httpClient.post(environment.apiUrl + '/api/appointments', appointment);
   }
-
-  // GetDoctorList():Observable<any>{
-  //       return this.httpClient.get(environment.apiUrl+'/api/doctor/doctors');
-  // }
-
+  //doctors list
+  
   bindListDoctors(){
     this.httpClient.get(environment.apiUrl+'/api/doctor/doctors')
     .toPromise().then(

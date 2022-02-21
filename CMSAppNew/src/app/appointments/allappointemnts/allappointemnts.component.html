@@ -1,0 +1,35 @@
+<app-receptionistnav></app-receptionistnav>
+<div class="container">
+    <div class="header">
+        <div class="form=control">
+            <a [routerLink]="" class="btn btn-outline-secondary"
+                style="float: right; margin-top: 10px; margin-bottom: 10px;" (click)='addAppointment()'> Add appointment</a>
+        </div>
+    </div>
+    <table class="table table-bordered table striped">
+        <thead>
+            <tr>
+                <th>AppointmentId</th>
+                <th>TokenNo</th>
+                <th>DateOfAppointment</th>
+                <th>PatientId</th>
+                <th>PatientName</th>
+                <th>DoctorId</th>
+                <th>DoctorName</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let app of appservice.appointment ">
+                <td>{{app.AppointmentId}}</td>
+                <td>{{app.TokenNo}}</td>
+                <td>{{app.DateOfAppointment | date:'dd-MMM-yyyy'}}</td>
+                <td>{{app.PatientId}}</td>
+                <td>{{app.PatientName}}</td>
+                <td>{{app.DoctorId}}</td>
+                <td>{{app.DoctorName}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footer">
+    </div>
+</div>
