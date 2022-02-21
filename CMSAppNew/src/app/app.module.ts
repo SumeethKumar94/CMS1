@@ -101,7 +101,6 @@ import { HomeComponent } from './home/home.component';
     LabreportformComponent,
     UpdatereportComponent,
     AllappointemntsComponent,
-   
     PrescribeComponent,
     PharmacybillprintingComponent,
     AddappointmentComponent,

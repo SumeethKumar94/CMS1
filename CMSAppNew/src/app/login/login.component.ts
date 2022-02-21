@@ -84,7 +84,7 @@ export class LoginComponent implements OnInit {
             localStorage.setItem("UserName",this.loginUser.Name);
             localStorage.setItem("ACESSROLE",this.loginUser.RoleId);
             sessionStorage.setItem("USERNAME",this.loginUser.Name);
-            this.router.navigateByUrl('/labtechnician');
+            this.router.navigateByUrl('/labreport');
           }
           else if(this.loginUser.RoleId === 1){
             console.log("receptionist");

@@ -31,69 +31,79 @@
             </div>
         </div>
     </div>
-    <!-- Gender dropdown -->
-    <div class="form-floating">
-        <label for="PatientGender">Gender :  </label>
-         <select name="PatientGender" id="PatientGender"
-        class="form-select"
-        #PatientGender = "ngModel"
-        required
-        [(ngModel)] = "patientService.formData.PatientGender"
-        >
-        <option value="0" disabled> Select Gender</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Other">Other</option>
+        <!-- Gender dropdown -->
+        <div class="form-floating">
+            <select name="PatientGender" id="PatientGender"
+            class="form-select"
+            #PatientGender = "ngModel"
+            required
+            [(ngModel)] = "patientService.formData.PatientGender"
+            >
+            <br>
+            <option value="0" disabled> Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
         </select>
-        <!--Validation-->
-        <div class="validation-error" *ngIf = "PatientGender.touched && PatientGender.invalid">
-           
-            <div *ngIf = "PatientGender.errors.required">
-                PatientGender required
+        <label for="PatientGender">PatientGender</label>
+            <!--Validation-->
+            <div class="validation-error" *ngIf = "PatientGender.touched && PatientGender.invalid">
+               
+                <div *ngIf = "PatientGender.errors.required">
+                    Patient Gender required
+                </div>
             </div>
         </div>
+    
+<!--Contact-->
+<div class="form-group">
+    <label>PatientPhoneNo</label>
+    <input type="text" name = "PatientPhoneNo"
+    #PatientPhoneNo = "ngModel"
+    [(ngModel)] = "patientService.formData.PatientPhoneNo"
+    class="form-control"
+    placeholder="Enter 10 digit mobile number"
+    required 
+    minlength="10"
+    maxlength="10"
+    [ngClass] = "{'is-invalid':PatientPhoneNo.touched && PatientPhoneNo.invalid}" 
+    pattern="\d+"/>
+    <!--Validation-->
+    <div class="validation-error" *ngIf = "PatientPhoneNo.touched && PatientPhoneNo.invalid">
+       
+        <div *ngIf = "PatientPhoneNo.errors.required">
+             Mobile number required
+        </div>
     </div>
-    <!--Contact-->
-    <div class="form-group">
-        <label>PatientPhoneNo: </label>
-        <input type="text" step="1" pattern="\d" name="PatientPhoneNo" #PatientPhoneNo="ngModel"
-            [(ngModel)]="patientService.formData.PatientPhoneNo" class="form-control" placeholder="Enter Contact"
-            required minlength="10" maxlength="10"
-            [ngClass]="{'is-invalid': PatientPhoneNo.touched && PatientPhoneNo.invalid}" />
-        <!--Validation-->
-        <div class="validation-error" *ngIf="PatientPhoneNo.touched && PatientPhoneNo.invalid">
+</div>
+        <!-- BloodGroup dropdown -->
 
-            <div *ngIf="PatientPhoneNo.errors.required">
-                Contact required
+        <div class="form-floating">
+            <select class="form-select" id="floatingSelectGrid"
+             aria-label="Floating label select example"
+             #BloodGroup = "ngModel"
+            required name="BloodGroup"
+            [(ngModel)] = "patientService.formData.BloodGroup">
+              <option selected>Select BloodGroup</option>
+              <option value="O+">O+</option>
+            <option value="O+">O-</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            </select>
+            <label for="BloodGroup">BloodGroup :  </label>
+            <!--Validation-->
+            <div class="validation-error" *ngIf = "BloodGroup.touched && BloodGroup.invalid">
+               
+                <div *ngIf = "BloodGroup.errors.required">
+                     BloodGroup required
+                </div>
             </div>
         </div>
-    </div>
-    <!-- PatientBlood-->
-    <div class="form-floating">
-        <select class="form-select" id="floatingSelectGrid"
-         aria-label="Floating label select example"
-         #BloodGroup = "ngModel"
-        required name="BloodGroup"
-        [(ngModel)] = "patientService.formData.BloodGroup">
-          <option selected>Select BloodGroup</option>
-          <option value="O+">O+</option>
-        <option value="O+">O-</option>
-        <option value="A+">A+</option>
-        <option value="A-">A-</option>
-        <option value="B+">B+</option>
-        <option value="B-">B-</option>
-        <option value="AB+">AB+</option>
-        <option value="AB-">AB-</option>
-        </select>
-        <label for="BloodGroup">BloodGroup :  </label>
-        <!--Validation-->
-        <div class="validation-error" *ngIf = "BloodGroup.touched && BloodGroup.invalid">
-           
-            <div *ngIf = "BloodGroup.errors.required">
-                 BloodGroup required
-            </div>
-        </div>
-    </div>
+    
     <!--Submit-->
     <br>
     <div class="form-group">
