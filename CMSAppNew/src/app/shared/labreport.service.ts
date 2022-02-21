@@ -13,6 +13,8 @@ export class LabreportService {
  }
 
  //retrive all data from 
+ 
+ report1:Labreport[];
  reports: Labreport[];
  formData: Labreport = new Labreport();
 
@@ -31,5 +33,17 @@ export class LabreportService {
        }
      )
  }
- 
+ //LabReportById
+ LabReportById(id:number){
+  this.httpClient.get(environment.apiUrl+'/api/prescribe/labreport/'+id)
+  .toPromise().then(
+    response=>{
+      console.log(response);
+      this.report1=response as Labreport[]
+    }
+  );}
+ //update test result by id
+
+
+
 }

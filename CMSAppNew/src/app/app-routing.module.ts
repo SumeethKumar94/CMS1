@@ -24,7 +24,8 @@ import { PharmacistComponent } from './pharmacist/pharmacist.component';
 import { DoctorappointmentlistComponent } from './appointments/doctorappointmentlist/doctorappointmentlist.component';
 import { ReceptionComponent } from './billing/reception/reception.component';
 import { PharmacyBillingComponent } from './billing/pharmacy-billing/pharmacy-billing.component';
-
+import { LabreportformComponent } from './labtechnician/labreportform/labreportform.component';
+import { UpdatereportComponent } from './labtechnician/updatereport/updatereport.component';
 const routes: Routes = [
   {path:'', component:LoginComponent},
   {path:'login', component:LoginComponent},
@@ -59,6 +60,9 @@ const routes: Routes = [
   {path:'pharmacybilling',component:PharmacyBillingComponent},
   {path:'doctorappointmentlist', component:DoctorappointmentlistComponent},
   {path:'doctorappointmentlist/:DoctorId', component:DoctorappointmentlistComponent},
+  {path:'labreportform/:ReportId',component:LabreportformComponent},
+  {path:'updatereport',component:UpdatereportComponent},
+  {path:'updatereport/:TestId',component:UpdatereportComponent}
 ];
 
 @NgModule({
