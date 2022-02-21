@@ -9,7 +9,7 @@
     <!-- Lab Test Name -->
     <div class="form-group">
         &nbsp;<label> Test Name : </label>
-        <input type="text" name="TestName"
+        <input type="text"  pattern="^[A-Za-z]+" name="TestName"
         #TestName="ngModel"
         [(ngModel)]="labService.formData.TestName"
         class="form-control"
@@ -45,7 +45,7 @@
     <!-- Test Normal Range -->
     <div class="form-group">
         &nbsp;<label>  Test Normal Range : </label>
-        <input type="number" name="TestNormalRange"
+        <input type="number range" name="TestNormalRange"
         #TestNormalRange="ngModel"
         [(ngModel)]="labService.formData.TestNormalRange"
         class="form-control"

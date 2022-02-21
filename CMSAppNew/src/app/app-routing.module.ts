@@ -32,7 +32,9 @@ import { PrescribeComponent } from './doctor/prescribe/prescribe.component';
 import { AddappointmentComponent } from './appointments/addappointment/addappointment.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { DepartmentComponent } from './department/department.component';
+import{AuthGuard}from './shared/auth.guard'
 import { HomeComponent } from './home/home.component';
+
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -74,6 +76,8 @@ const routes: Routes = [
   {path:'allappointments',component:AllappointemntsComponent},
   {path:'allappointments/:AppointmentId',component:AppointmentComponent},
   {path:'pharmacybillprinting',component:PharmacybillprintingComponent},
+  {path:'pharmacybillprinting/:Medicine_Bill_Id',component:PharmacybillprintingComponent},
+  {path:'prescribe',component:PrescribeComponent,canActivate:[AuthGuard],data:{role : 2}},
   {path:'pharmacybillprinting/:PrescriptionId',component:PharmacybillprintingComponent},
   {path:'prescribe',component:PrescribeComponent},
   {path:'prescribe/:AppointmentId',component:PrescribeComponent},
