@@ -32,6 +32,7 @@ import { PrescribeComponent } from './doctor/prescribe/prescribe.component';
 import { AddappointmentComponent } from './appointments/addappointment/addappointment.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { DepartmentComponent } from './department/department.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -73,13 +74,14 @@ const routes: Routes = [
   {path:'allappointments',component:AllappointemntsComponent},
   {path:'allappointments/:AppointmentId',component:AppointmentComponent},
   {path:'pharmacybillprinting',component:PharmacybillprintingComponent},
-  {path:'pharmacybillprinting/:Medicine_Bill_Id',component:PharmacybillprintingComponent},
+  {path:'pharmacybillprinting/:PrescriptionId',component:PharmacybillprintingComponent},
   {path:'prescribe',component:PrescribeComponent},
   {path:'prescribe/:AppointmentId',component:PrescribeComponent},
   {path:'addappointment',component:AddappointmentComponent},
   {path:'departmentlist',component:DepartmentListComponent},
   {path:'department',component:DepartmentComponent},
-  {path:'department/:RoleId',component:DepartmentComponent}
+  {path:'department/:RoleId',component:DepartmentComponent},
+  {path:'home',component:HomeComponent}
 ];
 
 @NgModule({

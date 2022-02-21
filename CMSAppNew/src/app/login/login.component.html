@@ -8,7 +8,7 @@
       <div class="form-group">
             <p>
               <label for="exampleFormControlInput1" class="form-label">User Name</label>
-                <input type="text" placeholder="Enter User Name" name="StaffName"
+                <input type="text" placeholder="Enter User Name" autocomplete="off" name="StaffName"
                 formControlName = "StaffName" class="form-control" minlength="3" required
                 [ngClass] = "{'is-invalid' : formControls.StaffName.touched && formControls.StaffName.invalid }"
                 autocomplete="off">
@@ -28,7 +28,7 @@
           <p>
             <label for="exampleFormControlInput1" class="form-label">Password</label>
               <input type="password" placeholder="Enter Password"
-              name="StaffPassword"
+              name="StaffPassword" autocomplete="off"
                 formControlName = "StaffPassword" class="form-control" minlength="3" required
                 [ngClass] = "{'is-invalid' : formControls.StaffPassword.touched && formControls.StaffPassword.invalid }">
           </p>

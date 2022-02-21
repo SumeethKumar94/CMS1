@@ -15,7 +15,7 @@ import html2canvas from 'html2canvas';
 })
 export class PharmacybillprintingComponent implements OnInit {
   
-  medicine_Bill_Id : number;
+  prescriptionId : number;
 
   constructor(public pharmacybillService : PharmacybillService,
     private route : ActivatedRoute,
@@ -23,9 +23,9 @@ export class PharmacybillprintingComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.medicine_Bill_Id = this.route.snapshot.params['Medicine_Bill_Id'];
+    this.prescriptionId = this.route.snapshot.params['PrescriptionId'];
 
-    this.pharmacybillService.bindListPharmacyBillPrint(this.medicine_Bill_Id);
+    this.pharmacybillService.bindListPharmacyBillPrint(this.prescriptionId);
     this.onSubmit()
     
   }

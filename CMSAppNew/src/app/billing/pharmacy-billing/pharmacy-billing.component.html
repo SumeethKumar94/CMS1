@@ -18,7 +18,7 @@
             <tr>
                 <th>Medicine Bill Id</th>
                 <th>Bill Date</th>
-                <th>Prescription Id</th>
+                <th>Patient Name</th>
                 <th>Patient Id</th>
                 <th>Doctor Id</th>
                 <th>Medicine Details</th>
@@ -28,9 +28,9 @@
         <tbody>
 
             <tr *ngFor= "let emp of pharmacybillService.pharmacyBill |filter: filter | paginate :{ itemsPerPage: 4, currentPage: page}">
-                <td>{{emp.Medicine_Bill_Id}}</td>
-                <td>{{emp.BillDate}}</td>
                 <td>{{emp.PrescriptionId}}</td>
+                <td>{{emp.Date}}</td>
+                <td>{{emp.PatientName}}</td>
                 <td>{{emp.PatientId}}</td>
                 <td>{{emp.DoctorId}}</td>
                 <td *ngFor = "let str of emp.Medicine">
@@ -44,7 +44,7 @@
                 </td>
                 <td>{{emp.GrandTotal}}</td>
                 <td>
-                    <button class="btn btn-sm btn-info" (click)="PrintBill(emp.Medicine_Bill_Id)"> Print Bill </button>
+                    <button class="btn btn-sm btn-info" (click)="PrintBill(emp.PrescriptionId)"> Print Bill </button>
                     &nbsp;
                 </td>
             </tr>

@@ -13,15 +13,17 @@ export class DoctorappointmentlistComponent implements OnInit {
   page:number=1;
   filter:string;
   DoctorId:number=0;
+  role:number=0;
 
   constructor(public appointmentService:AppointmentService,
     private route :ActivatedRoute,
     private router:Router) { }
-
+    
   ngOnInit(): void {
+    this.role = parseInt(localStorage.getItem('StaffId'));
     this.DoctorId = this.route.snapshot.params['DoctorId']
     //get appointment  by id for update
-    this.appointmentService.bindListDoctorAppointments(this.DoctorId)
+    this.appointmentService.bindListDoctorAppointments(this.role)
   }
 
   prescribe(AppointmentId : number){

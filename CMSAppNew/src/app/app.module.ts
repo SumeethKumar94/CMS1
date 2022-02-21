@@ -56,6 +56,7 @@ import { PrescribeComponent } from './doctor/prescribe/prescribe.component';
 import { AddappointmentComponent } from './appointments/addappointment/addappointment.component';
 import { DepartmentComponent } from './department/department.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -104,7 +105,8 @@ import { DepartmentListComponent } from './department/department-list/department
     PharmacybillprintingComponent,
     AddappointmentComponent,
     DepartmentComponent,
-    DepartmentListComponent
+    DepartmentListComponent,
+    HomeComponent
     
   ],
   imports: [
