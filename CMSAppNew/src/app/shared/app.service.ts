@@ -16,27 +16,31 @@ export class AppService {
   constructor(private httpClient: HttpClient) { }
 
   getAllAppointments(): Observable<any> {
-    return this.httpClient.get(environment.apiUrl + '/api/appointments');
+    return this.httpClient.get(environment.apiUrl + '/api/appointments/get');
   }
 
   //geting data
   bindListAppointments() {
-    this.httpClient.get(environment.apiUrl + '/api/appointments')
+    this.httpClient.get(environment.apiUrl + '/api/appointments/get')
       .toPromise().then(
+        
         response => {
           this.app = response as App[];
-        }
+          console.log("sneha");
+        } 
+
       )
+     
   }
-  //get patient  by id
+  //get appointment  by id
   getAppointmentById(id: number): Observable<any> {
     return this.httpClient.get(environment.apiUrl + '/api/appointments' + id);
   }
-  //insert patient 
+  //insert appointment
   insertAppointment(app:App): Observable<any> {
     return this.httpClient.post(environment.apiUrl + '/api/appointments', app);
   }
-  //update patient by id
+  //update appointment by id
   updateAppointment(app:App): Observable<any> {
     return this.httpClient.put(environment.apiUrl + '/api/appointments', app);
   }
