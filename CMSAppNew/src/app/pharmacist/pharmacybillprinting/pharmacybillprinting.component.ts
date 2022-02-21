@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Medicine } from 'src/app/shared/medicine';
 import { PharmacybillService } from 'src/app/shared/pharmacybill.service';
+import jspdf from 'jspdf';  
+import html2canvas from 'html2canvas'; 
 
 @Component({
   selector: 'app-pharmacybillprinting',
@@ -41,7 +43,29 @@ export class PharmacybillprintingComponent implements OnInit {
     }
     let str  = (<HTMLInputElement>document.getElementById('total'));
     (<HTMLInputElement>document.getElementById('gtotal')).value = gg.toString();
+
   }
 
+  Screen(){
+    var data = document.getElementById('page');
+    html2canvas(data).then(
+      canvas =>{
+        var imgWidth = 200;
+        var pageHeight = 290;
+        var imgHeight = canvas.height * imgWidth / canvas.width;
+        var heightLeft = imgHeight;
+
+        const contentDataUrl = canvas.toDataURL('image/png')
+        let pdf = new jspdf('p','mm','a4');
+        var position = 0;
+        pdf.addImage(contentDataUrl,'PNG',0,position,imgWidth,imgHeight)
+        for (const emp of this.pharmacybillService.pharmbillprint) {
+          
+          pdf.save(emp.PatientName +'Bill')
+        }
+
+      }
+    )
+  }
 
 }

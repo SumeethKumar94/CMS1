@@ -13,8 +13,7 @@ import { PrescribeService } from 'src/app/shared/prescribe.service';
 export class PrescribeComponent implements OnInit {
 
   AppointmentId:number =0;
-  reportId:number=0;
-  prescId:number=0;
+  MedIdZero:number=0;
   constructor(
     private router : Router,
     public prescService:PrescribeService,
@@ -30,40 +29,66 @@ export class PrescribeComponent implements OnInit {
         result => {
           console.log("Retrieving get By Id");
           console.log(result);
-          this.prescService.formData2 = Object.assign({}, result);
+          this.prescService.formData2 = Object.assign({}, result[0]);
         },
         error => {
           console.log(error);
         }
       ); 
     
-    let idd = this.prescService.formData2.AppointmentId;
-    let iddd = this.prescService.formData2.PatientName;
-    console.log( "Retrieved ID ::: "+idd);
-    console.log( "Retrieved Name ::: "+iddd);
+    
   }
   
 
-  addMed(){
-
-  }
-
-  addLab(){
-
-  }
-
-  addDN(){
-    
-    this.router.navigate(['doctorappointmentlist']);
-  }
-
-  onSubmit(form: NgForm) {
+  addMed(form: NgForm){
     console.log(form.value);
-  
-    
-    // this.insertLabRecord(form);
-    
-  }//end OnSubmit
+    console.log("Prescribing Medicines");
+    this.prescService.insertMedReport(form.value,this.AppointmentId).subscribe(
+    (result) => {
+      console.log(result);
+      this.resetForm(form);
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+  }
+
+  addLab(form: NgForm){
+    console.log(form.value);
+    console.log("Prescribing Lab Test");
+    this.prescService.insertLabReport(form.value,this.AppointmentId).subscribe(
+    (result) => {
+      console.log(result);
+      this.resetForm(form);
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+  }
+
+  addDN(form: NgForm) {
+    console.log(form.value);
+    console.log("Inserting Doctor Notes");
+    this.prescService.insertDoctorNotes(form.value).subscribe(
+    (result) => {
+      console.log(result);
+      this.resetForm(form);
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+    // this.router.navigate(['appointmentlist']);
+  }
+
+  //clear all contents after submit -- Intialization
+resetForm(form?: NgForm) {
+  if (form != null) {
+    form.resetForm();
+  }
+}//end ResetForm
 
 }
 

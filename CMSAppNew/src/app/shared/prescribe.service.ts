@@ -7,6 +7,8 @@ import { Labtests } from './labtests';
 import { Medicine } from './medicine';
 import { Medicines } from './medicines';
 import {Prescribe} from './prescribe';
+import { DoctorNotes } from './doctor-notes';
+import { Tests } from './tests';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +25,12 @@ export class PrescribeService {
   formData3 : Medicine = new Medicine();
   labtests : Labtests[];
   formData4 : Labtests =new Labtests();
-  medicine : Medicines[]
+  medicine : Medicines[];
   formData5 :Medicines = new Medicines();
+  notes : DoctorNotes[];
+  formData6:DoctorNotes=new DoctorNotes();
+  tests : Tests[];
+  formData7:Tests=new Tests();
  
   constructor(private httpClient: HttpClient) { }
 
@@ -43,20 +49,24 @@ export class PrescribeService {
     return this.httpClient.get(environment.apiUrl+"/api/doctor/appointment/"+id);
   }
 
-  insertPrescMed(med:Prescribe):Observable<any>{
-    return this.httpClient.post(environment.apiUrl+"/api/prescribe/medpresc",med);
+  // insertPrescMed(med:Prescribe):Observable<any>{
+  //   return this.httpClient.post(environment.apiUrl+"/api/prescribe/medpresc",med);
+  // }
+
+  // genrateLabReport(lab:Prescribe):Observable<any>{
+  //   return this.httpClient.post(environment.apiUrl+"/api/prescribe/labsreport",lab);
+  // }
+
+  insertMedReport(med:Medicines,id:number):Observable<any>{
+    return this.httpClient.post(environment.apiUrl+"/api/prescribe/medpresc/"+id,med);
   }
 
-  genrateLabReport(lab:Prescribe):Observable<any>{
-    return this.httpClient.post(environment.apiUrl+"/api/prescribe/labsreport",lab);
+  insertLabReport(lab:Tests,id:number):Observable<any>{
+    return this.httpClient.post(environment.apiUrl+"/api/prescribe/labpresc/"+id,lab);
   }
 
-  genrateMedReport(med:Prescribe):Observable<any>{
-    return this.httpClient.post(environment.apiUrl+"/api/prescribe/medspresc",med);
-  }
-
-  insertPrescLab(lab:Prescribe):Observable<any>{
-    return this.httpClient.post(environment.apiUrl+"/api/prescribe/labpresc",lab);
+  insertDoctorNotes(doc:DoctorNotes):Observable<any>{
+    return this.httpClient.post(environment.apiUrl+"/api/prescribe/notes",doc);
   }
 
   //get All Medicines 
