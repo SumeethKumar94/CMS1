@@ -1,0 +1,39 @@
+
+<div class="header">
+    <div class="form-control">
+        <!--Search functionality-->
+        <input type="text" class="form-control" placeholder="Search text here..."[(ngModel)]="filter" >
+    </div>
+    <!--
+        [] --- property binding
+        () --- event binding 
+        ([])--- banana box for event and property --([ngModel])
+    -->
+    <a [routerLink]="'/department'" class="btn btn-outline-secondary" style="float: right; margin-top: 10px; margin-bottom: 10px;"> Add Department</a>
+</div>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>DepartmentId</th>
+                <th>Department Name</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor= "let emp of staffService.department |filter: filter | paginate :{ itemsPerPage: 4, currentPage: page}">
+                <td>{{emp.RoleId}}</td>
+                <td>{{emp.RoleName}}</td>
+                
+                <td>
+                    <button class="btn btn-sm btn-info" (click)="UpdateDepartment(emp.RoleId)"> Edit </button>
+                    &nbsp;
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footer">
+        <!--Pageination footer-->
+        <pagination-controls (pageChange) = "page = ($event)"></pagination-controls>
+    </div>

@@ -52,6 +52,8 @@ import { PharmacybillprintingComponent } from './pharmacist/pharmacybillprinting
 import { PharmacyBillingComponent} from './billing/pharmacy-billing/pharmacy-billing.component';
 import { PrescribeComponent } from './doctor/prescribe/prescribe.component';
 import { AddappointmentComponent } from './appointments/addappointment/addappointment.component';
+import { DepartmentComponent } from './department/department.component';
+import { DepartmentListComponent } from './department/department-list/department-list.component';
 
 
 @NgModule({
@@ -97,7 +99,9 @@ import { AddappointmentComponent } from './appointments/addappointment/addappoin
    
     PrescribeComponent,
     PharmacybillprintingComponent,
-    AddappointmentComponent
+    AddappointmentComponent,
+    DepartmentComponent,
+    DepartmentListComponent
     
   ],
   imports: [
