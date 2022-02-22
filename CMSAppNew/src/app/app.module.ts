@@ -57,6 +57,7 @@ import { AddappointmentComponent } from './appointments/addappointment/addappoin
 import { DepartmentComponent } from './department/department.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
 import {AuthInterceptor} from './shared/auth.interceptor';
 
 
@@ -107,7 +108,8 @@ import {AuthInterceptor} from './shared/auth.interceptor';
     AddappointmentComponent,
     DepartmentComponent,
     DepartmentListComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
     
   ],
   imports: [
