@@ -28,13 +28,26 @@
                 class="form-control"
                 #MedInvId="ngModel"
                 required
+                
                 [(ngModel)]="prescService.formData5.MedInvId">
                 <option value=0 disabled>Select Medicine</option>
                 <option *ngFor="let med of prescService.medicines" 
                 value="{{med.MedInvId}}">{{med.MedicineName}}</option>
             </select>&nbsp;
-            <input type="text" required pattern="[0-9]*" name="MedQty" [(ngModel)]="prescService.formData5.MedQty" required pattern="\d+" style="margin-top: 10px;width: 4em;" placeholder="Quantity">&nbsp;
-            <input type="number" name="MedDosage" [(ngModel)]="prescService.formData5.MedDosage" style="margin-top: 10px;width: 4em;" placeholder="Dosage">&nbsp; 
+            <input class="form-control"  type="text" name="MedQty" 
+            #MedQty = "ngModel"
+            [ngClass] = "{'is-invalid': MedQty.invalid}" 
+            pattern="[0-9]+"  
+            [(ngModel)]="prescService.formData5.MedQty"  
+            style="margin-top: 10px;width: 4em;margin-right: 0px;" placeholder="Quantity">
+
+            <input type="text" name="MedDosage" 
+            class="form-control"
+            #MedDosage = "ngModel"
+            [ngClass] = "{'is-invalid':  MedDosage.invalid}" 
+            pattern="[0-9]+"
+            [(ngModel)]="prescService.formData5.MedDosage" 
+            style="margin-top: 10px;width: 4em;margin-right: 0px;" placeholder="Dosage">&nbsp; 
             <button type="submit" class="btn btn-info" style="padding-left: 5px;padding-right: 5px;margin-left: 4.5em;" >ADD</button>
         </form>
         </div>
