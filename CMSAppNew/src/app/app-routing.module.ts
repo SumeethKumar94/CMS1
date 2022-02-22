@@ -34,6 +34,7 @@ import { DepartmentListComponent } from './department/department-list/department
 import { DepartmentComponent } from './department/department.component';
 import{AuthGuard}from './shared/auth.guard'
 import { HomeComponent } from './home/home.component';
+import { PrescriptionlabListComponent } from './doctor/prescriptionlab-list/prescriptionlab-list.component';
 
 
 const routes: Routes = [
@@ -85,7 +86,8 @@ const routes: Routes = [
   {path:'departmentlist',component:DepartmentListComponent},
   {path:'department',component:DepartmentComponent},
   {path:'department/:RoleId',component:DepartmentComponent},
-  {path:'home',component:HomeComponent}
+  {path:'home',component:HomeComponent},
+  {path:'prescriptionslab', component:PrescriptionlabListComponent},
 ];
 
 @NgModule({
