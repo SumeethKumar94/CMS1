@@ -46,7 +46,7 @@ const routes: Routes = [
   {path:'labtestlist', component:LabtestListComponent,canActivate:[AuthGuard],data:{role : 3}},
   {path:'labtest', component:LabtestComponent,canActivate:[AuthGuard],data:{role : 3}},
   {path:'labtest/:LabTestId', component:LabtestComponent,canActivate:[AuthGuard],data:{role : 3}},
-  {path:'receptionist',component:ReceptionistComponent ,canActivate: [AuthGuard], data: { role: '1' }},
+  {path:'receptionist',component:ReceptionistComponent ,canActivate: [AuthGuard], data: { role: 1 }},
   {path:'medlist', component:MedicineListComponent},
   {path:'labtestlist', component:LabtestListComponent},
   {path:'labtest', component:LabtestComponent},
