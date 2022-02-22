@@ -1,3 +1,5 @@
+<app-pharmacistnav></app-pharmacistnav>
+
 <div class="container">
     <div class="card" *ngFor="let emp of pharmacybillService.pharmbillprint">
         <div class="container" id="page">
@@ -18,7 +20,8 @@
                 <div class="card-text" *ngFor="let str of emp.Medicine">
                     <p>Medicine Name : &nbsp; {{ str.MedicineName }}</p>
                     <p>Medicine Quantity : &nbsp; {{ str.MedQty }}</p>
-                    <p>Medicine Price : &nbsp; {{ str.UnitPrice }}</p>
+                    <p>Medicine Price : &nbsp; {{ str.MedPrice }}</p>
+                    <label for="">Total  :  </label> 
                     <input type="number" disabled value="{{ str.Total }}" />
                 </div>
                 <label for=""> GrandTotal</label>
