@@ -10,7 +10,7 @@
     <!-- MedicineName-->
     <div class="form-group">
         <label> Medicine Name :  </label>
-        <input type="text" name = "MedicineName"
+        <input type="text" pattern="^[A-Za-z]+" name = "MedicineName"
         #MedicineName = "ngModel"
         [(ngModel)] = "medicineService.formData.MedicineName"
         class="form-control"
@@ -29,7 +29,7 @@
    
      <!--MedDesc-->
      <div class="form-group">
-        <label>MedDesc :  </label>
+        <label>Description :  </label>
         <textarea name = "MedDesc"
         #MedDesc = "ngModel"
         [(ngModel)] = "medicineService.formData.MedDesc"
@@ -49,7 +49,7 @@
    
     <!--NetMedQty-->
     <div class="form-group">
-        <label> NetMedQty:  </label>
+        <label> Quantity:  </label>
        
         
         <input type="number"step="1" pattern="\d+" name = "NetMedQty"
@@ -63,7 +63,7 @@
         <div class="validation-error" *ngIf = "NetMedQty.touched && NetMedQty.invalid">
            
             <div *ngIf = "NetMedQty.errors.required">
-                NetMedQty required
+                Quantity required
             </div>
         </div>
     </div>
@@ -76,7 +76,7 @@
         [(ngModel)] = "medicineService.formData.UnitPrice"
         class="form-control"
         placeholder="Enter UnitPrice"
-        required minlength="5" maxlength="25"
+        required minlength="1" maxlength="25"
         [ngClass] = "{'is-invalid': UnitPrice.touched && UnitPrice.invalid}"/>
         <!--Validation-->
         <div class="validation-error" *ngIf = "UnitPrice.touched && UnitPrice.invalid">
