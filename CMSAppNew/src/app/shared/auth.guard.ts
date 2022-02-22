@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
       //check Role Current Role vs Expected Role
       //      login - local storage --- app routing module
       const expectedRole = next.data.role;
-      const currentRole = localStorage.getItem('ACCESSROLE');
+      const currentRole = localStorage.getItem('ACESSROLE');
       if(currentRole != expectedRole){
         this.router.navigateByUrl('/login');
         return false;
