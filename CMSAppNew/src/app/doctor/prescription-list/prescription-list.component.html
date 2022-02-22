@@ -6,20 +6,20 @@
         <input class="form-control" type="text" placeholder="Search here.." [(ngModel)]="filter">
         {{filter}}
         <!--Property Binding-->
-        <a [routerLink]="" class="btn btn-outline-secondary" style="float: right;margin-top: 15px;margin-bottom: 10px;" (click)="PrintBill()">Detailed Bill</a>
         
     </div>
 </div>
 <!-- <button class="btn btn-sm btn-info" (click)="PrintBill()">BILL</button>&nbsp; -->
-<div style="margin: 1.5em;overflow: scroll;background-color: aliceblue;">
-    <table class="table table-bordered table-striped">
+<div style="margin: 1.5em;overflow: scroll;background-color: aliceblue;padding-bottom: 7em;">
+    <a [routerLink]="" class="btn btn-outline-secondary" style="float: right;margin-top: 15px;margin-bottom: 10px;margin-right: 10px;" (click)="PrintBill()">Detailed Bill</a>
+        
+    <table class="table table-bordered table-striped" >
         <thead>
             <tr>
                 <th>Prescription Id</th>
                 <th>PrescriptionDate</th>
                 <th>PatientName</th>
                 <th>Medicines</th>
-                <th></th>
             </tr>            
         </thead>
         <tbody>
@@ -28,9 +28,6 @@
                 <td>{{lb.PrescriptionDate | date:'dd-MM-yyyy'}}</td>
                 <td>{{lb.PatientName}}</td>
                 <td>{{lb.Medicines}}</td>
-                <td>
-                    <!-- <button class="btn btn-sm btn-info" (click)="PrintBill()">BILL</button>&nbsp; -->
-                </td>
             </tr>
         </tbody>
     </table>
@@ -39,3 +36,5 @@
         <!--Pagination-->
     </div>
 </div>
+
+<app-footer></app-footer>

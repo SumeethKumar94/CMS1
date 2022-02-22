@@ -1,38 +1,35 @@
 
+<app-doctornav></app-doctornav>
 <div class="header" style="background-color: aliceblue;">
     <div style="margin: 25px;">
 
         <!--Search functionality-->
         <input class="form-control" type="text" placeholder="Search here.." [(ngModel)]="filter">
-        {{filter}}
         <!--Property Binding-->
         <!-- <a [routerLink]="" class="btn btn-outline-secondary" style="float: right;margin-top: 15px;margin-bottom: 10px;">Add Lab Tests</a> -->
         
     </div>
 </div>
-<div style="margin: 1.5em;overflow: scroll;background-color: aliceblue;">
-    <table class="table table-bordered table-striped">
+<div style="margin: 1.5em;overflow: scroll;background-color: aliceblue;padding-bottom: 8em;">
+    <table class="table table-bordered table-striped" style="padding-bottom: 3em;">
         <thead>
             <tr>
                 <th>Prescription Id</th>
                 <th>PrescriptionDate</th>
-                <th>ReportId</th>
                 <th>PatientName</th>
                 <th>Lab Tests</th>
-                <th></th>
+                <th>Medicines</th>
+                <th>Notes</th>
             </tr>            
         </thead>
         <tbody>
             <tr *ngFor="let lb of prescribeService.prescribe | filter:filter | paginate: {itemsPerPage:4,currentPage:page}">
                 <td>{{lb.PrescriptionId}}</td>
                 <td>{{lb.PrescriptionDate | date:'dd-MM-yyyy'}}</td>
-                <td>{{ReportId}}</td>
                 <td>{{lb.PatientName}}</td>
                 <td>{{lb.LabTests}}</td>
-                <td>
-                    <button class="btn btn-sm btn-info" (click)="LabReportById(lb.ReportId)">REPORT</button>&nbsp;
-                    
-                </td>
+                <td>{{lb.Medicines}}</td>
+                <td>{{Notes}}</td>
             </tr>
         </tbody>
     </table>
@@ -41,3 +38,5 @@
         <!--Pagination-->
     </div>
 </div>
+
+<app-footer></app-footer>

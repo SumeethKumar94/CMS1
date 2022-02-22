@@ -46,6 +46,7 @@ export class PrescribeComponent implements OnInit {
     this.prescService.insertMedReport(form.value,this.AppointmentId).subscribe(
     (result) => {
       console.log(result);
+      this.toastrService.success('Medicine Added','C M S');
     },
     (error) => {
       console.log(error);
@@ -59,6 +60,7 @@ export class PrescribeComponent implements OnInit {
     this.prescService.insertLabReport(form.value,this.AppointmentId).subscribe(
     (result) => {
       console.log(result);
+      this.toastrService.success('LabTest Added','C M S');
     },
     (error) => {
       console.log(error);
@@ -72,7 +74,7 @@ export class PrescribeComponent implements OnInit {
     this.prescService.insertDoctorNotes(form.value).subscribe(
     (result) => {
       console.log(result);
-      this.resetForm(form);
+      this.toastrService.success('Notes Added','C M S');
     },
     (error) => {
       console.log(error);

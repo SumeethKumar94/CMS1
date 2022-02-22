@@ -11,5 +11,5 @@ export class Prescribe {
     PatientId:number=0;
     DoctorId:number=0;
     ReceptionistId:number=0;
-    DoctorNotes:string='';
+    Notes:string='';
 }
