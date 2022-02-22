@@ -38,7 +38,6 @@ import { PrescriptionlabListComponent } from './doctor/prescriptionlab-list/pres
 
 
 const routes: Routes = [
-  {path:'', component:LoginComponent},
   {path:'login', component:LoginComponent},
   {path:'doctor', component:DoctorComponent},
   {path:'admin', component:AdminComponent},
@@ -86,6 +85,7 @@ const routes: Routes = [
   {path:'departmentlist',component:DepartmentListComponent},
   {path:'department',component:DepartmentComponent},
   {path:'department/:RoleId',component:DepartmentComponent},
+  {path:'',component:HomeComponent},
   {path:'home',component:HomeComponent},
   {path:'prescriptionslab', component:PrescriptionlabListComponent},
 ];
