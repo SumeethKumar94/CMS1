@@ -60,14 +60,14 @@ export class LoginComponent implements OnInit {
             
             console.log("Admin");
             localStorage.setItem("UserName",this.loginUser.Name);
-            localStorage.setItem("ACESSROLE",this.loginUser.RoleId);
+            localStorage.setItem("ACCESSROLE",this.loginUser.RoleId);
             sessionStorage.setItem("USERNAME",this.loginUser.Name);
             this.router.navigateByUrl('/admin');
           }
           else if(this.loginUser.RoleId === 2){
             console.log("Doctor");
             localStorage.setItem("UserName",this.loginUser.Name);
-            localStorage.setItem("ACESSROLE",this.loginUser.RoleId);
+            localStorage.setItem("ACCESSROLE",this.loginUser.RoleId);
             localStorage.setItem("StaffId",this.loginUser.StaffId);
             sessionStorage.setItem("USERNAME",this.loginUser.Name);
             this.router.navigateByUrl('/doctorappointmentlist');
@@ -75,21 +75,21 @@ export class LoginComponent implements OnInit {
           else if(this.loginUser.RoleId === 4){
             console.log("pharmacist");
             localStorage.setItem("UserName",this.loginUser.Name);
-            localStorage.setItem("ACESSROLE",this.loginUser.RoleId);
+            localStorage.setItem("ACCESSROLE",this.loginUser.RoleId);
             sessionStorage.setItem("USERNAME",this.loginUser.Name);
             this.router.navigateByUrl('/pharmacist');
           }
           else if(this.loginUser.RoleId === 3){
             console.log("labtechnician");
             localStorage.setItem("UserName",this.loginUser.Name);
-            localStorage.setItem("ACESSROLE",this.loginUser.RoleId);
+            localStorage.setItem("ACCESSROLE",this.loginUser.RoleId);
             sessionStorage.setItem("USERNAME",this.loginUser.Name);
             this.router.navigateByUrl('/labreport');
           }
           else if(this.loginUser.RoleId === 1){
             console.log("receptionist");
             localStorage.setItem("UserName",this.loginUser.Name);
-            localStorage.setItem("ACESSROLE",this.loginUser.RoleId);
+            localStorage.setItem("ACCESSROLE",this.loginUser.RoleId);
             sessionStorage.setItem("USERNAME",this.loginUser.Name);
             this.router.navigateByUrl('/receptionist');
           }
