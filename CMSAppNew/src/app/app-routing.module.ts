@@ -75,7 +75,6 @@ const routes: Routes = [
   {path:'updatereport',component:UpdatereportComponent},
   {path:'updatereport/:TestId',component:UpdatereportComponent,canActivate:[AuthGuard],data:{role : 3}},
   {path:'allappointments',component:AllappointemntsComponent},
-  {path:'doctorappointmentlist/:DoctorId', component:DoctorappointmentlistComponent,canActivate:[AuthGuard],data:{role : 2}},
   {path:'labreportform/:ReportId',component:LabreportformComponent,canActivate:[AuthGuard],data:{role : 3}},
   {path:'updatereport',component:UpdatereportComponent,canActivate:[AuthGuard],data:{role : 3}},
   {path:'updatereport/:TestId',component:UpdatereportComponent,canActivate:[AuthGuard],data:{role : 3}},
