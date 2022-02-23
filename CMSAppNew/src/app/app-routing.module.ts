@@ -73,6 +73,7 @@ const routes: Routes = [
   {path:'labtechnician', component:LabtechnicianComponent},
   {path:'receptionbilling',component:ReceptionComponent},
   {path:'pharmacybilling',component:PharmacyBillingComponent},
+  {path:'doctorappointmentlist', component:DoctorappointmentlistComponent},
   {path:'doctorappointmentlist/:DoctorId', component:DoctorappointmentlistComponent,canActivate:[AuthGuard],data:{role : 2}},
   {path:'labreportform/:ReportId',component:LabreportformComponent},
   {path:'updatereport',component:UpdatereportComponent},
