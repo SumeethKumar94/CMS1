@@ -91,6 +91,8 @@ const routes: Routes = [
   {path:'pharmacybillprinting/:PrescriptionId',component:PharmacybillprintingComponent},
   {path:'addappointment',component:AddappointmentComponent ,canActivate: [AuthGuard], data: { role: 1 }},
   {path:'prescribe/:AppointmentId',component:PrescribeComponent,canActivate:[AuthGuard],data:{role : 2}},
+  {path:'addappointment',component:AddappointmentComponent},
+  {path:'departmentlist',component:DepartmentListComponent,canActivate:[AuthGuard],data:{role : '5'}},
   {path:'departmentlist',component:DepartmentListComponent},
   {path:'department',component:DepartmentComponent,canActivate:[AuthGuard],data:{role : '5'}},
   {path:'department/:RoleId',component:DepartmentComponent,canActivate:[AuthGuard],data:{role : '5'}},
