@@ -1,14 +1,14 @@
 <app-pharmacistnav></app-pharmacistnav>
 
-<div class="container">
-    <div class="card" *ngFor="let emp of pharmacybillService.pharmbillprint">
-        <div class="container" id="page">
-            <div class="card-header">
+<div  style="margin: 0px;margin-top: 10px;padding-bottom: 40px;">
+    <div class="card" style="border:antiquewhite;background-color: rgb(229, 248, 247);padding: 10px;width: 600px;margin-left: 25%;margin-top: 20px;" *ngFor="let emp of pharmacybillService.pharmbillprint">
+        <div class="" id="page" style="margin: 0px;color: rgb(67, 127, 129);">
+            <div class="card-header" style="margin-top: 15px;">
+                <h3 style="text-align: center;">PHARMACY BILL</h3>
                 <p id="billingId">
-                    <span id="billId">Billing Id : &nbsp;</span>
+                    <span id="billId">BILL ID : &nbsp;</span>
                     <span id="billIdData"> {{ emp.PrescriptionId }} </span>
-                    <br>
-                    <span id="date">Date : &nbsp; {{ emp.Date | date:'dd-MMM-yyyy' }}</span>
+                    <span id="date" style="float: right">DATE : &nbsp; {{ emp.Date | date:'dd-MMM-yyyy' }}</span>
                 </p>
             </div>
             <div class="card-body">
@@ -16,21 +16,22 @@
                     <span id="patientId">Patient Id : &nbsp; {{ emp.PatientId }}</span><br>
                     <span id="patientName"> Patient Name : &nbsp; {{ emp.PatientName }}</span>
                 </p>
-                <p class="card-text">Doctor Id : &nbsp; {{ emp.DoctorId }}</p>
+                <p class="card-text">Doctor Name : &nbsp; {{ emp.DoctorName }}</p>
                 <div class="card-text" *ngFor="let str of emp.Medicine">
                     <p>Medicine Name : &nbsp; {{ str.MedicineName }}</p>
                     <p>Medicine Quantity : &nbsp; {{ str.MedQty }}</p>
                     <p>Medicine Price : &nbsp; {{ str.MedPrice }}</p>
-                    <label for="">Total  :  </label> 
+                    <label for="">Total  :  </label> &nbsp;
                     <input type="number" disabled value="{{ str.Total }}" />
                 </div>
                 <label for=""> GrandTotal</label>
-                <input class="card-text" id="gtotal" type="number" value="" />
+                <input class="card-text" id="gtotal" disabled type="number" value="" />
             </div>
         </div>
-        <button class="btn btn-primary" (click)="onSubmit()">Grand Total</button>
+        <button class="btn btn-info" (click)="onSubmit()" style="margin-left: 80%;">Grand Total</button>
     </div>
-    <button class="btn btn-success" (click)="Screen()">Print Bill</button>
+    <button class="btn btn-success" (click)="Screen()" style=" margin-left: 80%;">Print Bill</button>
+    
 </div>
 
 <app-footer></app-footer>

@@ -7,6 +7,7 @@ export class Pharmbillprint {
         PrescriptionId: number = 0;
         PatientId : number = 0; 
         DoctorId: number = 0;
+        DoctorName : string='';
         PatientName : string = '';
         Medicine : Medicine[];
         GrandTotal : number;

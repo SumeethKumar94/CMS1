@@ -1,6 +1,8 @@
 <app-pharmacistnav></app-pharmacistnav>
+<div style="padding:50px;">
+    
 <div class="header">
-    <div class="form-control">
+    <div class="">
         <!--search functionality-->
         <input class="form-control" type="text" placeholder="search text here..."[(ngModel)]="filter" >
         {{filter}}
@@ -25,7 +27,7 @@
             <td>{{med.MedInvId}}</td>
             <td>{{med.MedicineName}}</td>
             <td>{{med.NetMedQty}}</td>
-            <td>{{UnitPrice}}</td> 
+            <td>{{med.UnitPrice}}</td> 
             <td>{{med.MedDesc}}</td>
             <td>
                 <button class="btn btn-sm btn-info" (click)="updateMedicine(med.MedInvId)"> Edit </button>
@@ -39,6 +41,7 @@
    <div class="footer">
     <pagination-controls (pageChange)="page=($event)"></pagination-controls>
     <!--Pagination-->
+   </div>
 </div>
 
 <app-footer></app-footer>

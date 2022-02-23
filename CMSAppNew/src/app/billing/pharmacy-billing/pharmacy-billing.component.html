@@ -1,7 +1,7 @@
 <app-pharmacistnav></app-pharmacistnav>
-
-<div class="header">
-    <div class="form-control">
+<div style="padding: 50px;">
+<div class="header" style="margin-bottom: 20px;">
+    <div class="">
         <!--Search functionality-->
         <input type="text" class="form-control" placeholder="Search text here..."[(ngModel)]="filter" >
     </div>
@@ -15,17 +15,18 @@
 
     <table class="table table-bordered">
         <thead>
-            <tr>
-                <th>Medicine Bill Id</th>
+            <tr style="text-align: center;">
+                <th>Medicine Bill ID</th>
                 <th>Bill Date</th>
                 <th>Patient Name</th>
                 <th>Patient Id</th>
                 <th>Doctor Id</th>
                 <th>Medicine Details</th>
+                <th></th>
             </tr>
         </thead>
 
-        <tbody>
+        <tbody style="text-align: center;">
 
             <tr *ngFor= "let emp of pharmacybillService.pharmacyBill |filter: filter | paginate :{ itemsPerPage: 4, currentPage: page}">
                 <td>{{emp.PrescriptionId}}</td>
@@ -46,13 +47,14 @@
                     </td>
                 </div>
                 
-                <td>
+                <td style="text-align: center;">
                     <button class="btn btn-sm btn-info" (click)="PrintBill(emp.PrescriptionId)"> Print Bill </button>
                     &nbsp;
                 </td>
             </tr>
         </tbody>
     </table>
+</div>
     <div class="footer">
         <!--Pageination footer-->
         <pagination-controls (pageChange) = "page = ($event)"></pagination-controls>
