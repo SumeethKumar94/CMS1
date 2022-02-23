@@ -18,7 +18,7 @@ export class DoctornavComponent implements OnInit {
    //logout
    logout(){
     this.authService.logout();
-    this.router.navigateByUrl('login');
+    this.router.navigateByUrl('');
   }
 
 }
