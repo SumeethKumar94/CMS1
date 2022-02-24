@@ -15,7 +15,7 @@ import html2canvas from 'html2canvas';
 })
 export class PharmacybillprintingComponent implements OnInit {
   
-  prescriptionId : number = 0;
+  prescriptionId : number =0;
 
   constructor(public pharmacybillService : PharmacybillService,
     private route : ActivatedRoute,
