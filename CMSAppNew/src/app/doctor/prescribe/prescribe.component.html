@@ -33,14 +33,15 @@
                 <option value=0 disabled>Select Medicine</option>
                 <option *ngFor="let med of prescService.medicines" 
                 value="{{med.MedInvId}}">{{med.MedicineName}}</option>
-            </select>&nbsp;
+            </select>
+            <label>Quantity :</label>
             <input class="form-control"  type="text" name="MedQty" 
             #MedQty = "ngModel"
             [ngClass] = "{'is-invalid': MedQty.invalid}" 
             pattern="[0-9]+"  
             [(ngModel)]="prescService.formData5.MedQty"  
             style="margin-top: 10px;width: 4em;margin-right: 0px;" placeholder="Quantity">
-
+            <label >Dosage :</label>
             <input type="text" name="MedDosage" 
             class="form-control"
             #MedDosage = "ngModel"
@@ -75,7 +76,7 @@
     <div class="col">
         <form name="docform" #docform="ngForm" autocomplete="off" (ngSubmit)="addDN(docform)" >
             <input type = "hidden" name="DoctorNotesId" [(ngModel)]="prescService.formData6.DoctorNotesId">
-            <input type = "" name="AppointmentId" [(ngModel)]="prescService.formData2.AppointmentId">
+            <input type = "hidden" name="AppointmentId" [(ngModel)]="prescService.formData2.AppointmentId">
             <label>NOTES : </label>&nbsp;
             <input type="text" class="form-control" placeholder="Doctor Notes" 
             name="Notes"

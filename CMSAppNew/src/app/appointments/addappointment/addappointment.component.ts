@@ -52,13 +52,13 @@ export class AddappointmentComponent implements OnInit {
     //   this.updateAppointment(form);
     // }
   }
-  insertAppointment(form?: NgForm) {
+  insertAppointment(form1?: NgForm) {
     console.log("Inserting a record...");
-    this.appService.insertAppointment(form.value).subscribe(
+    this.appService.insertAppointment(form1.value).subscribe(
       result => {
         console.log(result);
         //calling reset form for clear the contents
-        this.resetForm(form);
+        form1.resetForm();
         this.toastrService.success("Appointment sucessfully");
       },
       error => {

@@ -1,14 +1,13 @@
 <app-receptionistnav></app-receptionistnav>
-<div class="header">
-    <div class="form-control">
- </div>
-<form name="app" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+<h3 style="text-align: center;color: rgb(43, 174, 184);font-weight: bolder;font-size: 1.5em; background-color: aliceblue; padding: .5em;">APPOINTMENT</h3>
+
+<form name="app" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)" style="padding: 50px;padding-top: 0px;padding-bottom: 100px;">
     <!--Appointment ID Hidden-->
     <input type="hidden" name="AppointmentId" [(ngModel)]="appService.formData.AppointmentId">
 
     <!--token no-->
     <div class="form-group">
-        <label>TokenNo</label>
+        <label>Token :</label>
         <input type="text" pattern="^([1-9]|[1-2][0-9]|3[0-2])$" name="TokenNo" #TokenNo="ngModel" [(ngModel)]="appService.formData.TokenNo"
             class="form-control" placeholder="Enter TokenNo" required 
             [ngClass]="{'is-invalid': TokenNo.touched && TokenNo.invalid}" />
@@ -16,13 +15,13 @@
         <div class="validation-error" *ngIf="TokenNo.touched && TokenNo.invalid">
 
             <div *ngIf="TokenNo.errors.required">
-                TokenNo required
+                Token Number Required
             </div>
         </div>
     </div>
     <!--Appointment date-->
     <div class="form-group">
-        <label>DateOfAppointment</label>
+        <label>Date :</label>
         <input type="date" name="DateOfAppointment" #DateOfAppointment="ngModel"
             [(ngModel)]="appService.formData.DateOfAppointment" class="form-control"
             placeholder="Enter Date Of Appointment" required
@@ -37,7 +36,7 @@
     </div>
     <!--PatientId-->
     <div class="form-group">
-        <label>PatientId</label>
+        <label>Patient Id :</label>
         <input type="number" step="1" pattern="\d" name="PatientId" #PatientId="ngModel" [(ngModel)]="appService.formData.PatientId"
             class="form-control" placeholder="Enter PatientId" required
             [ngClass]="{'is-invalid': PatientId.touched && PatientId.invalid}" />
@@ -45,13 +44,13 @@
         <div class="validation-error" *ngIf="PatientId.touched && PatientId.invalid">
 
             <div *ngIf="PatientId.errors.required">
-                PatientId required
+                Patient Id required
             </div>
         </div>
     </div>
     <!--DoctorId-->
     <div class="form-group">
-        <label>DoctorId</label>
+        <label>Doctor Id :</label>
         <input type="number" step="1" pattern="\d" name="DoctorId" #DoctorId="ngModel" [(ngModel)]="appService.formData.DoctorId"
             class="form-control" placeholder="Enter DoctorId" required
             [ngClass]="{'is-invalid': DoctorId.touched && DoctorId.invalid}" />
@@ -59,7 +58,7 @@
         <div class="validation-error" *ngIf="DoctorId.touched && DoctorId.invalid">
 
             <div *ngIf="DoctorId.errors.required">
-                DoctorId required
+                Doctor Id required
             </div>
         </div>
     </div>
@@ -68,7 +67,7 @@
      <!--Submit-->
      <br>
      <div class="form-group">
-         <button type="submit" class="btn btn-lg btn-primary form-control"
+         <button type="submit" class="btn btn-primary form-control"
              >Submit</button>
      </div>
      <!-- [disabled]="!(form.valid && form.dirty)" -->
