@@ -44,9 +44,11 @@
                     </td>
                     
                     <div *ngFor="let st of str.Tests ">
-                        <td >TestId:{{st.TestId}}<br>
-                            Result:{{st.Result}}<br> Test Name: {{st.TestName}}
+                        <td >TestId:{{st.TestId}} 
                             <button class="btn btn-sm btn-info" style="margin-left: 10em;" (click)="getTestById(st.TestId)">Edit</button>
+                            <br>
+                            Result:{{st.Result}}<br> Test Name: {{st.TestName}}
+        
                         </td>
                    </div>
                   <td>
