@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
- apiUrl:'http://nirvanas-001-site1.btempurl.com'
+ apiUrl:'https://nirvana.somee.com'
 
  };
 
