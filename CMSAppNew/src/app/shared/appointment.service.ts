@@ -73,12 +73,12 @@ export class AppointmentService {
     );}
 
     // GetDoctorAppointmentById(id: number): Observable<any> {
-    //    return this.httpClient.get(environment.apiUrl + '/api/doctor/appointments/' + id);
+    //    return this.httpClient.get(environment.apiUrl + '/api/doctor/appointments/2);
   
     // }
 
     bindListDoctorAppointments(id:number){
-      this.httpClient.get(environment.apiUrl+'/api/doctor/appointments/'+id)
+      this.httpClient.get(environment.apiUrl+'/api/doctor/appointments/'+2)
       .toPromise().then(
         response=>{
           console.log(response);
